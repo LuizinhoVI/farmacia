@@ -319,14 +319,15 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
             <h3 >ADICIONAR PRODUTO </h3>
             <div class="w3-container" align="center">
               
-                <table border="2" align="center" class="w3-table w3-striped w3-bordered">
+                <table border="1" align="center" class="w3-table w3-striped w3-bordered">
                   <th align="center">Id</th>
                   <th align="center">Nome do produto</th>
                   <th align="center">TIPO</th>
-                  <th align="center">STATUS</th>
+                  <th align="center">QUANTIDADE</th>
                   <th align="center">DATA</th>
                   <th align="center">HORA</th>
                   <th align="center">VALOR</th>
+                  <th align="center">VERIFICAR</th>
                   
                   <tr></tr>
                   <td align="center">1</td>
@@ -338,30 +339,42 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                   <td align="center">
                     
                     <select class="w3-select w3-border" name="option">
-                      <option value="" disabled selected>cx</option>
-                      <option value="1">M/L</option>
+                      <option value="" disabled selected>Comprimidos</option>
+                      <option value="0">Comprimidos</option>
+                      <option value="1">Cremes</option>
                       <option value="2">comprimido</option>
                       <option value="3">pomada</option>
+                      <option value="4">Pó</option>
+                      <option value="5">Cápsulas</option>
+                      <option value="6">Géis</option>
+                      <option value="7">Soluções</option>
+                      <option value="8">Suspensões</option>
+                      <option value="9">Sprays</option>
+                      <option value="10">Supositórios</option>
+                      <option value="11">Injeções</option>
+                      <option value="12">Inaladores</option>
+                      <option value="13">Compressa</option>
+                      
                     </select>
                     
                   </td>
-                  <td align="center">19/06/24</td>
+                  <td align="center">
+                    <input class="w3-input w3-border"  type="number" placeholder="quantidade">
+                  </td>
+                  <td align="center" >23/05/30</td>
                   <td align="center">08:50:30</td>
-                  <td align="center" >PIX 📱</td>
-                  <td align="center">R$20,00</td>
+                  <td align="center">
+
+                    <input class="w3-input w3-border"  type="text" placeholder="Nome">
+                  </td>
+                  <td align="center">
+                    <input class="w3-check" type="checkbox"  align="center">
+                    
+                  </td>
 
              
                   
-                  <tr></tr>
-                  <td align="center">2</td>
-                  <td align="center">jOSE LUIZ VIEIRA filho</td>
-                  <td align="center">
-                    
-                  </td>
-                  <td align="center">DESODORANTE</td>
-                  <td align="center">19/06/24</td>
-                  <td align="center">08:50:30</td>
-                  <td align="center">R$50,00</td>
+                
                 
               
                 </table>
