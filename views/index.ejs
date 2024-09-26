@@ -40,11 +40,14 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   <!-- Grid -->
   <div class="w3-row-padding" id="about">
     <div class="w3-center w3-padding-64">
-      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">FICHA</span>
+      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">
+      <b>  F I C H A</b>
+      </span>
     </div>
 
     <div class="w3-third w3-margin-bottom">
       <div class="w3-card-4" align="center">
+        <br>
         <img src="img/pasta-medica.png" alt="John" style="width:50%">
         <div class="w3-container" align="center">
           <h3 >NEW</h3>
@@ -54,58 +57,91 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     </div>
 
     <div class="w3-third w3-margin-bottom">
-      <div class="w3-card-4">
-        <img src="/w3images/team2.jpg" alt="Mike" style="width:100%">
+      <div class="w3-card-4" align="center">
+        <br>
+        <img src="img/analise.png" alt="Mike" align="center" style="width:50%">
         <div class="w3-container" align="center">
-          <h3>Modific</h3>
-          <p><button class="w3-button w3-light-grey w3-block">Procurar ficha</button></p>
+          <h3>pesquisa</h3>
+          <p><button class="w3-button w3-light-grey w3-block">PROCURAR FICHA</button></p>
         </div>
       </div>
     </div>
 
     <div class="w3-third w3-margin-bottom">
-      <div class="w3-card-4">
-        <img src="/w3images/team3.jpg" alt="Jane" style="width:100%">
+      <div class="w3-card-4" align=center>
+        <br>
+        <img src="img/lixo.png" alt="Jane" style="width:50%">
         <div class="w3-container" align="center">
-          <h3>Excluir</h3>
-         <p><button class="w3-button w3-light-grey w3-block">Exluir ficha</button></p>
+          <h3>Delete</h3>
+         <p><button class="w3-button w3-light-grey w3-block">EXCLUIR FICHA</button></p>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Contact -->
-  <div class="w3-center w3-padding-64" id="contact">
-    <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Contact Us</span>
+  <div class="w3-center" id="contact">
+    <BR></BR>
+    <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">HISTÓRICO</span>
   </div>
 
-  <form class="w3-container" action="/action_page.php" target="_blank">
-    <div class="w3-section">
-      <label>Name</label>
-      <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Name" required>
-    </div>
-    <div class="w3-section">
-      <label>Email</label>
-      <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Email" required>
-    </div>
-    <div class="w3-section">
-      <label>Subject</label>
-      <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Subject" required>
-    </div>
-    <div class="w3-section">
-      <label>Message</label>
-      <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Message" required>
-    </div>
-    <button type="submit" class="w3-button w3-block w3-black">Send</button>
-  </form>
+  <div class="w3-container">
+<br>    <br> 
+  <table border="2" align="center" class="w3-table w3-striped w3-bordered">
+    <td align="center">Id</td>
+    <td align="center">Nome</td>
+    <td align="center">CPF</td>
+    <td align="center">Limite</td>
+    <td align="center">DATA</td>
+    <td align="center">HORA</td>
+    <td align="center">STATUS</td>
+    
+    <tr></tr>
+    <td align="center">1</td>
+    <td align="center">jOSE LUIZ VIEIRA filho</td>
+    <td align="center">999.999.989-45</td>
+    <td align="center">R$500</td>
+    <td align="center">19/06/24</td>
+    <td align="center">08:50:30</td>
+    <td align="center" bgcolor="green">Novo</td>
 
+    <tr></tr>
+    <td align="center">2</td>
+    <td align="center">jOSE LUIZ VIEIRA filho</td>
+    <td align="center">999.999.989-45</td>
+    <td align="center">R$500</td>
+    <td align="center">19/06/24</td>
+    <td align="center">08:50:30</td>
+    <td align="center" bgcolor="red">excluido</td>
+  
+    <tr></tr>
+    <td align="center">3</td>
+    <td align="center">jOSE LUIZ VIEIRA filho</td>
+    <td align="center">999.999.989-45</td>
+    <td align="center">R$500</td>
+    <td align="center">19/06/24</td>
+    <td align="center">08:50:30</td>
+    <td align="center" bgcolor="yellow">editado</td>
+  </table>
+
+  </div>
+
+  <div class="w3-bar" align="center">
+    <br>
+    <a href="#" class="w3-button">«</a>
+    <a href="#" class="w3-button w3-green">1</a>
+    <a href="#" class="w3-button">2</a>
+    <a href="#" class="w3-button">3</a>
+    <a href="#" class="w3-button">4</a>
+    <a href="#" class="w3-button">»</a>
+  </div>
 </div>
 
 <!-- Footer -->
 
 <footer class="w3-container w3-padding-32 w3-light-grey w3-center">
-  <h4>Footer</h4>
-  <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  
+  <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>voltar pro topo</a>
   <div class="w3-xlarge w3-section">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
     <i class="fa fa-instagram w3-hover-opacity"></i>
