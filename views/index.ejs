@@ -239,7 +239,6 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
         <h2 align="center">HISTÓRICO DE PAGAMENTO...</h2>
         <input class="w3-input w3-border" placeholder="Pesquisar ficha" name="last" type="text"></p>
       </form>
-
       <div class="w3-container">
         <br>
          <table border="2" align="center" class="w3-table w3-striped w3-bordered">
@@ -293,8 +292,8 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     </div>
  <!-- final da conta -->
 
- <!-- conta  -->
- <div class="w3-container" id="conta" style="display: display;">
+ <!-- pagamento  -->
+ <div class="w3-container" id="pagamento" style="display: display;">
   <!-- Grid -->
   <div class="w3-row-padding" id="about">
     <div class="w3-center w3-padding-64">
@@ -303,125 +302,79 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
       </span>
     </div>
 
-    <div class="w3-third w3-margin-bottom">
-      <div class="w3-card-4" align="center">
-        <br>
-        <img src="img/voluntario.png" alt="John" style="width:50%">
-        <div class="w3-container" align="center">
-          <h3 >BOM PAGADOR</h3>
-          <div class="w3-container">
-            <ul class="w3-ul w3-hoverable">
-              <li> 1ª Jill vieira 💰</li>
-              <li> 2ª Jill vieira 💰</li>
-              <li> 3ª Jill vieira 💰</li>
-            </ul>
-          </div>
-          <p><button class="w3-button w3-light-grey w3-block">MAIS</button></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="w3-third w3-margin-bottom">
-      <div class="w3-card-4" align="center">
-        <br>
-        <img src="img/feliz-aniversario.png" alt="Mike" align="center" style="width:50%">
-        <div class="w3-container" align="center">
-          <h3>ANIVERSARIANTE </h3>
-          <div class="w3-container">
-            <ul class="w3-ul w3-hoverable">
-              <li > ruck vieira 🎂</li>
-              <li>  lex vieira 🎂</li>
-             
-            </ul>
-          </div>
-          <p><button class="w3-button w3-light-grey w3-block">MAIS</button></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="w3-third w3-margin-bottom">
-      <div class="w3-card-4" align=center>
-        <br>
-        <img src="img/divida.png" alt="Jane" style="width:50%">
-        <div class="w3-container" align="center">
-          <h3>MAL PAGADOR</h3>
-          <div class="w3-container"></div>
-            <ul class="w3-ul w3-hoverable">
-              <li> 1ª rocket vieira 💸</li>
-              <li> 2ª vivald vieira 💸</li>
-              <li> 3ª donatelo vieira 💸</li>
-            </ul>
-          </div>
-         <p><button class="w3-button w3-light-grey w3-block">MAIS</button></p>
-        </div>
-      </div>
-    </div>
-<!--  -->
-<br><br>
-    <div class="w3-container">
-      <div class="w3-center">
-        <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">
-        <b>  CONTA A PAGAR  </b>
-        </span>
-      </div>
-      <br>
-      <br>
-      <p>Divida paga :R$ 800,00</p>
-  <div class="w3-light-grey w3-xlarge">
-    <div class="w3-container w3-green" style="width:80%"> 80%</div>
-  </div>
-      <p>falta pagar :R$ 200,00</p>
-  <div class="w3-light-grey w3-xlarge">
-    <div class="w3-container w3-red" style="width:20%"> 20%</div>
-  </div>
-
-    </div>
 
 <br>
     <div class="w3-container"></div>
       <form class="w3-container w3-card-4 w3-light-grey">
-        <h2 align="center">HISTÓRICO DE PAGAMENTO...</h2>
-        <input class="w3-input w3-border" placeholder="Pesquisar ficha" name="last" type="text"></p>
+        <h2 align="center">PROCURAR FICHAS</h2>
+        <input class="w3-input w3-border w3-round-xxlarge" name="last" type="text"></p>
       </form>
+<br><br>
+      <div class=" w3-margin-bottom " align="center" >
+      
+        <div class="w3-card-4" align="center" style="width: 100%; left: 50%; position: relative;transform: translateX(-50%);" >
+          <br>
+          <!-- <img src="img/cv.png" alt="John" style="width:20%"> -->
+          <div class="w3-container" align="center">
+            <h3 >ADICIONAR PRODUTO </h3>
+            <div class="w3-container" align="center">
+              
+                <table border="2" align="center" class="w3-table w3-striped w3-bordered">
+                  <th align="center">Id</th>
+                  <th align="center">Nome do produto</th>
+                  <th align="center">TIPO</th>
+                  <th align="center">STATUS</th>
+                  <th align="center">DATA</th>
+                  <th align="center">HORA</th>
+                  <th align="center">VALOR</th>
+                  
+                  <tr></tr>
+                  <td align="center">1</td>
+                  <td align="center">
+
+                    <input class="w3-input w3-border"  type="text" placeholder="Nome">
+                    
+                  </td>
+                  <td align="center">
+                    
+                    <select class="w3-select w3-border" name="option">
+                      <option value="" disabled selected>cx</option>
+                      <option value="1">M/L</option>
+                      <option value="2">comprimido</option>
+                      <option value="3">pomada</option>
+                    </select>
+                    
+                  </td>
+                  <td align="center">19/06/24</td>
+                  <td align="center">08:50:30</td>
+                  <td align="center" >PIX 📱</td>
+                  <td align="center">R$20,00</td>
+
+             
+                  
+                  <tr></tr>
+                  <td align="center">2</td>
+                  <td align="center">jOSE LUIZ VIEIRA filho</td>
+                  <td align="center">
+                    
+                  </td>
+                  <td align="center">DESODORANTE</td>
+                  <td align="center">19/06/24</td>
+                  <td align="center">08:50:30</td>
+                  <td align="center">R$50,00</td>
+                
+              
+                </table>
+              
+            </div>
+            <p><button class="w3-button w3-light-grey w3-block">SALVAR</button></p>
+          </div>
+        </div>
+      </div>
 
       <div class="w3-container">
         <br>
-         <table border="2" align="center" class="w3-table w3-striped w3-bordered">
-           <th align="center">Id</th>
-           <th align="center">Nome</th>
-           <th align="center">STATUS</th>
-           <th align="center">VALOR</th>
-           <th align="center">DATA</th>
-           <th align="center">HORA</th>
-           <th align="center">TIPO</th>
-           
-           <tr></tr>
-           <td align="center">1</td>
-           <td align="center">jOSE LUIZ VIEIRA filho</td>
-           <td align="center">PAGAMANETO DA FICHA</td>
-           <td align="center">R$20,00</td>
-           <td align="center">19/06/24</td>
-           <td align="center">08:50:30</td>
-           <td align="center" >PIX 📱</td>
-       
-           <tr></tr>
-           <td align="center">2</td>
-           <td align="center">jOSE LUIZ VIEIRA filho</td>
-           <td align="center">DESODORANTE</td>
-           <td align="center">R$50,00</td>
-           <td align="center">19/06/24</td>
-           <td align="center">08:50:30</td>
-           <td align="center">FICHA 📝</td>
          
-           <tr></tr>
-           <td align="center">3</td>
-           <td align="center">jOSE LUIZ VIEIRA filho</td>
-           <td align="center">NIMESULIDA</td>
-           <td align="center">R$40,00</td>
-           <td align="center">19/06/24</td>
-           <td align="center">08:50:30</td>
-           <td align="center" >FICHA 📝</td>
-         </table>
        
          </div>
        
@@ -435,7 +388,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
            <a href="#" class="w3-button">»</a>
          </div>
     </div>
- <!-- final da conta -->
+ <!-- final da pegamento -->
 
 
 
