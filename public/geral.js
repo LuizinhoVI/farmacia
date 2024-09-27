@@ -1,4 +1,3 @@
-
 document.getElementById("menu2").style.display="block";
 
 function menu(numero) {

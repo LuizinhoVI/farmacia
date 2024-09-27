@@ -154,7 +154,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 <!-- final da ficha -->
 
  <!-- conta  -->
- <div class="w3-container esconder" style="display: block;" id="menu1"   >
+ <div class="w3-container esconder" " id="menu1"   >
 
   
   <!-- Grid -->
@@ -294,7 +294,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
  <!-- final da conta -->
 
  <!-- pagamento  -->
- <div class="w3-container esconder" id="menu3"  >
+ <div class="w3-container esconder" style="display: block;" id="menu3"  >
   <!-- Grid -->
   <div class="w3-row-padding" id="about">
     <div class="w3-center w3-padding-64">
@@ -379,7 +379,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
           <div class="w3-container" align="center">
             <h3 >ADICIONAR PRODUTO </h3>
           
-            <div class="w3-container" id="adicionar_produto" align="center">
+            <div class="w3-container adicionar_produto" id="adicionar_produto" align="center">
               
                 <table border="1" align="center" class="w3-table w3-striped w3-bordered">
                   <th align="center">Id</th>
@@ -389,13 +389,13 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                   <th align="center">DATA</th>
                   <th align="center">HORA</th>
                   <th align="center">VALOR</th>
-                  <th align="center">VERIFICAR</th>
+                  
                   
                   <tr></tr>
-                  <td align="center">1</td>
+                  <td align="center" class="contador_de_id">1</td>
                   <td align="center">
 
-                    <input class="w3-input w3-border"  type="text" placeholder="Nome">
+                    <input class="w3-input w3-border nome_procudo"  type="text" placeholder="Nome">
                     
                   </td>
                   <td align="center">
@@ -429,11 +429,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
                     <input class="w3-input w3-border"  type="number" placeholder="Nome">
                   </td>
-                  <td align="center">
-                    <input class="w3-check" type="checkbox"  align="center">
-                    
-                  </td>
-
+                 
              
                   
                 
@@ -442,14 +438,23 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                 </table>
               
                 <br>
-              </div>
-          
-            <div id="colar"></div>
+              
+          <!-- onde vai ser colado para adicinar os produtos -->
+           
             <br>
+          </div>
+
+           <div id="colar"></div>
+          <div align="center"> 
+            
+            <input class="w3-check verificar_compra" type="checkbox" id="verificar_compra"  align="center"> 
+              Verificar...
+            </div>
+          <br>
               <div>
               <img src="img/mais.png" alt="mais" onclick="adicionar_mais()" width="10%" style="cursor: pointer;border-radius: 50%;">
             </div>
-            <p><button class="w3-button w3-light-grey w3-block">SALVAR</button></p>
+            <p><button class="w3-button w3-light-grey w3-block" onclick="salvar()">SALVAR</button></p>
           </div>
         </div>
         <!-- adicionar produto -->
@@ -517,6 +522,7 @@ function showDivs(n) {
   dots[slideIndex-1].className += " w3-white";
 }
 </script>
+
 
 </body>
 </html>
