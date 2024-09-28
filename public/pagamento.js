@@ -32,18 +32,53 @@ function formatarDinheiro(input) {
 
 function pagamento_data_hora() {
     const agora = new Date();
+    const data = agora.toLocaleDateString('pt-BR'); // Formato da data
+    const hora = agora.toLocaleTimeString('pt-BR'); 
+
+
+
+    // Pega todos os inputs dentro da div de resultado
+    const inputs = document.querySelectorAll('.hora');
+    for (let index = 0; index < inputs.length; index++) {
+        
+
+            
+ const mostrarhora = inputs[index].textContent=hora; // Acessa o valor do terceiro input
+        document.querySelector('.mostrar5').textContent += mostrarhora; // Mostra no HTML 
+    }
+    const inputs1 = document.querySelectorAll('.data');
+
+    for (let index = 0; index < inputs1.length; index++) {
+        
+    const mostrardata = inputs1[index].textContent=data; // Acessa o valor do terceiro input
+        document.querySelector('.mostrar6').textContent += mostrardata; // Mostra no HTML   
+    }
+
+
+}
+     
+
+function data_hora_atualizada() {
+      
+    const agora = new Date();
 
         // Obtém a data e a hora
         const data = agora.toLocaleDateString('pt-BR'); // Formato da data
         const hora = agora.toLocaleTimeString('pt-BR'); // Formato da hora
 
-        // Mostra no HTML
-        document.querySelector('.data').innerText = `Data: ${data}`;
-        document.querySelector('.hora').innerText = `Hora: ${hora}`;
+        
+    // Seleciona todos os elementos com a classe "data" e "hora"
+            const divs = document.querySelectorAll('.data, .hora');
+
+           
+
+
+            // Atualiza o texto
+            divs[0].textContent = data; // Para a primeira div (data)
+            divs[1].textContent =hora; // Para a segunda div (hora)
 
 }
-pagamento_data_hora();
-        setInterval(pagamento_data_hora, 1000);
+ setInterval(data_hora_atualizada, 1000);
 
 
 function option() {
@@ -129,15 +164,16 @@ function salvar() {
         
         quantidade();
         pagamento_nome();
-        option()
-        pagamento_valor()
+        option();
+        pagamento_valor();
+        pagamento_data_hora();
+      
 
 
 
 
 
-
-
+    
 
     } else {
         alert('Você deve aceitar os termos para Salvar os produtos.' );

@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="geral.js"></script>
-<script src="pagamento.js"></script>
+<!-- <script src="pagamento.js"></script> -->
 <link rel="shortcut icon" href="img/farmacia.png" type="image/x-icon">
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -154,7 +154,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 <!-- final da ficha -->
 
  <!-- conta  -->
- <div class="w3-container esconder" " id="menu1"   >
+ <div class="w3-container esconder"  id="menu1"   >
 
   
   <!-- Grid -->
@@ -383,7 +383,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
               
                 <table border="1" align="center" class="w3-table w3-striped w3-bordered">
                   <th align="center">Id</th>
-                  <th align="center">NOME</th>
+                  <th align="center">Produto</th>
                   <th align="center">TIPO</th>
                   <th align="center">QUANTIDADE</th>
                   <th align="center">DATA</th>
@@ -424,16 +424,14 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                   <td align="center">
                     <input class="w3-input w3-border  pagamento_quantidade"  type="number" placeholder="quantidade">
                   </td>
-                  <td align="center" class="data"  ></td>
+                  <td align="center" class="data"> </td>
                   <td align="center" class="hora" > </td>
+                 
                   <td align="center">
-
+                    
                     <input class="w3-input w3-border pagamento_valor" id="pagamento_valor"  type="text" oninput="formatarDinheiro(this)" placeholder="Valor">
                   </td>
-                 
-             
-                  
-                
+            
                 
               
                 </table>
@@ -461,6 +459,8 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
           <div class="mostrar2">tipo:</div>
           <div class="mostrar3">quantidade:</div>
           <div class="mostrar4">valor:</div>
+          <div class="mostrar5">hora :</div>
+          <div class="mostrar6">data :</div>
           </div>
         </div>
         <!-- adicionar produto -->
@@ -482,6 +482,17 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
 
 </div>
+</div>
+
+<div class="w3-content ">
+
+  
+
+
+</div>
+
+
+
 
 <!-- Footer -->
 <footer class="w3-container w3-padding-32 w3-light-grey w3-center">
@@ -527,8 +538,13 @@ function showDivs(n) {
   x[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " w3-white";
 }
+
+
+// data e hora 
+
+
+
 </script>
-
-
+                    <script src="pagamento.js"></script>
 </body>
 </html>
