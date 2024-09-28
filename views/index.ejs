@@ -401,7 +401,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                   <td align="center">
                     
                     <select class="w3-select w3-border option" name="option">
-                      <option value="" disabled selected>Comprimidos</option>
+                      
                       <option value="Comprimidos">Comprimidos</option>
                       <option value="Liquido">Liquido</option>
                       <option value="comprimido">comprimido</option>
@@ -424,11 +424,11 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                   <td align="center">
                     <input class="w3-input w3-border  pagamento_quantidade"  type="number" placeholder="quantidade">
                   </td>
-                  <td align="center" >23/05/30</td>
-                  <td align="center">08:50:30</td>
+                  <td align="center" class="data"  ></td>
+                  <td align="center" class="hora" > </td>
                   <td align="center">
 
-                    <input class="w3-input w3-border"  type="number" placeholder="Numero">
+                    <input class="w3-input w3-border pagamento_valor" id="pagamento_valor"  type="text" oninput="formatarDinheiro(this)" placeholder="Valor">
                   </td>
                  
              
@@ -458,7 +458,9 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
             </div>
             <p><button class="w3-button w3-light-grey w3-block" onclick="salvar()">SALVAR</button></p>
           <div class="mostrar1">nomes:</div>
+          <div class="mostrar2">tipo:</div>
           <div class="mostrar3">quantidade:</div>
+          <div class="mostrar4">valor:</div>
           </div>
         </div>
         <!-- adicionar produto -->
