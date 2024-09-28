@@ -12,12 +12,21 @@ function adicionar_mais() {
 
 }
 
+function option() {
+    const option=document.querySelector('.option')
+
+    const pegar_option =option.value
+
+    alert("o valor da celeção"+pegar_option);
+
+}
+
 
 function quantidade() {
-alert("")
+
     // Pega todos os inputs dentro da div de resultado
     const inputs = document.querySelectorAll('.pagamento_quantidade');
-        for (let index = 0; index <= inputs.length; index++) {
+        for (let index = 0; index < inputs.length; index++) {
 
             
  const terceiroValor = inputs[index].value; // Acessa o valor do terceiro input
@@ -32,7 +41,7 @@ function pagamento_nome() {
     
     // Pega todos os inputs dentro da div de resultado
     const inputs = document.querySelectorAll('.nome_procudo');
-    for (let index1 = 0; index1 <= inputs.length; index1++) {
+    for (let index1 = 0; index1 < inputs.length; index1++) {
         
         const terceiroValor = inputs[index1].value; // Acessa o valor do terceiro input
         
@@ -56,10 +65,10 @@ function salvar() {
     if (checkbox.checked) {
         // console.log('Checkbox está marcado:', checkbox.checked);
         
-        pagamento_nome();
         
         quantidade();
-
+        pagamento_nome();
+        option()
        
 
 
