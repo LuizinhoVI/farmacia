@@ -146,12 +146,15 @@ function pagamento_valor() {
         // alert(terceiroValor);           
         
                 }
+}
 
 
-
-    
-  
-
+function removerclass() {
+    const divs = document.querySelectorAll('.adicionar_produto'); // Seleciona todas as divs clonadas
+    // Mantém apenas a primeira div
+    for (let i = 1; i < divs.length; i++) {
+        divs[i].remove(); // Remove as divs a partir da segunda
+    }
 }
 
 
@@ -168,13 +171,13 @@ function salvar() {
         pagamento_valor();
         pagamento_data_hora();
       
+        removerclass();
 
 
 
 
-
-    
-
+        checkbox.checked=false;
+        const limpar =document.querySelectorAll('.pagamento_valor,.nome_procudo')
     } else {
         alert('Você deve aceitar os termos para Salvar os produtos.' );
         
