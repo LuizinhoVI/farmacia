@@ -14,7 +14,7 @@ function adicionar_mais() {
 
 
 function quantidade() {
-
+alert("")
     // Pega todos os inputs dentro da div de resultado
     const inputs = document.querySelectorAll('.pagamento_quantidade');
         for (let index = 0; index <= inputs.length; index++) {
@@ -26,27 +26,24 @@ function quantidade() {
 
         }
     }
-        function pagamento_nome() {
 
-            // Pega todos os inputs dentro da div de resultado
-            const inputs = document.querySelectorAll('.pagamento_quantidade');
-                for (let index = 0; index <= inputs.length; index++) {
         
-                    
-         const terceiroValor = inputs[index].value; // Acessa o valor do terceiro input
-                document.querySelector('.mostrar3').textContent += terceiroValor; // Mostra no HTML
+function pagamento_nome() {
+    
+    // Pega todos os inputs dentro da div de resultado
+    const inputs = document.querySelectorAll('.nome_procudo');
+    for (let index1 = 0; index1 <= inputs.length; index1++) {
         
+        const terceiroValor = inputs[index1].value; // Acessa o valor do terceiro input
+        
+        document.querySelector('.mostrar1').textContent += terceiroValor; // Mostra no HTML
+        
+        // alert(terceiroValor);           
         
                 }
 
 
-    // Se houver pelo menos 3 inputs, acessa o valor do terceiro
-    if (inputs.length >= 3) {
 
-
-        const terceiroValor = inputs[2].value; // Acessa o valor do terceiro input
-        document.querySelector('.mostrar3').textContent = terceiroValor; // Mostra no HTML
-    }
     
   
 
@@ -58,9 +55,10 @@ function salvar() {
     // console.log('Checkbox encontrado:', checkbox); 
     if (checkbox.checked) {
         // console.log('Checkbox está marcado:', checkbox.checked);
-
-        quantidade();
+        
         pagamento_nome();
+        
+        quantidade();
 
        
 
