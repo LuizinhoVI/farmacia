@@ -1,0 +1,28 @@
+@media print {
+
+
+
+    
+  
+
+
+
+
+.print_produto{
+        /* display: block !important; */
+        position: fixed;
+        left: 50%;
+    top: 0%;
+    /* transform: translateY(-50%); */
+    transform: translateX(-50%);
+    width: 8cm;
+    border: solid red 2px;
+    /* height: 100%; */
+   
+
+}
+
+.desligar{
+    display: none;
+}
+}
