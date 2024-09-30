@@ -183,3 +183,32 @@ function salvar() {
         
     }
 }
+
+window.onscroll = function() {
+    fixarbarra();
+};
+
+var div = document.getElementById("procurar_ficha");
+var ficha = document.getElementById("ficha");
+var sticky = div.offsetTop;
+
+function fixarbarra() {
+    if (window.pageYOffset > sticky) {
+        div.style.position = "fixed";
+        div.style.top = "50px";
+        div.style.width = "70%";
+        div.style.left = "50%";
+        div.style.transform = "translateX(-50%)";
+        div.style.zIndex = "3";
+        ficha.style.position = "relative";
+        ficha.style.top = "180px";
+    } else {
+        div.style.position = "relative";
+        div.style.width = "";
+        div.style.top = "";
+        ficha.style.position = "";
+        ficha.style.top = "";
+
+        // div.style.width = "80%";
+    }
+}
