@@ -32,7 +32,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     <div class="w3-col s3  escolha1 " id="escolha1" onclick="menu('menu1','escolha1')">
       <a href="#" class="w3-button w3-block">Conta</a>
     </div>
-    <div class="w3-col s3 escolha2" id="escolha2" onclick="menu('menu2','escolha2')">
+    <div class="w3-col s3 escolha2 w3-green" id="escolha2" onclick="menu('menu2','escolha2')">
       <a href="#plans" class="w3-button w3-block">Ficha</a>
     </div>
     <div class="w3-col s3 escolha3" id="escolha3"  onclick="menu('menu3','escolha3')">
@@ -53,11 +53,8 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   
   <!-- Grid -->
   <div class="w3-row-padding" id="about">
-    <div class="w3-center w3-padding-64">
-      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">
-      <b>  F I C H A</b>
-      </span>
-    </div>
+  <br>
+  <br>
 
     <div class="w3-third w3-margin-bottom">
       <div class="w3-card-4" align="center">
@@ -65,7 +62,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
         <img src="img/pasta-medica.png" alt="John" style="width:50%">
         <div class="w3-container" align="center">
           <h3 >NEW</h3>
-          <p><button class="w3-button w3-light-grey w3-block">CRIAR FICHA</button></p>
+          <p><button class="w3-button w3-light-grey w3-block " onclick="ficha_menu('ficha_pessoa')">CRIAR FICHA</button></p>
         </div>
       </div>
     </div>
@@ -95,7 +92,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
   <!-- INICIO DO CADASTRO  -->
     
-  <div class="w3-container ficha_cadastro">
+  <div class="w3-container ficha_cadastro ficha_pessoa " style="display: none;">
 
  
 <form action="/" class="w3-container w3-card-4 w3-light-grey w3-text-green w3-margin">
@@ -173,12 +170,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
         <input class="w3-input w3-border" name="message" type="text" placeholder="Estado">
       </div>
   </div>
-  <div class="w3-row w3-section">
-    <img src="img/pagamento-em-dinheiro.png" class="w3-col" style="width: 50px;position:relative; top:-10px;"  alt=""> 
-      <div class="w3-rest">
-        <input class="w3-input w3-border" name="message" type="text" placeholder="Credito">
-      </div>
-  </div>
+
   <div class="w3-row w3-section">
     <div align="center">
       Conta
@@ -186,6 +178,12 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     <img src="img/movel.png" class="w3-col" style="width: 50px;position:relative; top:-10px;"  alt=""> 
       <div class="w3-rest">
         <input class="w3-input w3-border" name="message" type="text" placeholder="Login">
+      </div>
+  </div>
+  <div class="w3-row w3-section">
+    <img src="img/pagamento-em-dinheiro.png" class="w3-col" style="width: 50px;position:relative; top:-10px;"  alt=""> 
+      <div class="w3-rest">
+        <input class="w3-input w3-border" name="message" type="text" placeholder="Credito">
       </div>
   </div>
   <div class="w3-row w3-section">
@@ -206,70 +204,188 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   </form>
 
   </div>
-
-
-
   <!-- FIM  DO INICIO DO  CADASTRO  -->
 
-<!-- historico de ficha  -->
-  <br><br>
-    <div class="w3-container">
-      <form class="w3-container w3-card-4 w3-light-grey">
-        <h2 align="center">HISTÓRICO DAS FICHAS...</h2>
-        <input class="w3-input w3-border" placeholder="Pesquisar ficha" name="last" type="text"></p>
-      </form>
+  <div class="w3-container ficha_pessoa">
+  <form class="w3-container w3-card-4 w3-light-grey " id="procurar_ficha1">
+    <h4 align="center">P R OC U R A R</h4>
+    <input class="w3-input w3-border w3-round-xxlarge" name="last" type="text"></p>
+    
+  </form>
+
+  <div class="ficha_procurar" id="ficha_procurar" style="display: none;" >
+
+<br><br>
+    <!-- FICHA  -->
+    <div class=" w3-margin-bottom "  align="center" >
+        <!-- Adicionar produto -->
+    <div class="w3-card-4" align="center" style="width: 100%; left: 50%; position: relative;transform: translateX(-50%);" >
+      <br>
+      <!-- <img src="img/cv.png" alt="John" style="width:20%"> -->
+      <div class="w3-container" align="center">
+        <h3 >F I C H A </h3>
+        <h3 >jose luiz vieira filho </h3>
+        <div class="w3-container" align="center">
+          
+            <table border="2" align="center"   class="w3-table w3-striped w3-bordered">
+              <th align="center">NOME:</th>
+              <td colspan="10">jose luiz vieira filh jose luiz vieira filh</td>
+              <tr></tr>
+              <th align="center">RUA:</th>
+              <td colspan="3">rua marechal das ruas do centro que </td>
+              <th>Nº:</th>
+              <td>4565</td>
+              <th colspan="1">REFERÊNCIA:</th>
+              <td>centro</td>
+              <tr></tr>
+              <th>CEP:</th>
+              <td colspan="2">49700-000</td>
+              <th colspan="1">ESTADO:</th>
+              <td>SE</td>
+              <th colspan="2">CIDADE:</th>
+              <td>capela</td>
+              <tr></tr>
+              <th>CPF : </th>
+              <td colspan="2">78945612387</td>
+              <th>DATA DE NASCIMENTO: </th>
+              <td colspan="4" align="center">23/03/1995</td>
+              <tr></tr>
+              <th>LOGIN :</th>
+              <td colspan="2" >79999722046 </td>
+              <th>LIMITE-DE-CREDITO :</th>
+              <td colspan="2" >  R$500,00</td>
+              <TH>FALTA PAGAR :</TH>
+              <td>R$300,00</td>
+              <tr></tr>
+              <th>TELEFONE:</th>
+              <td colspan="2">79 99722046</td>
+              <th>EMAIL:</th>
+              <td colspan="4">brat.luiz23@hotmail.com</td>
+              <tr></tr>
+              <th>STATUS</th>
+              <td colspan="2">BOM PAGADOR 👍</td>
+              <th>LIMITE RESTANTE</th>
+              <td colspan="10">R$200,00 💵 </td>
+            </table>
+            <br>
+        </div>
+        
+      </div>
+    </div>
+    <!-- adicionar produto -->
+    </div>
+    <!-- FICHA -->
+
+
+    <hr>
+
+   
+      <!-- Adicionar produto -->
+    <div class=" w3-margin-bottom " align="center" >
+      <div class="w3-card-4" align="center" style="width: 100%; left: 50%; position: relative;transform: translateX(-50%);" >
+      <br>
+  
+      <div class="w3-container" align="center">
+        <h3 >ADICIONAR PRODUTO </h3>
+      
+        <div class="w3-container adicionar_produto" id="adicionar_produto" align="center">
+          
+            <table border="1" align="center" class="w3-table w3-striped w3-bordered">
+              <th align="center">Id</th>
+              <th align="center">Produto</th>
+              <th align="center">TIPO</th>
+              <th align="center">QUANTIDADE</th>
+              <th align="center">DATA</th>
+              <th align="center">HORA</th>
+              <th align="center">VALOR</th>
+              
+              
+              <tr></tr>
+              <td align="center" class="contador_de_id">1</td>
+              <td align="center">
+
+                <input class="w3-input w3-border nome_procudo"  type="text" placeholder="Nome do produto">
+                
+              </td>
+              <td align="center">
+                
+                <select class="w3-select w3-border option" name="option">
+                  
+                  <option value="Comprimidos">Comprimidos</option>
+                  <option value="Liquido">Liquido</option>
+                  <option value="comprimido">comprimido</option>
+                  <option value="pomada">pomada</option>
+                  <option value="Pó">Pó</option>
+                  <option value="Cápsulas">Cápsulas</option>
+                  <option value="Géis">Géis</option>
+                  <option value="Soluções">Soluções</option>
+                  <option value="Suspensões">Suspensões</option>
+                  <option value="Sprays">Sprays</option>
+                  <option value="Supositórios">Supositórios</option>
+                  <option value="Injeções">Injeções</option>
+                  <option value="Inaladores">Inaladores</option>
+                  <option value="Compressa">Compressa</option>
+                  <option value="Cremes">Cremes</option>
+                  
+                </select>
+                
+              </td>
+              <td align="center">
+                <input class="w3-input w3-border  pagamento_quantidade"  type="number" placeholder="unidades">
+              </td>
+              <td align="center" class="data"> </td>
+              <td align="center" class="hora" > </td>
+             
+              <td align="center">
+                
+                <input class="w3-input w3-border pagamento_valor" id="pagamento_valor"  type="text" oninput="formatarDinheiro(this)" placeholder="Valor">
+              </td>
+        
+            
+          
+            </table>
+          
+            <br>
+          
+      <!-- onde vai ser colado para adicinar os produtos -->
+       
+        
+      </div>
+
+       <div id="colar"></div>
+      
+      <div align="center"> 
+        
+        <input class="w3-check verificar_compra" type="checkbox" id="verificar_compra"  align="center"> 
+          Verificar...
+        </div>
+      <br>
+          <div>
+          <img src="img/mais.png" alt="mais" onclick="adicionar_mais()" width="10%" style="cursor: pointer;border-radius: 50%;">
+        </div>
+        <p><button class="w3-button w3-light-grey w3-block" onclick="salvar()">SALVAR</button></p>
+      <div class="mostrar1">nomes:</div>
+      <div class="mostrar2">tipo:</div>
+      <div class="mostrar3">quantidade:</div>
+      <div class="mostrar4">valor:</div>
+      <div class="mostrar5">hora :</div>
+      <div class="mostrar6">data :</div>
+     
+      <div class="w3-container ">
+        <button onclick="window.print()">imprimir</button>
+        </div>
 
     </div>
-  <div class="w3-container">
- <br>
-  <table border="2" align="center" class="w3-table w3-striped w3-bordered">
-    <th align="center">Id</th>
-    <th align="center">Nome</th>
-    <th align="center">CPF</th>
-    <th align="center">Limite</th>
-    <th align="center">DATA</th>
-    <th align="center">HORA</th>
-    <th align="center">STATUS</th>
-    
-    <tr></tr>
-    <td align="center">1</td>
-    <td align="center">jOSE LUIZ VIEIRA filho</td>
-    <td align="center">999.999.989-45</td>
-    <td align="center">R$500</td>
-    <td align="center">19/06/24</td>
-    <td align="center">08:50:30</td>
-    <td align="center" bgcolor="green">Novo</td>
-
-    <tr></tr>
-    <td align="center">2</td>
-    <td align="center">jOSE LUIZ VIEIRA filho</td>
-    <td align="center">999.999.989-45</td>
-    <td align="center">R$500</td>
-    <td align="center">19/06/24</td>
-    <td align="center">08:50:30</td>
-    <td align="center" bgcolor="red">excluido</td>
-  
-    <tr></tr>
-    <td align="center">3</td>
-    <td align="center">jOSE LUIZ VIEIRA filho</td>
-    <td align="center">999.999.989-45</td>
-    <td align="center">R$500</td>
-    <td align="center">19/06/24</td>
-    <td align="center">08:50:30</td>
-    <td align="center" bgcolor="yellow">editado</td>
-  </table>
+    </div>
+    <!-- adicionar produto -->
+  </div>
+    <!-- adiconar produto  -->
 
   </div>
 
-  <div class="w3-bar" align="center">
-    <br>
-    <a href="#" class="w3-button">«</a>
-    <a href="#" class="w3-button w3-green">1</a>
-    <a href="#" class="w3-button">2</a>
-    <a href="#" class="w3-button">3</a>
-    <a href="#" class="w3-button">4</a>
-    <a href="#" class="w3-button">»</a>
   </div>
+<!-- historico de ficha  -->
+
 </div>
 <!-- final da ficha -->
 
@@ -340,22 +456,10 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     </div>
 <!--  -->
 <br><br>
-    <div class="w3-container">
-      <br>
-      <br>
-      <p>Divida paga :R$ 800,00</p>
-  <div class="w3-light-grey w3-xlarge">
-    <div class="w3-container w3-green" style="width:80%"> 80%</div>
-  </div>
-      <p>falta pagar :R$ 200,00</p>
-  <div class="w3-light-grey w3-xlarge">
-    <div class="w3-container w3-red" style="width:20%"> 20%</div>
-  </div>
-
-    </div>
+   
 
 <br>
-    <div class="w3-container"></div>
+      <div class="" >
       <form class="w3-container w3-card-4 w3-light-grey">
         <h2 align="center">HISTÓRICO DE PAGAMENTO...</h2>
         <input class="w3-input w3-border" placeholder="Pesquisar ficha" name="last" type="text"></p>
@@ -411,6 +515,8 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
            <a href="#" class="w3-button">»</a>
          </div>
         </div>
+      </div>
+       
  <!-- final da conta -->
 
  <!-- pagamento  -->
@@ -634,8 +740,8 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 </footer>
 
 
-<script src="pagamento.js"></script>
-<script src="Ficha.js"></script>
+<!-- <script src="pagamento.js"></script> -->
+<!-- <script src="Ficha.js"></script> -->
 
  
 <!-- impressão dos produtos  -->
@@ -647,9 +753,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
 
 
-
-</script>
                     <script src="pagamento.js"></script>
-
+    <script src="Ficha.js"></script>
 </body>
 </html>
