@@ -62,7 +62,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
         <img src="img/pasta-medica.png" alt="John" style="width:50%">
         <div class="w3-container" align="center">
           <h3 >NEW</h3>
-          <p><button class="w3-button w3-light-grey w3-block " onclick="ficha_menu('ficha_pessoa')">CRIAR FICHA</button></p>
+          <p><button class="w3-button w3-light-grey w3-block " onclick="ficha_menu('ficha_pessoa1')">CRIAR FICHA</button></p>
         </div>
       </div>
     </div>
@@ -73,7 +73,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
         <img src="img/analise.png" alt="Mike" align="center" style="width:50%">
         <div class="w3-container" align="center">
           <h3>pesquisa</h3>
-          <p><button class="w3-button w3-light-grey w3-block">PROCURAR FICHA</button></p>
+          <p><button class="w3-button w3-light-grey w3-block" onclick="ficha_menu('ficha_pessoa2')">PROCURAR FICHA</button></p>
         </div>
       </div>
     </div>
@@ -84,17 +84,14 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
         <img src="img/lixo.png" alt="Jane" style="width:50%">
         <div class="w3-container" align="center">
           <h3>Delete</h3>
-         <p><button class="w3-button w3-light-grey w3-block">EXCLUIR FICHA</button></p>
+         <p><button class="w3-button w3-light-grey w3-block"onclick="ficha_menu('ficha_pessoa3')">EXCLUIR FICHA</button></p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- INICIO DO CADASTRO  -->
-    
-  <div class="w3-container ficha_cadastro ficha_pessoa " style="display: none;">
-
- 
+  <!-- INICIO DO CADASTRO  da ficha-->
+  <div class="w3-container ficha_pessoa1 ficha_pessoa " style="display: none;">
 <form action="/" class="w3-container w3-card-4 w3-light-grey w3-text-green w3-margin">
   <h2 class="w3-center">CADASTRAR</h2>
    
@@ -202,12 +199,13 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   <button class="w3-button w3-block w3-section w3-green w3-ripple w3-padding">CADASTRAR</button>
   
   </form>
-
   </div>
-  <!-- FIM  DO INICIO DO  CADASTRO  -->
+  <!-- FIM  DO INICIO DO  CADASTRO da ficha -->
 
-  <div class="w3-container ficha_pessoa">
-  <form class="w3-container w3-card-4 w3-light-grey " id="procurar_ficha1">
+<!-- procurar ficha para compras -->
+  <div class="w3-container " style="display: ;">
+  
+    <form class="w3-container w3-card-4 ficha_pessoa ficha_pessoa2 w3-light-grey "  style="display: none;">
     <h4 align="center">P R OC U R A R</h4>
     <input class="w3-input w3-border w3-round-xxlarge" name="last" type="text"></p>
     
@@ -216,6 +214,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   <div class="ficha_procurar" id="ficha_procurar" style="display: none;" >
 
 <br><br>
+
     <!-- FICHA  -->
     <div class=" w3-margin-bottom "  align="center" >
         <!-- Adicionar produto -->
@@ -223,7 +222,6 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
       <br>
       <!-- <img src="img/cv.png" alt="John" style="width:20%"> -->
       <div class="w3-container" align="center">
-        <h3 >F I C H A </h3>
         <h3 >jose luiz vieira filho </h3>
         <div class="w3-container" align="center">
           
@@ -232,17 +230,17 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
               <td colspan="10">jose luiz vieira filh jose luiz vieira filh</td>
               <tr></tr>
               <th align="center">RUA:</th>
-              <td colspan="3">rua marechal das ruas do centro que </td>
+              <td colspan="2">rua marechal das ruas do centro que </td>
               <th>Nº:</th>
-              <td>4565</td>
+              <td colspan="2">4565</td>
               <th colspan="1">REFERÊNCIA:</th>
               <td>centro</td>
               <tr></tr>
               <th>CEP:</th>
               <td colspan="2">49700-000</td>
-              <th colspan="1">ESTADO:</th>
+              <th colspan="2">ESTADO:</th>
               <td>SE</td>
-              <th colspan="2">CIDADE:</th>
+              <th colspan="1">CIDADE:</th>
               <td>capela</td>
               <tr></tr>
               <th>CPF : </th>

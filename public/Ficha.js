@@ -11,7 +11,7 @@ function ficha_menu(numero) {
     
     // Mostra a opção selecionada
     
-    document.querySelector('.'+numero).style.display = "none";
+    document.querySelector('.'+numero).style.display = "block";
     
     
     }
