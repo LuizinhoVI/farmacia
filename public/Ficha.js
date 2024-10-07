@@ -33,12 +33,12 @@ function ficha_menu(numero) {
         // resultadoDiv.innerHTML = ''; // Limpa o resultado anterior
 
         if (cep.length === 8) {
-            
+
                 const response = await fetch(`https://brasilapi.com.br/api/cep/v1/${cep}`);
                 const data = await response.json();
 
                 if (!data.erro) {
-                //   alert(data.state)
+                //   alert(data.state)  
 
                     cidade.value=data.city  
                     estado.value=data.state
@@ -50,3 +50,87 @@ function ficha_menu(numero) {
             
             }
         }
+
+
+       async function formatarTelefone() {
+            const inputTelefone = document.getElementById('ficha_telefone');
+            let value = inputTelefone.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+        
+            if (value.length > 6) {
+                value = value.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+            } else if (value.length > 2) {
+                value = value.replace(/^(\d{2})(\d{0,5})$/, '($1) $2');
+            } else if (value.length > 0) {
+                value = value.replace(/^(\d{2})$/, '($1)');
+            }
+        
+            inputTelefone.value = value; // Atualiza o valor do input
+        }
+        
+       async function formatarCPF(input) {
+            let value = input.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+            if (value.length > 11) value = value.slice(0, 11);
+            
+            if (value.length > 9) {
+                value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+            } else if (value.length > 6) {
+                value = value.replace(/(\d{3})(\d{3})(\d{2})/, '$1.$2.$3');
+            } else if (value.length > 3) {
+                value = value.replace(/(\d{3})(\d+)/, '$1.$2');
+            }
+            
+            input.value = value;
+        }
+
+         function validarCPF(input) {
+            const cpf = input.value.replace(/\D/g, '');
+            if (cpf.length < 11) {
+                document.getElementById('cpf_resultado').innerText = '';
+                return;
+            }
+            
+            // Validação básica do CPF
+            if (!isValidCPF(cpf)) {
+                document.querySelector('.cpf_resultado').innerText = 0;
+                alert("CPF ERRADO")
+                input.value=null;
+                
+            } else {
+                input.style.fontSize='20px'
+                alert("valido")
+                
+            }
+        }
+        // faz parte da função de cima validarcpf()
+        function isValidCPF(cpf) {
+            if (/^(.)\1{10}$/.test(cpf)) return false; // Verifica se todos os dígitos são iguais
+        
+            let soma = 0;
+            for (let i = 0; i < 9; i++) {
+                soma += parseInt(cpf.charAt(i)) * (10 - i);
+            }
+            let resto = 11 - (soma % 11);
+            let primeiroDigito = resto > 9 ? 0 : resto;
+        
+            if (parseInt(cpf.charAt(9)) !== primeiroDigito) return false;
+        
+            soma = 0;
+            for (let i = 0; i < 10; i++) {
+                soma += parseInt(cpf.charAt(i)) * (11 - i);
+            }
+            resto = 11 - (soma % 11);
+            let segundoDigito = resto > 9 ? 0 : resto;
+        
+            return parseInt(cpf.charAt(10)) === segundoDigito;
+        }
+
+        function somenteNumeros(input) {
+            input.value = input.value.replace(/[^0-9]/g, ''); // Remove caracteres não numéricos
+        }
+        function somentecredito(input) {
+            input.value = input.value.replace(/[^0-9]/g, ''); // Remove caracteres não numéricos
+            if (input.value > 1000) {
+                input.value= null;
+            }
+        }
+    
