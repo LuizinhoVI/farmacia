@@ -195,7 +195,7 @@ function fixarbarra() {
         div.style.transform = "translateX(-50%)";
         div.style.zIndex = "3";
         ficha.style.position = "relative";
-        ficha.style.top = "180px";
+        ficha.style.top = "120px";
     } else {
         div.style.position = "relative";
         div.style.width = "";
@@ -208,24 +208,60 @@ function fixarbarra() {
 }
 
 function pagamento_ver_mais() {
-    const remover = document.querySelectorAll('.mostrar');
-    remover.forEach((elemento) => {
+    const mais = document.querySelectorAll('.mostrar');
+    mais.forEach((elemento) => {
         elemento.classList.remove('mostrar'); // Remove a classe que oculta
     });
-    document.querySelector('.pagamento_ver_mais').style.display="none"  
+    const mostrar = document.querySelector('#pagamento_ver_mais');
+    const remover =document.querySelector('#pagamento_remover');
+  
+    remover.style.display="block"
+    mostrar.style.display="none"  
 
-    
-    document.querySelector('.pagamento_remover').style.display="block"
+ 
 }
 
 function pagamento_recolher() {
     
-    const remover = document.querySelectorAll('.mostrar');
-    remover.forEach((elemento) => {
-        elemento.classList.add('mostrar'); // Remove a classe que oculta
-    });
-    document.querySelector('.pagamento_ver_mais').style.display="block"
+    const divs = document.querySelectorAll('.remover'); // Seleciona todas as divs com a classe 'minha-div'
     
-    document.querySelector('.pagamento_remover').style.display="none"
+    divs.forEach((div) => {
+        div.classList.add('mostrar'); // Adiciona a classe 'nova-classe' a cada div
+   
 
+    });
+
+    const mostrar = document.querySelector('#pagamento_ver_mais');
+    const remover = document.querySelector('#pagamento_remover');
+
+
+
+
+    remover.style.display="none"
+    mostrar.style.display="block"  
+
+    
+
+}
+
+
+
+
+function test() {
+
+        // Obter o valor atual da div
+        const divValor = document.getElementById('valor');
+        let valorAtual = parseFloat(divValor.textContent);
+        
+        // Obter o valor do input
+        const inputValor = document.getElementById('inputValor');
+        let valorSubtrair = parseFloat(inputValor.value) || 0; // Define 0 se não for um número
+        
+        // Fazer a subtração
+        let resultado = valorAtual - valorSubtrair;
+        
+        // Atualizar a div com o valor restante
+        divValor.textContent = resultado >= 0 ? resultado : 0; // Garante que não fique negativo
+    
+    
 }
