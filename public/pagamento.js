@@ -184,6 +184,7 @@ window.onscroll = function() {
 
 var div = document.getElementById("procurar_ficha");
 var ficha = document.getElementById("ficha");
+
 var sticky = div.offsetTop;
 
 function fixarbarra() {
@@ -195,13 +196,17 @@ function fixarbarra() {
         div.style.transform = "translateX(-50%)";
         div.style.zIndex = "3";
         ficha.style.position = "relative";
-        ficha.style.top = "120px";
+        ficha.style.top = "200px";
+        
+       
+
     } else {
         div.style.position = "relative";
         div.style.width = "";
         div.style.top = "";
         ficha.style.position = "";
         ficha.style.top = "";
+        
 
         // div.style.width = "80%";
     }
