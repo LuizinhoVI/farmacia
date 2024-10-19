@@ -1,0 +1,753 @@
+<html><head>
+  <title>F A R M A C I A</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="geral.js"></script>
+  <!-- <script src="pagamento.js"></script> -->
+  <link rel="shortcut icon" href="img/farmacia.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/pagamento.css">
+  
+  <style>
+  html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
+  .mySlides {display:none}
+  .w3-tag, .fa {cursor:pointer}
+  .w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+  
+  
+  </style>
+  </head>
+  <body cz-shortcut-listen="true">
+  
+  <!-- Links (sit on top) -->
+  <div class="w3-top desligar">
+    <div class="w3-row w3-large w3-light-grey">
+      <div class="w3-col s3  escolha1 " id="escolha1" onclick="menu('menu1','escolha1')">
+        <a href="#" class="w3-button w3-block">Conta</a>
+      </div>
+      <div class="w3-col s3 escolha2 " id="escolha2" onclick="menu('menu2','escolha2')">
+        <a href="#plans" class="w3-button w3-block">Ficha</a>
+      </div>
+      <div class="w3-col s3 escolha3 w3-green " id="escolha3" onclick="menu('menu3','escolha3')">
+        <a href="#about" class="w3-button  w3-block">Pagamento</a>
+      </div>
+      <div class="w3-col s3">
+        <a href="#contact" class="w3-button w3-block">Configuração</a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- inicio -->
+  <div class="w3-content desligar" style="max-width:1100px;margin-top:10px;margin-bottom:80px">
+   
+   <!-- ficha  -->
+    <div class="w3-container esconder" id="menu2">
+  
+    
+    <!-- Grid -->
+    <div class="w3-row-padding" id="about">
+    <br>
+    <br>
+  
+      <div class="w3-third w3-margin-bottom">
+        <div class="w3-card-4" align="center">
+          <br>
+          <img src="img/pasta-medica.png" alt="John" style="width:50%">
+          <div class="w3-container" align="center">
+            <h3>NEW</h3>
+            <p><button class="w3-button w3-light-grey w3-block " onclick="ficha_menu('ficha_pessoa1')">CRIAR FICHA</button></p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="w3-third w3-margin-bottom">
+        <div class="w3-card-4" align="center">
+          <br>
+          <img src="img/analise.png" alt="Mike" align="center" style="width:50%">
+          <div class="w3-container" align="center">
+            <h3>pesquisa</h3>
+            <p><button class="w3-button w3-light-grey w3-block" onclick="ficha_menu('ficha_pessoa2')">PROCURAR FICHA</button></p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="w3-third w3-margin-bottom">
+        <div class="w3-card-4" align="center">
+          <br>
+          <img src="img/lixo.png" alt="Jane" style="width:50%">
+          <div class="w3-container" align="center">
+            <h3>Delete</h3>
+           <p><button class="w3-button w3-light-grey w3-block" onclick="ficha_menu('ficha_pessoa3')">EXCLUIR FICHA</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- INICIO DO CADASTRO  da ficha-->
+    <div class="w3-container ficha_pessoa1 ficha_pessoa " style="display: block;">
+  <form action="" class="w3-container w3-card-4 w3-light-grey w3-text-green w3-margin">
+    <h2 class="w3-center">CADASTRAR</h2>
+     
+    <div class="w3-row w3-section">
+      <img src="img/nome.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt=""> 
+        <div class="w3-rest">
+          <input class="w3-input w3-border" name="first" type="text" placeholder="Nome completo">
+        </div>
+    </div>
+    
+    <div class="w3-row w3-section">
+      <img src="img/arquivo.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt=""> 
+        <div class="w3-rest">
+          <input class="w3-input w3-border cpf_resultado" oninput="formatarCPF(this),validarCPF(this)" maxlength="14" id="cpf_resultado" name="last" type="text" placeholder="CPF">
+        </div>
+    </div>
+    
+    <div class="w3-row w3-section">
+      <img src="img/email.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt="">
+        <div class="w3-rest">
+          <input class="w3-input w3-border" name="email" type="email" placeholder="Email">
+        </div>
+    </div>
+    
+    <div class="w3-row w3-section">
+      <img src="img/telefone.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt=""> 
+        <div class="w3-rest">
+          <input class="w3-input w3-border " oninput="formatarTelefone()" ame="phone" maxlength="11" type="tel" placeholder="Telefone" id="ficha_telefone">
+        </div>
+    </div>
+    
+    <div class="w3-row w3-section">
+      <img src="img/feliz-aniversario.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt=""> 
+        <div class="w3-rest">
+          <input class="w3-input w3-border" name="message" type="date" placeholder="Data de nascimento">
+        </div>
+    </div>
+  
+    <div class="w3-row w3-section">
+        <h4 align="center"> Endereço</h4>
+      <img src="img/casa-limpa.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt=""> 
+        <div class="w3-rest">
+          <input class="w3-input w3-border" name="message" type="text" placeholder="Endereço">
+        </div>
+    </div>
+    <div class="w3-row w3-section">
+      <img src="img/numerocasa.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt=""> 
+        <div class="w3-rest">
+          <input class="w3-input w3-border" oninput="somenteNumeros(this)" name="message" type="text" placeholder="Numero da casa">
+        </div>
+    </div>
+    <div class="w3-row w3-section">
+      <img src="img/endereco-residencial.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt=""> 
+        <div class="w3-rest">
+          <input class="w3-input w3-border" name="message" type="text" placeholder="Referência">
+        </div>
+    </div>
+    
+    <div class="w3-row w3-section">
+      <img src="img/localizacao.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt=""> 
+        <div class="w3-rest">
+          <input class="w3-input w3-border" maxlength="10" id="cep" oninput="formatarCep(this),buscarCep()" name="" type="text" placeholder="CEP 49700-000" value="49700-000">
+        </div>
+    </div>
+    <div class="w3-row w3-section">
+      <img src="img/vista-da-rua.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt=""> 
+        <div class="w3-rest">
+          <input class="w3-input w3-border" id="cidade" value="Capela" name="message" type="text" placeholder="Cidade">
+        </div>
+    </div>
+    <div class="w3-row w3-section">
+      <img src="img/cidade.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt=""> 
+        <div class="w3-rest">
+          <input class="w3-input w3-border" id="estado" name="message" type="text" value="SE" placeholder="Estado">
+        </div>
+    </div>
+  
+    <div class="w3-row w3-section">
+      <div align="center">
+        Conta
+      </div>
+      <img src="img/movel.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt=""> 
+        <div class="w3-rest">
+          <input class="w3-input w3-border" name="message" type="text" placeholder="Login">
+        </div>
+    </div>
+    <div class="w3-row w3-section">
+      <img src="img/pagamento-em-dinheiro.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt=""> 
+        <div class="w3-rest">
+          <input class="w3-input w3-border" name="message" type="text" placeholder="Credito" oninput="somentecredito(this)">
+        </div>
+    </div>
+    <div class="w3-row w3-section">
+      <img src="img/senha.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt=""> 
+        <div class="w3-rest">
+          <input class="w3-input w3-border" name="message" type="text" placeholder="Senha" id="ficha_senha" oninput="ficha_senha(this)">
+        </div>
+    </div>
+   
+    
+    <button class="w3-button w3-block w3-section w3-green w3-ripple w3-padding">CADASTRAR</button>
+    
+    </form>
+    </div>
+    <!-- FIM  DO INICIO DO  CADASTRO da ficha ************************-->
+  
+  
+  <!-- procurar ficha para compras -->
+    <div class="w3-container ">
+      
+      <form class="w3-container w3-card-4 ficha_pessoa ficha_pessoa2 w3-light-grey " style="display: none;">
+      <h4 align="center">P R O C U R A R</h4>
+      <input class="w3-input w3-border w3-round-xxlarge" oninput="ficha_procurar(this)" id="ficha_procurar_input" name="last" type="text"><p></p>
+      
+    </form>
+  
+  <!-- mensgem de  ficha mão encontrada -->
+  <div class="w3-container" id="ficha_nao_encontrada" style="display: none;">
+    <br>
+     <h1 align="center">Ficha não encontrada...</h1>
+    <br>
+  </div>
+  
+  <!-- fim mensgem de  ficha mão encontrada -->
+  
+    <div class="ficha_procurar" id="ficha_procurar" style="display: none;">
+  
+  
+   <!-- FICHA  -->
+   <div class=" w3-margin-bottom " align="center">
+    <!-- Adicionar produto -->
+  <div class="w3-card-4" align="center" style="width: 100%; left: 50%; position: relative;transform: translateX(-50%);">
+  <br>
+  <!-- <img src="img/cv.png" alt="John" style="width:20%"> -->
+  <div class="w3-container" align="center">
+    
+    <h3>jose luiz vieira filho </h3>
+    <div class="w3-container" align="center">
+      
+        <table border="2" align="center" class="w3-table w3-striped w3-bordered">
+          <tbody><tr></tr><tr></tr>
+          
+          <tr><th style="text-align: center; background:#F1F1F1;" colspan="2"> DADOS </th>
+        
+          </tr><tr></tr>                 
+          <tr><th>NOME:</th>
+        
+          <td colspan="">jose luiz vieira filho </td>
+          </tr><tr></tr>
+          <tr><th align="center">LIMITE</th>
+          <td colspan="">R$ 500 💵</td>
+          </tr><tr> </tr>
+          <tr><th>FALTA PAGAR</th>
+          <td> R$ 200</td>
+          </tr><tr></tr>
+          <tr><th>STATUS</th>
+          <td colspan="">BOM PAGADOR 👍</td> 
+          
+    
+            
+          
+          </tr><tr></tr>
+          <tr><th class="mostrar remover">CPF : </th>
+          <td colspan="" class="mostrar remover  ">78945612387</td>
+          </tr><tr></tr>
+          <tr><th class="mostrar remover">DATA DE NASCIMENTO:</th>
+          <td colspan="" class="mostrar remover" align="center">23/03/1995 </td>
+          </tr><tr></tr>
+          <tr><th class="mostrar remover">LOGIN :</th>
+          <td colspan="" class="mostrar remover">79999722046 </td>
+          </tr><tr></tr>
+     
+          <tr><th class="remover mostrar"> TELEFONE:</th>
+          <td colspan=" " class="remover mostrar">79 99722046</td>
+          </tr><tr></tr>
+          <tr><th class="remover mostrar">EMAIL:</th>
+          <td colspan="" class="remover mostrar">brat.luiz23@hotmail.com</td>
+          </tr><tr></tr>
+          <tr></tr>
+          <tr><th colspan="2" class=" remover mostrar" style="text-align: center;">ENDEREÇO</th>
+          </tr><tr></tr>
+          <tr></tr>
+          <tr><th class="mostrar remover">RUA:</th>
+          <td colspan="" class="mostrar remover">RUA MARECHAL  </td>
+          </tr><tr></tr>
+  
+          <tr><th colspan="" class="mostrar remover">REFERÊNCIA:</th>
+          <td class="mostrar remover">centro</td>
+          </tr><tr></tr>
+          <tr><th class="mostrar remover">CEP:</th>
+          <td class="mostrar remover" colspan="">49700-000</td>
+          </tr><tr></tr>
+          <tr><th class="mostrar remover" colspan="">ESTADO:</th>
+          <td class="mostrar remover">SE</td>
+         </tr><tr></tr>
+          <tr><th colspan="" class="mostrar remover">CIDADE:</th>
+          <td class="mostrar remover">capela</td>
+          </tr><tr></tr>
+         
+         
+        </tbody></table>
+  
+        <br>
+        <div id="pagamento_ver_mais" style="text-align: center;"><button onclick="pagamento_ver_mais()">Ver mais...</button></div>
+  
+        <div id="pagamento_remover" colspan="3" style="text-align: center; display: none !important;"><button onclick="pagamento_recolher()">Recolher...</button></div>
+        <br>
+    </div>
+    
+  </div>
+  </div>
+  <!-- adicionar produto -->
+  </div>
+  <!-- FICHA -->
+  
+      <hr>
+  
+     <!-- Adicionar produto -->
+          <div class=" w3-margin-bottom " align="center">
+            <div class="w3-card-4" align="center" style="width: 100%; left: 50%; position: relative;transform: translateX(-50%);">
+            <br>
+        
+            <div class="w3-container" align="center">
+              <h3>ADICIONAR PRODUTO </h3>
+            
+              <div class="w3-container adicionar_produto" id="adicionar_produto" align="center">
+                
+                  <table border="1" align="center" class="w3-table w3-striped w3-bordered">
+                    <tbody><tr><th align="center">Id</th>
+                    <th align="center">Produto</th>
+                    <th align="center">TIPO</th>
+                    <th align="center">QUANTIDADE</th>
+                    <th align="center">DATA</th>
+                    <th align="center">HORA</th>
+                    <th align="center">VALOR</th>
+                    
+                    
+                    </tr><tr></tr>
+                    <tr><td align="center" class="contador_de_id">1</td>
+                    <td align="center">
+  
+                      <input class="w3-input w3-border nome_procudo" type="text" placeholder="Nome do produto">
+                      
+                    </td>
+                    <td align="center">
+                      
+                      <select class="w3-select w3-border option" name="option">
+                        
+                        <option value="Comprimidos">Comprimidos</option>
+                        <option value="Liquido">Liquido</option>
+                        <option value="comprimido">comprimido</option>
+                        <option value="pomada">pomada</option>
+                        <option value="Pó">Pó</option>
+                        <option value="Cápsulas">Cápsulas</option>
+                        <option value="Géis">Géis</option>
+                        <option value="Soluções">Soluções</option>
+                        <option value="Suspensões">Suspensões</option>
+                        <option value="Sprays">Sprays</option>
+                        <option value="Supositórios">Supositórios</option>
+                        <option value="Injeções">Injeções</option>
+                        <option value="Inaladores">Inaladores</option>
+                        <option value="Compressa">Compressa</option>
+                        <option value="Cremes">Cremes</option>
+                        
+                      </select>
+                      
+                    </td>
+                    <td align="center">
+                      <input class="w3-input w3-border  pagamento_quantidade" type="number" placeholder="unidades">
+                    </td>
+                    <td align="center" class="data">19/10/2024</td>
+                    <td align="center" class="hora">11:59:20</td>
+                   
+                    <td align="center">
+                      
+                      <input class="w3-input w3-border pagamento_valor" id="pagamento_valor" type="text" oninput="formatarDinheiro(this)" placeholder="Valor">
+                    </td>
+              
+                  
+                
+                  </tr></tbody></table>
+                
+                  <br>
+                
+            <!-- onde vai ser colado para adicinar os produtos -->
+             
+              
+            </div>
+  
+             <div id="colar"></div>
+            
+            <div align="center"> 
+              
+              <input class="w3-check verificar_compra" type="checkbox" id="verificar_compra" align="center"> 
+                Verificar...
+              </div>
+            <br>
+                <div>
+                <img src="img/mais.png" alt="mais" onclick="adicionar_mais()" width="10%" style="cursor: pointer;border-radius: 50%;">
+              </div>
+              <p><button class="w3-button w3-light-grey w3-block" onclick="salvar()">SALVAR</button></p>
+            <div class="mostrar1">nomes:</div>
+            <div class="mostrar2">tipo:</div>
+            <div class="mostrar3">quantidade:</div>
+            <div class="mostrar4">valor:</div>
+            <div class="mostrar5">hora :</div>
+            <div class="mostrar6">data :</div>
+           
+            <div class="w3-container ">
+              <button onclick="window.print()">imprimir</button>
+              </div>
+  
+          </div>
+          </div>
+          <!-- adicionar produto -->
+        </div>
+          <!-- adiconar produto  -->
+       
+  
+  
+  
+  
+  
+  
+    </div>
+  
+    </div>
+  <!-- FINAL procurar ficha para compras -->
+  
+  </div>
+  <!-- final da ficha -->
+  
+   <!-- conta  -->
+   <div class="w3-container esconder" id="menu1">
+  
+    
+    <!-- Grid -->
+    <div class="w3-row-padding" id="about">
+      <div class="w3-center w3-padding-64">
+        <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">
+        <b>  C O N T A </b>
+        </span>
+      </div>
+  
+      <div class="w3-third w3-margin-bottom">
+        <div class="w3-card-4" align="center">
+          <br>
+          <img src="img/voluntario.png" alt="John" style="width:50%">
+          <div class="w3-container" align="center">
+            <h3>BOM PAGADOR</h3>
+            <div class="w3-container">
+              <ul class="w3-ul w3-hoverable">
+                <li> 1ª Jill vieira 💰</li>
+                <li> 2ª Jill vieira 💰</li>
+                <li> 3ª Jill vieira 💰</li>
+              </ul>
+            </div>
+            <p><button class="w3-button w3-light-grey w3-block">MAIS</button></p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="w3-third w3-margin-bottom">
+        <div class="w3-card-4" align="center">
+          <br>
+          <img src="img/feliz-aniversario.png" alt="Mike" align="center" style="width:50%">
+          <div class="w3-container" align="center">
+            <h3>ANIVERSARIANTE </h3>
+            <div class="w3-container">
+              <ul class="w3-ul w3-hoverable">
+                <li> ruck vieira 🎂</li>
+                <li>  lex vieira 🎂</li>
+               
+              </ul>
+            </div>
+            <p><button class="w3-button w3-light-grey w3-block">MAIS</button></p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="w3-third w3-margin-bottom">
+        <div class="w3-card-4" align="center">
+          <br>
+          <img src="img/divida.png" alt="Jane" style="width:50%">
+          <div class="w3-container" align="center">
+            <h3>MAL PAGADOR</h3>
+            <div class="w3-container"></div>
+              <ul class="w3-ul w3-hoverable">
+                <li> 1ª rocket vieira 💸</li>
+                <li> 2ª vivald vieira 💸</li>
+                <li> 3ª donatelo vieira 💸</li>
+              </ul>
+            </div>
+           <p><button class="w3-button w3-light-grey w3-block">MAIS</button></p>
+          </div>
+        </div>
+      </div>
+  <!--  -->
+  <br><br>
+     
+  
+  <br>
+        <div class="">
+        <form class="w3-container w3-card-4 w3-light-grey">
+          <h2 align="center">HISTÓRICO DE PAGAMENTO...</h2>
+          <input class="w3-input w3-border" placeholder="Pesquisar ficha" name="last" type="text"><p></p>
+        </form>
+        <div class="w3-container">
+          <br>
+           <table border="2" align="center" class="w3-table w3-striped w3-bordered">
+             <tbody><tr><th align="center">Id</th>
+             <th align="center">Nome</th>
+             <th align="center">STATUS</th>
+             <th align="center">VALOR</th>
+             <th align="center">DATA</th>
+             <th align="center">HORA</th>
+             <th align="center">TIPO</th>
+             
+             </tr><tr></tr>
+             <tr><td align="center">1</td>
+             <td align="center">jOSE LUIZ VIEIRA filho</td>
+             <td align="center">PAGAMANETO DA FICHA</td>
+             <td align="center">R$20,00</td>
+             <td align="center">19/06/24</td>
+             <td align="center">08:50:30</td>
+             <td align="center">PIX 📱</td>
+         
+             </tr><tr></tr>
+             <tr><td align="center">2</td>
+             <td align="center">jOSE LUIZ VIEIRA filho</td>
+             <td align="center">DESODORANTE</td>
+             <td align="center">R$50,00</td>
+             <td align="center">19/06/24</td>
+             <td align="center">08:50:30</td>
+             <td align="center">FICHA 📝</td>
+           
+             </tr><tr></tr>
+             <tr><td align="center">3</td>
+             <td align="center">jOSE LUIZ VIEIRA filho</td>
+             <td align="center">NIMESULIDA</td>
+             <td align="center">R$40,00</td>
+             <td align="center">19/06/24</td>
+             <td align="center">08:50:30</td>
+             <td align="center">FICHA 📝</td>
+           </tr></tbody></table>
+         
+           </div>
+         
+           <div class="w3-bar" align="center">
+             <br>
+             <a href="#" class="w3-button">«</a>
+             <a href="#" class="w3-button w3-green">1</a>
+             <a href="#" class="w3-button">2</a>
+             <a href="#" class="w3-button">3</a>
+             <a href="#" class="w3-button">4</a>
+             <a href="#" class="w3-button">»</a>
+           </div>
+          </div>
+        </div>
+         
+   <!-- final da conta -->
+  
+  
+  
+  
+  
+  
+  
+  <!-- pagamento-************************* -->
+   <div class="w3-container esconder" id="menu3" style="display: block;">
+    
+    <div class="w3-row-padding" id="about">
+  
+      <br>
+      <br>
+  
+  
+  <br>
+      
+        <form class="w3-container w3-card-4 w3-light-grey " id="procurar_ficha" style="position: fixed; top: 50px; width: 70%; left: 50%; transform: translateX(-50%); z-index: 3;">
+          <h4 align="center">PROCURAR FICHAS</h4>
+          <input class="w3-input w3-border w3-round-xxlarge" name="last" type="text"><p></p>
+        </form>
+          <br>
+   
+  
+         
+  
+  
+  
+  <!-- pagamento -->
+  <div class="ficha w3-container" id="ficha" style="position: relative; top: 200px;">
+  
+  
+          <!-- FICHA  -->
+          <div class=" w3-margin-bottom " align="center">
+              <!-- Adicionar produto -->
+          <div class="w3-card-4" align="center" style="width: 100%; left: 50%; position: relative;transform: translateX(-50%);">
+            <br>
+            <!-- <img src="img/cv.png" alt="John" style="width:20%"> -->
+            <div class="w3-container" align="center">
+              
+              <h3>jose luiz vieira filho </h3>
+              <div class="w3-container" align="center">
+                
+                  <table border="2" align="center" class="w3-table w3-striped w3-bordered">
+                    <tbody><tr></tr><tr></tr>
+                    
+                    <tr><th style="text-align: center; background:#F1F1F1;" colspan="2"> DADOS </th>
+                  
+                    </tr><tr></tr>                 
+                    <tr><th>NOME:</th>
+                  
+                    <td colspan="">jose luiz vieira filh </td>
+                    </tr><tr></tr>
+                    <tr><th align="center">LIMITE</th>
+                    <td colspan="">R$ 500 💵</td>
+                    </tr><tr></tr>
+                    <tr><th>FALTA PAGAR</th>
+                    <td id="pagamento_falta_pagar"> R$&nbsp;99,29</td>
+                    </tr><tr></tr>
+                    <tr><th>STATUS</th>
+                    <td colspan="">BOM PAGADOR 👍</td> 
+                    
+              
+                      
+                    
+                    </tr><tr></tr>
+                    <tr><th class="mostrar remover">CPF : </th>
+                    <td colspan="" class="mostrar remover  ">78945612387</td>
+                    </tr><tr></tr>
+                    <tr><th class="mostrar remover">DATA DE NASCIMENTO:</th>
+                    <td colspan="" class="mostrar remover" align="center">23/03/1995 </td>
+                    </tr><tr></tr>
+                    <tr><th class="mostrar remover">LOGIN :</th>
+                    <td colspan="" class="mostrar remover">79999722046 </td>
+                    </tr><tr></tr>
+               
+                    <tr><th class="remover mostrar"> TELEFONE:</th>
+                    <td colspan=" " class="remover mostrar">79 99722046</td>
+                    </tr><tr></tr>
+                    <tr><th class="remover mostrar">EMAIL:</th>
+                    <td colspan="" class="remover mostrar">brat.luiz23@hotmail.com</td>
+                    </tr><tr></tr>
+                    <tr></tr>
+                    <tr><th colspan="2" class=" remover mostrar" style="text-align: center;">ENDEREÇO</th>
+                    </tr><tr></tr>
+                    <tr></tr>
+                    <tr><th class="mostrar remover">RUA:</th>
+                    <td colspan="" class="mostrar remover">RUA MARECHAL  </td>
+                    </tr><tr></tr>
+  
+                    <tr><th colspan="" class="mostrar remover">REFERÊNCIA:</th>
+                    <td class="mostrar remover">centro</td>
+                    </tr><tr></tr>
+                    <tr><th class="mostrar remover">CEP:</th>
+                    <td class="mostrar remover" colspan="">49700-000</td>
+                    </tr><tr></tr>
+                    <tr><th class="mostrar remover" colspan="">ESTADO:</th>
+                    <td class="mostrar remover">SE</td>
+                   </tr><tr></tr>
+                    <tr><th colspan="" class="mostrar remover">CIDADE:</th>
+                    <td class="mostrar remover">capela</td>
+                    </tr><tr></tr>
+                   
+                   
+                  </tbody></table>
+  
+                  <br>
+                  <div id="pagamento_ver_mais" style="text-align: center;"><button onclick="pagamento_ver_mais()">Ver mais...</button></div>
+  
+                  <div id="pagamento_remover" colspan="3" style="text-align: center; display: none !important;"><button onclick="pagamento_recolher()">Recolher...</button></div>
+                  <br>
+              </div>
+              
+            </div>
+          </div>
+          <!-- adicionar produto -->
+          </div>
+          <!-- FICHA -->
+  
+  
+          <hr>
+  
+         
+  
+          <div class="w3-container" id="">
+  
+            <br>
+  
+                <h1 id="resultado" align="center">Resto: R$&nbsp;99,29</h1>
+  
+            <input type="text" id="valor" oninput="formatarDinheiro(this)" placeholder="Digite o valor a subtrair" required="">
+            <button id="subtrairBtn" onclick="subtrair ()">Subtrair</button>
+              
+            <!-- <div id="resultado"> </div> -->
+              
+            <div id="valor1">valor: </div>
+            
+              </div>
+  
+  
+  
+            
+      </div>
+   <!-- final da pegamento -->
+    <!-- final da tela -->
+  
+  
+  
+  
+  
+    
+  <!-- final do pagamento -->
+  
+  
+  </div>
+  
+  </div>
+  <!-- pagamento **************************-->
+  </div>
+  
+  
+  
+  
+   <br><br> <br> <br> <br>
+  
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-32 w3-light-grey w3-center desligar">
+    
+    <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>voltar pro topo</a>
+    <div class="w3-xlarge w3-section">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-snapchat w3-hover-opacity"></i>
+      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+    <p>CRIADO POR  <a href="" title="code programado" target="_blank" class="w3-hover-text-green">Luiz vieira </a></p>
+  </footer>
+  
+  
+  <!-- <script src="pagamento.js"></> -->
+  <!-- <script src="Ficha.js"></script> -->
+  
+   
+  <!-- impressão dos produtos  -->
+  <div class="w3-container  print_produto" align="center">
+    <h3 align="center"> farmacia</h3>
+      <div> testando o print </div>
+  </div>
+  <!-- final da impressão dos produtos -->
+  
+  
+  
+                      <script src="pagamento.js"></script>
+      <script src="Ficha.js"></script>
+  
+  
+  </body></html>
