@@ -12,6 +12,7 @@ function adicionar_mais() {
 
 }
 // ////////////////////******************************* formatação de real  */
+
 function formatarDinheiro(input) {
     // Remove tudo que não é número
     let valor = input.value.replace(/\D/g, '');
@@ -21,7 +22,9 @@ function formatarDinheiro(input) {
     valor = valor.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 
     // Atualiza o campo de entrada
+
     input.value = valor;
+    
 }
 
 
@@ -290,3 +293,20 @@ window.onload = function() {
     document.getElementById('resultado').innerText = `Resto: ${formatarMoeda(resto)}`;
     document.querySelector('#pagamento_falta_pagar').innerText = `Resto: ${formatarMoeda(resto)}`;
 };
+
+function limite(teste) {
+
+    const number = parseFloat(teste.value.replace(',', '.'));
+   // alert('valor : '+ total)
+   
+    if (number > total ) {
+        
+       
+
+    alert('escrito  : '+ number)
+    
+teste.value = null
+
+}
+
+}
