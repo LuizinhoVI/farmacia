@@ -266,7 +266,7 @@ function formatarMoeda(valor) {
 
 }
 
-function subtrair() {
+function pagamento() {
 
     const valorInput = document.getElementById('valor').value;
     const valor = parseFloat(valorInput.replace(/\./g, '').replace(',', '.')); // Converte o valor
@@ -278,6 +278,7 @@ function subtrair() {
 
     if (valor > resto) {
         alert("Valor maior que o restante disponível.");
+        document.getElementById('valor').value = null; // Limpa o 
         return;
     }
 
@@ -294,19 +295,12 @@ window.onload = function() {
     document.querySelector('#pagamento_falta_pagar').innerText = `Resto: ${formatarMoeda(resto)}`;
 };
 
+
 function limite(teste) {
-
     const number = parseFloat(teste.value.replace(',', '.'));
-   // alert('valor : '+ total)
-   
-    if (number > total ) {
-        
-       
+   if (number > total ) {
+       teste.value = null
+    }
 
-    alert('escrito  : '+ number)
-    
-teste.value = null
-
-}
 
 }
