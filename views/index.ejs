@@ -31,10 +31,10 @@
       <div class="w3-col s3  escolha1 " id="escolha1" onclick="menu('menu1','escolha1')">
         <a href="#" class="w3-button w3-block">Conta</a>
       </div>
-      <div class="w3-col s3 escolha2 " id="escolha2" onclick="menu('menu2','escolha2')">
+      <div class="w3-col s3 escolha2 w3-green " id="escolha2" onclick="menu('menu2','escolha2')">
         <a href="#plans" class="w3-button w3-block">Ficha</a>
       </div>
-      <div class="w3-col s3 escolha3 w3-green " id="escolha3" onclick="menu('menu3','escolha3')">
+      <div class="w3-col s3 escolha3  " id="escolha3" onclick="menu('menu3','escolha3')">
         <a href="#about" class="w3-button  w3-block">Pagamento</a>
       </div>
       <div class="w3-col s3">
@@ -47,7 +47,7 @@
   <div class="w3-content desligar" style="max-width:1100px;margin-top:10px;margin-bottom:80px">
    
    <!-- ficha  -->
-    <div class="w3-container esconder" id="menu2">
+    <div class="w3-container esconder" id="menu2" style="display: block;">
   
     
     <!-- Grid -->
@@ -229,74 +229,74 @@
     
     <h3>jose luiz vieira filho </h3>
     <div class="w3-container" align="center">
-      
-        <table border="2" align="center" class="w3-table w3-striped w3-bordered">
-          <tbody><tr></tr><tr></tr>
-          
-          <tr><th style="text-align: center; background:#F1F1F1;" colspan="2"> DADOS </th>
-        
-          </tr><tr></tr>                 
-          <tr><th>NOME:</th>
-        
-          <td colspan="">jose luiz vieira filho </td>
-          </tr><tr></tr>
-          <tr><th align="center">LIMITE</th>
-          <td colspan="">R$ 500 💵</td>
-          </tr><tr> </tr>
-          <tr><th>FALTA PAGAR</th>
-          <td> R$ 200</td>
-          </tr><tr></tr>
-          <tr><th>STATUS</th>
-          <td colspan="">BOM PAGADOR 👍</td> 
-          
-    
-            
-          
-          </tr><tr></tr>
-          <tr><th class="mostrar remover">CPF : </th>
-          <td colspan="" class="mostrar remover  ">78945612387</td>
-          </tr><tr></tr>
-          <tr><th class="mostrar remover">DATA DE NASCIMENTO:</th>
-          <td colspan="" class="mostrar remover" align="center">23/03/1995 </td>
-          </tr><tr></tr>
-          <tr><th class="mostrar remover">LOGIN :</th>
-          <td colspan="" class="mostrar remover">79999722046 </td>
-          </tr><tr></tr>
-     
-          <tr><th class="remover mostrar"> TELEFONE:</th>
-          <td colspan=" " class="remover mostrar">79 99722046</td>
-          </tr><tr></tr>
-          <tr><th class="remover mostrar">EMAIL:</th>
-          <td colspan="" class="remover mostrar">brat.luiz23@hotmail.com</td>
-          </tr><tr></tr>
-          <tr></tr>
-          <tr><th colspan="2" class=" remover mostrar" style="text-align: center;">ENDEREÇO</th>
-          </tr><tr></tr>
-          <tr></tr>
-          <tr><th class="mostrar remover">RUA:</th>
-          <td colspan="" class="mostrar remover">RUA MARECHAL  </td>
-          </tr><tr></tr>
+      <table border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Cidade</th>
+                <th class="">Profissão</th>
+                <th class="">Salário</th>
+                <th class="">Estado</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <tr>
+                <td>Alice</td>
+                <td>30</td>
+                <td>São Paulo</td>
+                <td class="hidden">Engenheira</td>
+                <td class="hidden">R$ 10.000</td>
+                <td class="hidden">SP</td>
+            </tr>
+            <tr>
+                <td>Bruno</td>
+                <td>25</td>
+                <td>Rio de Janeiro</td>
+                <td class="hidden">Designer</td>
+                <td class="hidden">R$ 7.000</td>
+                <td class="hidden">RJ</td>
+            </tr>
+            <tr>
+                <td>Carlos</td>
+                <td>28</td>
+                <td>Belo Horizonte</td>
+                <td class="hidden">Médico</td>
+                <td class="hidden">R$ 15.000</td>
+                <td class="hidden">MG</td>
+            </tr>
+            <tr>
+                <td>Diana</td>
+                <td>32</td>
+                <td>Curitiba</td>
+                <td class="hidden">Professora</td>
+                <td class="hidden">R$ 8.000</td>
+                <td class="hidden">PR</td>
+            </tr>
+            <tr>
+                <td>Eduardo</td>
+                <td>27</td>
+                <td>Porto Alegre</td>
+                <td class="">Programador</td>
+                <td class="">R$ 12.000</td>
+                <td class="">RS</td>
+            </tr>
+            <tr>
+                <td>Fernanda</td>
+                <td>29</td>
+                <td>Salvador</td>
+                <td class="hidden">Arquiteta</td>
+                <td class="hidden">R$ 9.000</td>
+                <td class="hidden">BA</td>
+            </tr>
+        </tbody>
+    </table>
+   
+
+      <br>
+        <div id="ficha_ver_mais1" style="text-align: center;"><button onclick="abrir_ficha()" class="mostrar_mais_">Ver mais...</button></div>
   
-          <tr><th colspan="" class="mostrar remover">REFERÊNCIA:</th>
-          <td class="mostrar remover">centro</td>
-          </tr><tr></tr>
-          <tr><th class="mostrar remover">CEP:</th>
-          <td class="mostrar remover" colspan="">49700-000</td>
-          </tr><tr></tr>
-          <tr><th class="mostrar remover" colspan="">ESTADO:</th>
-          <td class="mostrar remover">SE</td>
-         </tr><tr></tr>
-          <tr><th colspan="" class="mostrar remover">CIDADE:</th>
-          <td class="mostrar remover">capela</td>
-          </tr><tr></tr>
-         
-         
-        </tbody></table>
-  
-        <br>
-        <div id="pagamento_ver_mais" style="text-align: center;"><button onclick="pagamento_ver_mais()">Ver mais...</button></div>
-  
-        <div id="pagamento_remover" colspan="3" style="text-align: center; display: none !important;"><button onclick="pagamento_recolher()">Recolher...</button></div>
+        <div id="ficha_recolher1" colspan="3" style="text-align: center; display: none !important;"><button onclick="ficha_recolher1()">Recolher...</button></div>
         <br>
     </div>
     
@@ -553,14 +553,9 @@
          
    <!-- final da conta -->
   
-  
-  
-  
-  
-  
-  
+
   <!-- pagamento-************************* -->
-   <div class="w3-container esconder" id="menu3" style="display: block;">
+   <div class="w3-container esconder" id="menu3" style="display: ;">
     
     <div class="w3-row-padding" id="about">
   
@@ -730,28 +725,12 @@
   <footer class="w3-container w3-padding-32 w3-light-grey w3-center desligar">
     
     <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>voltar pro topo</a>
-    <div class="w3-xlarge w3-section">
-      <i class="fa fa-facebook-official w3-hover-opacity"></i>
-      <i class="fa fa-instagram w3-hover-opacity"></i>
-      <i class="fa fa-snapchat w3-hover-opacity"></i>
-      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-      <i class="fa fa-twitter w3-hover-opacity"></i>
-      <i class="fa fa-linkedin w3-hover-opacity"></i>
-    </div>
-    <p>CRIADO POR  <a href="" title="code programado" target="_blank" class="w3-hover-text-green">Luiz vieira </a></p>
+   
+    <p>CRIADO POR  <a href="" title="code programado" target="_blank" class="w3-hover-text-green">LUIZ PROGRAMADOR</a></p>
   </footer>
   
   
-  <!-- <script src="pagamento.js"></> -->
-  <!-- <script src="Ficha.js"></script> -->
   
-   
-  <!-- impressão dos produtos  -->
-  <div class="w3-container  print_produto" align="center">
-    <h3 align="center"> farmacia</h3>
-      <div> testando o print </div>
-  </div>
-  <!-- final da impressão dos produtos -->
   
   
   

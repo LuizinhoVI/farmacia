@@ -215,7 +215,7 @@ function fixarbarra() {
         // div.style.width = "80%";
     }
 }
-
+// botão ver mais do pagamento ==============================
 function pagamento_ver_mais1() {
     const mais = document.querySelectorAll('.remover');
     mais.forEach((elemento) => {
@@ -252,8 +252,6 @@ function pagamento_recolher1() {
     
 
 }
-
-
 // **********************************************
 
 let total = 100.50; // Valor inicial

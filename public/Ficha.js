@@ -158,3 +158,20 @@ function ficha_menu(numero) {
             }
         }
     
+        // botão ver mais da ficha  ==============================
+      
+      function abrir_ficha() {
+        
+      
+            const rows = document.querySelectorAll('#tableBody tr');
+            const halfIndex = Math.ceil(rows.length / 2);
+            rows.forEach((row, index) => {
+                if (index >= halfIndex) {
+                    row.classList.toggle('hidden');
+                }
+            });
+            const button = document.querySelector('.mostrar_mais_');
+            button.textContent = button.textContent === 'Mostrar mais' ? 'Mostrar menos' : 'Mostrar mais';
+        
+        }
+// **********************************************
