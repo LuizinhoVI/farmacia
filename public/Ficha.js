@@ -162,16 +162,12 @@ function ficha_menu(numero) {
       
       function abrir_ficha() {
         
-      
-            const rows = document.querySelectorAll('#tableBody tr');
-            const halfIndex = Math.ceil(rows.length / 2);
-            rows.forEach((row, index) => {
-                if (index >= halfIndex) {
-                    row.classList.toggle('hidden');
-                }
-            });
-            const button = document.querySelector('.mostrar_mais_');
-            button.textContent = button.textContent === 'Mostrar mais' ? 'Mostrar menos' : 'Mostrar mais';
+        const table = document.getElementById('tableBody');
+        const button = document.querySelector('.mostrar_mais_');
+        table.classList.toggle('hidden');
+
+        button.textContent = table.classList.contains('hidden') ? 'Mostrar Tabela' : 'Ocultar Tabela';
         
         }
+
 // **********************************************
