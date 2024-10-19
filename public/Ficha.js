@@ -1,22 +1,5 @@
 
-function ficha_procurar(elemento) {
-    
-    const div = document.querySelector('#ficha_procurar_input')
-    const ficha_procurar = document.querySelector('#ficha_procurar')
-    const ficha_nao_encontrada = document.querySelector('#ficha_nao_encontrada')
 
-    if (div.value=== 'luiz') {
-        ficha_procurar.style.display='block'
-        ficha_nao_encontrada.style.display='none'
-    }else{
-        ficha_nao_encontrada.style.display='block'
-        ficha_procurar.style.display='none'
-        
-
-    }
-
-
-}
 
 function ficha_menu(numero) {
     // mostra a div escolhida 
@@ -26,17 +9,10 @@ function ficha_menu(numero) {
     
    
     
+    // Mostra a opção selecionada
     
-    // quando apertar esse botão vailimpar o outro botão 
     document.querySelector('.'+numero).style.display = "block";
-    if (numero === "ficha_pessoa1") {
-        const ficha_procurar = document.querySelector('#ficha_procurar')
-     ficha_procurar.style.display="none"
-        const input = document.querySelector('#ficha_procurar_input')
-     input.value=null
-     const ficha_nao_encontrada = document.querySelector('#ficha_nao_encontrada')
-     ficha_nao_encontrada.style.display="none"
-    }
+    
     
     }
     

@@ -6,16 +6,3 @@
   display: none !important;
 
 }
-.remover{
-
-  text-align: center;
-}
-.pagamento_ver_mais{
-  text-align: center;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.pagamento_remover{
-  text-align: center;
-}
