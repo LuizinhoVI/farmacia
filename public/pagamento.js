@@ -1,4 +1,4 @@
-// let id =1;
+let id =1;
 function adicionar_mais() {
    
     document.querySelector('.contador_de_id').innerHTML=id++;
@@ -22,6 +22,12 @@ function formatarDinheiro(input) {
     // Atualiza o campo de entrada
     input.value = valor;
 }
+
+
+
+// const numeroOriginal = 1234900; // equivalente a R$ 12.349,00
+// const numeroFormatado = formatarNumero(numeroOriginal);
+// console.log(numeroFormatado); // Saída: "12.349,00"
 
 
 function pagamento_data_hora() {

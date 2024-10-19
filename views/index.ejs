@@ -20,8 +20,6 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 .mySlides {display:none}
 .w3-tag, .fa {cursor:pointer}
 .w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
-
-
 </style>
 </head>
 <body>
@@ -29,13 +27,13 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 <!-- Links (sit on top) -->
 <div class="w3-top desligar">
   <div class="w3-row w3-large w3-light-grey">
-    <div class="w3-col s3  escolha1 " id="escolha1" onclick="menu('menu1','escolha1')">
+    <div class="w3-col s3" onclick="menu('menu1')">
       <a href="#" class="w3-button w3-block">Conta</a>
     </div>
-    <div class="w3-col s3 escolha2" id="escolha2" onclick="menu('menu2','escolha2')">
+    <div class="w3-col s3" onclick="menu('menu2')">
       <a href="#plans" class="w3-button w3-block">Ficha</a>
     </div>
-    <div class="w3-col s3 escolha3" id="escolha3"  onclick="menu('menu3','escolha3')">
+    <div class="w3-col s3" onclick="menu('menu3')">
       <a href="#about" class="w3-button w3-block">Pagamento</a>
     </div>
     <div class="w3-col s3">
@@ -645,6 +643,37 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 </div>
 <!-- final da impressão dos produtos -->
 
+<script>
+// Slideshow
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demodots");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+}
+
+
+// data e hora 
 
 
 
