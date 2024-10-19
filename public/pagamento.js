@@ -206,15 +206,3 @@ function fixarbarra() {
         // div.style.width = "80%";
     }
 }
-
-function pagamento_ver_mais() {
-    
-    const remover = document.querySelectorAll('.mostrar');
-    
- 
- 
-
-    remover.forEach((elemento) => {
-        elemento.classList.remove('mostrar'); // Remove a classe que oculta
-    });
-}
