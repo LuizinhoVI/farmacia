@@ -11,7 +11,6 @@ function adicionar_mais() {
     
 
 }
-// ////////////////////******************************* formatação de real  */
 function formatarDinheiro(input) {
     // Remove tudo que não é número
     let valor = input.value.replace(/\D/g, '');
@@ -249,44 +248,25 @@ function pagamento_recolher() {
     
 
 }
-// **********************************************
 
-let total = 100.50; // Valor inicial
-let resto = total; // Resto inicial
 
-function formatarMoeda(valor) {
 
-    return new Intl.NumberFormat('pt-BR', {
-        style: 'currency',
-        currency: 'BRL',
-    }).format(valor);
 
+function test() {
+
+        // Obter o valor atual da div
+        const divValor = document.getElementById('valor');
+        let valorAtual = parseFloat(divValor.textContent);
+        
+        // Obter o valor do input
+        const inputValor = document.getElementById('inputValor');
+        let valorSubtrair = parseFloat(inputValor.value) || 0; // Define 0 se não for um número
+        
+        // Fazer a subtração
+        let resultado = valorAtual - valorSubtrair;
+        
+        // Atualizar a div com o valor restante
+        divValor.textContent = resultado >= 0 ? resultado : 0; // Garante que não fique negativo
+    
+    
 }
-
-function subtrair() {
-
-    const valorInput = document.getElementById('valor').value;
-    const valor = parseFloat(valorInput.replace(/\./g, '').replace(',', '.')); // Converte o valor
-
-    if (isNaN(valor) || valor <= 0) {
-        alert("Por favor, insira um valor válido.");
-        return;
-    }
-
-    if (valor > resto) {
-        alert("Valor maior que o restante disponível.");
-        return;
-    }
-
-    resto -= valor; // Subtrai o valor do resto
-
-    document.querySelector('#pagamento_falta_pagar').innerText = ` ${formatarMoeda(resto)}`;
-    document.getElementById('resultado').innerText = `Resto: ${formatarMoeda(resto)}`;
-    document.getElementById('valor').value = ''; // Limpa o input
-
-}
-
-window.onload = function() {
-    document.getElementById('resultado').innerText = `Resto: ${formatarMoeda(resto)}`;
-    document.querySelector('#pagamento_falta_pagar').innerText = `Resto: ${formatarMoeda(resto)}`;
-};

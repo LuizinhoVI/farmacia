@@ -239,13 +239,13 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
         <tr></tr>                 
         <th >NOME:</th>
       
-        <td colspan="">jose luiz vieira filho </td>
+        <td colspan="">jose luiz vieira filh </td>
         <tr></tr>
         <th align="center">LIMITE</th>
         <td colspan="">R$ 500 💵</td>
-        <tr> </tr>
-        <th >FALTA PAGAR</th>
-        <td > R$ 200</td>
+        <tr></tr>
+        <th>FALTA PAGAR</th>
+        <td>R$ 200</td>
         <tr></tr>
         <th>STATUS</th>
         <td colspan="">BOM PAGADOR 👍</td> 
@@ -611,7 +611,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                   <td colspan="">R$ 500 💵</td>
                   <tr></tr>
                   <th>FALTA PAGAR</th>
-                  <td id="pagamento_falta_pagar">R$ 200</td>
+                  <td>R$ 200</td>
                   <tr></tr>
                   <th>STATUS</th>
                   <td colspan="">BOM PAGADOR 👍</td> 
@@ -679,17 +679,11 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
        
 
         <div class="w3-container" id="">
-
           <br>
-
-              <h1 id="resultado" align="center"> R$ 100</h1>
-
-          <input type="text" id="valor" oninput="formatarDinheiro(this)" placeholder="Digite o valor a subtrair"  required/>
-          <button id="subtrairBtn" onclick="subtrair ()">Subtrair</button>
-            
-          <!-- <div id="resultado"> </div> -->
-            
-          <div id="valor1">valor: </div>
+              <h1 id="valor" align="center"> R$ 100</h1>
+          <input type="number" id="inputValor" placeholder="Digite o valor a subtrair" />
+          <button id="subtrairBtn" onclick="test()">Subtrair</button>
+          
           
             </div>
 
