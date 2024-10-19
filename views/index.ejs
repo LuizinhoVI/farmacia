@@ -105,7 +105,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   <div class="w3-row w3-section">
     <img src="img/arquivo.png" class="w3-col" style="width: 50px;position:relative; top:-10px;"  alt=""> 
       <div class="w3-rest">
-        <input class="w3-input w3-border cpf_resultado" oninput="formatarCPF(this),validarCPF(this)" maxlength="14" id="cpf_resultado" name="last" type="text" placeholder="CPF">
+        <input class="w3-input w3-border" name="last" type="text" placeholder="CPF">
       </div>
   </div>
   
@@ -119,7 +119,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   <div class="w3-row w3-section">
     <img src="img/telefone.png" class="w3-col" style="width: 50px;position:relative; top:-10px;"  alt=""> 
       <div class="w3-rest">
-        <input class="w3-input w3-border "oninput="formatarTelefone()" ame="phone" maxlength="11" type="tel" placeholder="Telefone" id="ficha_telefone">
+        <input class="w3-input w3-border" name="phone" type="tel" placeholder="Telefone">
       </div>
   </div>
   
@@ -140,7 +140,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   <div class="w3-row w3-section">
     <img src="img/numerocasa.png" class="w3-col" style="width: 50px;position:relative; top:-10px;"  alt=""> 
       <div class="w3-rest">
-        <input class="w3-input w3-border" oninput="somenteNumeros(this)" name="message" type="text" placeholder="Numero da casa">
+        <input class="w3-input w3-border" name="message" type="text" placeholder="Numero da casa">
       </div>
   </div>
   <div class="w3-row w3-section">
@@ -153,19 +153,19 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   <div class="w3-row w3-section">
     <img src="img/localizacao.png" class="w3-col" style="width: 50px;position:relative; top:-10px;"  alt=""> 
       <div class="w3-rest">
-        <input class="w3-input w3-border" maxlength="10" id="cep" oninput="formatarCep(this),buscarCep()" name="" type="text" placeholder="CEP 49700-000" value="49700-000">
+        <input class="w3-input w3-border" maxlength="10" id="cep" oninput="formatarCep(this),buscarCep()" name="" type="text" placeholder="CEP 49700-000">
       </div>
   </div>
   <div class="w3-row w3-section">
     <img src="img/vista-da-rua.png" class="w3-col" style="width: 50px;position:relative; top:-10px;"  alt=""> 
       <div class="w3-rest">
-        <input class="w3-input w3-border" id="cidade" value="Capela" name="message" type="text" placeholder="Cidade">
+        <input class="w3-input w3-border" id="cidade" name="message" type="text" placeholder="Cidade">
       </div>
   </div>
   <div class="w3-row w3-section">
     <img src="img/cidade.png" class="w3-col" style="width: 50px;position:relative; top:-10px;"  alt=""> 
       <div class="w3-rest">
-        <input class="w3-input w3-border" id="estado" name="message" type="text" value="SE" placeholder="Estado">
+        <input class="w3-input w3-border" id="estado" name="message" type="text" placeholder="Estado">
       </div>
   </div>
 
@@ -181,16 +181,21 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   <div class="w3-row w3-section">
     <img src="img/pagamento-em-dinheiro.png" class="w3-col" style="width: 50px;position:relative; top:-10px;"  alt=""> 
       <div class="w3-rest">
-        <input class="w3-input w3-border" name="message" type="text" placeholder="Credito" oninput="somentecredito(this)">
+        <input class="w3-input w3-border" name="message" type="text" placeholder="Credito">
       </div>
   </div>
   <div class="w3-row w3-section">
     <img src="img/senha.png" class="w3-col" style="width: 50px;position:relative; top:-10px;"  alt=""> 
       <div class="w3-rest">
-        <input class="w3-input w3-border" name="message" type="text" placeholder="Senha" id="ficha_senha"  oninput="ficha_senha(this)">
+        <input class="w3-input w3-border" name="message" type="text" placeholder="Senha">
       </div>
   </div>
- 
+  <div class="w3-row w3-section">
+    <img src="img/senha.png" class="w3-col" style="width: 50px;position:relative; top:-10px;"  alt=""> 
+      <div class="w3-rest">
+        <input class="w3-input w3-border" name="message" type="text" placeholder="Repetir a senha">
+      </div>
+  </div>
   
   <button class="w3-button w3-block w3-section w3-green w3-ripple w3-padding">CADASTRAR</button>
   
