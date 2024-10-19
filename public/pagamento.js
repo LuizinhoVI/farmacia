@@ -216,13 +216,13 @@ function fixarbarra() {
     }
 }
 
-function pagamento_ver_mais() {
-    const mais = document.querySelectorAll('.mostrar');
+function pagamento_ver_mais1() {
+    const mais = document.querySelectorAll('.remover');
     mais.forEach((elemento) => {
-        elemento.classList.remove('mostrar'); // Remove a classe que oculta
+        elemento.classList.remove('remover'); // Remove a classe que oculta
     });
-    const mostrar = document.querySelector('#pagamento_ver_mais');
-    const remover =document.querySelector('#pagamento_remover');
+    const mostrar = document.querySelector('#pagamento_ver_mais1');
+    const remover =document.querySelector('#pagamento_remover1');
   
     remover.style.display="block"
     mostrar.style.display="none"  
@@ -230,18 +230,18 @@ function pagamento_ver_mais() {
  
 }
 
-function pagamento_recolher() {
+function pagamento_recolher1() {
     
-    const divs = document.querySelectorAll('.remover'); // Seleciona todas as divs com a classe 'minha-div'
+    const divs = document.querySelectorAll('.mostrar'); // Seleciona todas as divs com a classe 'minha-div'
     
     divs.forEach((div) => {
         div.classList.add('mostrar'); // Adiciona a classe 'nova-classe' a cada div
-   
+        div.style.setProperty('display', 'none', 'important');
 
     });
-
-    const mostrar = document.querySelector('#pagamento_ver_mais');
-    const remover = document.querySelector('#pagamento_remover');
+    console.log('t')
+    const mostrar = document.querySelector('#pagamento_ver_mais1');
+    const remover = document.querySelector('#pagamento_remover1');
 
 
 
@@ -252,6 +252,8 @@ function pagamento_recolher() {
     
 
 }
+
+
 // **********************************************
 
 let total = 100.50; // Valor inicial
