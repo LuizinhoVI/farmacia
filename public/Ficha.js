@@ -164,10 +164,14 @@ function ficha_menu(numero) {
         
         const table = document.getElementById('tableBody');
         const button = document.querySelector('.mostrar_mais_');
+
         table.classList.toggle('hidden');
 
-        button.textContent = table.classList.contains('hidden') ? 'Mostrar Tabela' : 'Ocultar Tabela';
+        button.textContent = table.classList.contains('hidden') ? 'Ver mais...' : 'Ocultar...';
         
         }
+
+        
+
 
 // **********************************************

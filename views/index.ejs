@@ -12,6 +12,7 @@
   
   <link rel="stylesheet" href="css/pagamento_valor.css">
   <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/ficha.css">
   <link rel="stylesheet" href="css/pagamento.css">
   
   <style>
@@ -216,7 +217,7 @@
   
   <!-- fim mensgem de  ficha mão encontrada -->
   
-    <div class="ficha_procurar" id="ficha_procurar" style="display: none;">
+    <div class="ficha_procurar" id="ficha_procurar" style="display: block;">
   
   
    <!-- FICHA  -->
@@ -231,65 +232,87 @@
     <div class="w3-container" align="center">
       <table border="1">
         <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Idade</th>
-                <th>Cidade</th>
-                <th class="">Profissão</th>
-                <th class="">Salário</th>
-                <th class="">Estado</th>
+            <tr align="cent">
+                <td>Nome:</td>
+                <td align="cente">jose luiz vieira filho </td>
             </tr>
         </thead>
       
-            <tr>
-                <td>Alice</td>
-                <td>30</td>
-                <td>São Paulo</td>
-                <td class="">Engenheira</td>
-                <td class="">R$ 10.000</td>
-                <td class="">SP</td>
+            <tr align="cente">
+                <td>Limite:</td>
+                <td>R$ 500 💵</td>
             </tr>
-            <tr>
-                <td>Bruno</td>
-                <td>25</td>
-                <td>Rio de Janeiro</td>
-                <td class="">Designer</td>
-                <td class="">R$ 7.000</td>
-                <td class="">RJ</td>
+            
+            <tr align="cente">
+                <td>FALTA PAGAR:</td>
+                <td><b> R$&nbsp;99,29 </b></td>
+           
+            </tr>
+           
+            <tr align="cente">
+                <td>STATUS:</td>
+                <td>BOM PAGADOR 👍</td>
+             
             </tr>
             <tbody id="tableBody" class="hidden">
             <tr>
-                <td>Carlos</td>
-                <td>28</td>
-                <td class="">Belo Horizonte</td>
-                <td class="">Médico</td>
-                <td class="">R$ 15.000</td>
-                <td class="">MG</td>
+                <td>CPF:</td>
+                <td>789.456.990-67</td>
+              
             </tr>
             <tr>
-                <td>Diana</td>
-                <td>32</td>
-                <td class="">Curitiba</td>
-                <td class="">Professora</td>
-                <td class="">R$ 8.000</td>
-                <td class="">PR</td>
+                <td class="">DATA DE NASCIMENTO:</td>
+                <td class="">	23/03/1995</td>
+              
             </tr>
             <tr>
-                <td class="">Eduardo</td>
-                <td class="">27</td>
-                <td class="">Porto Alegre</td>
-                <td class="">Programador</td>
-                <td class="">R$ 12.000</td>
-                <td class="">RS</td>
+                <td class="">LOGIN :</td>
+                <td class="">79999722046</td>
+                
             </tr>
             <tr>
-                <td class="">Fernanda</td>
-                <td class="">29</td>
-                <td class="">Salvador</td>
-                <td class="">Arquiteta</td>
-                <td class="">R$ 9.000</td>
-                <td class="">BA</td>
+                <td class="">TELEFONE: </td>
+                <td class="">	79 99722046</td>
+                
             </tr>
+            <tr>
+                <td class="">EMAIL:</td>
+                <td class="">brat.luiz23@hotmail.com</td>
+                
+            </tr>
+
+            <tr>
+
+                <td class="">RUA:</td>
+                <td class="">		RUA MARECHAL</td>
+                
+            </tr>
+            <tr>
+                <td class="">REFERÊNCIA:</td>
+                <td class="">centro</td>
+                
+            </tr>
+
+            <tr>
+
+                <td class="">CEP:</td>
+                <td class="">49700-000</td>
+                
+            </tr>
+            <tr>
+
+                <td class="">ESTADO:</td>
+                <td class="">SE</td>
+                
+            </tr>
+            <tr>
+
+                <td class="">CIDADE:</td>
+                <td class="">Capela</td>
+                
+            </tr>
+           
+
         </tbody>
     </table>
    
@@ -311,68 +334,87 @@
      <!-- Adicionar produto -->
           <div class=" w3-margin-bottom " align="center">
             <div class="w3-card-4" align="center" style="width: 100%; left: 50%; position: relative;transform: translateX(-50%);">
-            <br>
+         
         
             <div class="w3-container" align="center">
               <h3>ADICIONAR PRODUTO </h3>
             
               <div class="w3-container adicionar_produto" id="adicionar_produto" align="center">
+
+                <br>
+                <div id="tabelaContainer">
                 
-                  <table border="1" align="center" class="w3-table w3-striped w3-bordered">
-                    <tbody><tr><th align="center">Id</th>
-                    <th align="center">Produto</th>
-                    <th align="center">TIPO</th>
-                    <th align="center">QUANTIDADE</th>
-                    <th align="center">DATA</th>
-                    <th align="center">HORA</th>
-                    <th align="center">VALOR</th>
-                    
-                    
-                    </tr><tr></tr>
-                    <tr><td align="center" class="contador_de_id">1</td>
-                    <td align="center">
+                  <table border="" align="center" class="w3-containe ficha_tabela">
+                    <tr>
+                      <td align="center">Id</td>
+                      <td align="center" class="contador_de_id">1</td>
+                      </tr>
+                      <tr>
+                        <td align="center">Produto</td>
+                        <td align="center">
   
-                      <input class="w3-input w3-border nome_procudo" type="text" placeholder="Nome do produto">
+                          <input class="w3-input w3-border nome_procudo" type="text" placeholder="Nome do produto">
+                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center">Tipo</td>
+                        <td align="center">
                       
-                    </td>
-                    <td align="center">
+                          <select class="w3-select w3-border option" name="option">
+                            
+                            <option value="Comprimidos">Comprimidos</option>
+                            <option value="Liquido">Liquido</option>
+                            <option value="comprimido">comprimido</option>
+                            <option value="pomada">pomada</option>
+                            <option value="Pó">Pó</option>
+                            <option value="Cápsulas">Cápsulas</option>
+                            <option value="Géis">Géis</option>
+                            <option value="Soluções">Soluções</option>
+                            <option value="Suspensões">Suspensões</option>
+                            <option value="Sprays">Sprays</option>
+                            <option value="Supositórios">Supositórios</option>
+                            <option value="Injeções">Injeções</option>
+                            <option value="Inaladores">Inaladores</option>
+                            <option value="Compressa">Compressa</option>
+                            <option value="Cremes">Cremes</option>
+                            
+                          </select>
+                          
+                        </td>
+                      </tr>
+                      <tr>
+
+                        <td align="center">Quantidade</td>
+                        <td align="center">
+                          <input class="w3-input w3-border  pagamento_quantidade" type="number" placeholder="unidades">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center">Data</td>
+                        <td align="center" class="data">19/10/2024</td>
+                      </tr>
+                      <tr>
+                        <td align="center">Hora</td>
+                        <td align="center" class="hora">11:59:20</td>
+                      </tr>
+                      <tr>
+                        <td align="center">Valor</td>
+                        <td align="center">
                       
-                      <select class="w3-select w3-border option" name="option">
-                        
-                        <option value="Comprimidos">Comprimidos</option>
-                        <option value="Liquido">Liquido</option>
-                        <option value="comprimido">comprimido</option>
-                        <option value="pomada">pomada</option>
-                        <option value="Pó">Pó</option>
-                        <option value="Cápsulas">Cápsulas</option>
-                        <option value="Géis">Géis</option>
-                        <option value="Soluções">Soluções</option>
-                        <option value="Suspensões">Suspensões</option>
-                        <option value="Sprays">Sprays</option>
-                        <option value="Supositórios">Supositórios</option>
-                        <option value="Injeções">Injeções</option>
-                        <option value="Inaladores">Inaladores</option>
-                        <option value="Compressa">Compressa</option>
-                        <option value="Cremes">Cremes</option>
-                        
-                      </select>
-                      
-                    </td>
-                    <td align="center">
-                      <input class="w3-input w3-border  pagamento_quantidade" type="number" placeholder="unidades">
-                    </td>
-                    <td align="center" class="data">19/10/2024</td>
-                    <td align="center" class="hora">11:59:20</td>
-                   
-                    <td align="center">
-                      
-                      <input class="w3-input w3-border pagamento_valor" id="pagamento_valor" type="text" oninput="formatarDinheiro(this)" placeholder="Valor">
-                    </td>
-              
-                  
-                
-                  </tr></tbody></table>
-                
+                          <input class="w3-input w3-border pagamento_valor" id="pagamento_valor" type="text" oninput="formatarDinheiro(this)" placeholder="Valor">
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td colspan="2" align="center">
+                            <button onclick="deleteTable(this)">Excluir</button> <!-- Botão de excluir -->
+                        </td>
+                    </tr>
+                               
+                  </table>
+
+                </div>
                   <br>
                 
             <!-- onde vai ser colado para adicinar os produtos -->
@@ -380,7 +422,7 @@
               
             </div>
   
-             <div id="colar"></div>
+             
             
             <div align="center"> 
               
@@ -389,8 +431,11 @@
               </div>
             <br>
                 <div>
-                <img src="img/mais.png" alt="mais" onclick="adicionar_mais()" width="10%" style="cursor: pointer;border-radius: 50%;">
+                <img src="img/mais.png" alt="mais" onclick="cloneTable()" width="10%" style="cursor: pointer;border-radius: 50%;">
               </div>
+              
+              <script src="ficha_compras.js"></script>
+
               <p><button class="w3-button w3-light-grey w3-block" onclick="salvar()">SALVAR</button></p>
             <div class="mostrar1">nomes:</div>
             <div class="mostrar2">tipo:</div>
@@ -555,7 +600,7 @@
   
 
   <!-- pagamento-************************* -->
-   <div class="w3-container esconder" id="menu3" style="display: ;">
+   <div class="w3-container esconder" id="menu3" style="display: none;">
     
     <div class="w3-row-padding" id="about">
   

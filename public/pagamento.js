@@ -1,17 +1,3 @@
-// let id =1;
-function adicionar_mais() {
-   
-    document.querySelector('.contador_de_id').innerHTML=id++;
-    
-    const mais = document.querySelector("#adicionar_produto");
-    const copiar = mais.cloneNode(true);
-
-    document.getElementById("colar").appendChild(copiar);
-    
-    
-
-}
-// ////////////////////******************************* formatação de real  */
 
 function formatarDinheiro(input) {
     // Remove tudo que não é número

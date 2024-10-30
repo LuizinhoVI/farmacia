@@ -1,0 +1,14 @@
+#tabelaContainer{
+    display: flex;
+    justify-content: space-around;
+    /* position: relative; */
+    /* grid-template-columns: 50%, 50%,50%; */
+    border: solid red 1px;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.ficha_tabela{
+    
+    margin: 5px;
+
+}
