@@ -144,8 +144,13 @@ function removerclass() {
 
 function salvar() {
     const checkbox = document.querySelector('.verificar_compra');
+    const nomeproduto = document.querySelector('.nome_procudo');
+    const pagamento_quantidade = document.querySelector('.pagamento_quantidade');
+    const pagamento_valor1 = document.querySelector('.pagamento_valor');
+   
+    console.log(pagamento_valor1.value);
     // console.log('Checkbox encontrado:', checkbox); 
-    if (checkbox.checked) {
+    if (checkbox.checked && nomeproduto.value && pagamento_quantidade.value && pagamento_valor1.value) {
         // console.log('Checkbox está marcado:', checkbox.checked);
         
         
@@ -157,11 +162,9 @@ function salvar() {
       
         removerclass();
 
-
-
-
         checkbox.checked=false;
-        const limpar =document.querySelectorAll('.pagamento_valor,.nome_procudo')
+
+       // const limpar =document.querySelectorAll('.pagamento_valor,.nome_procudo')
     } else {
         alert('Você deve aceitar os termos para Salvar os produtos.' );
         

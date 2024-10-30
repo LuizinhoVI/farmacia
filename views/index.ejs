@@ -251,7 +251,7 @@
            
             <tr align="cente">
                 <td>STATUS:</td>
-                <td>BOM PAGADOR 👍</td>
+                <td><b>BOM PAGADOR 👍 </b></td>
              
             </tr>
             <tbody id="tableBody" class="hidden">
@@ -346,19 +346,19 @@
                 
                   <table border="" align="center" class="w3-containe ficha_tabela">
                     <tr>
-                      <td align="center">Id</td>
+                     
                       <td align="center" class="contador_de_id">1</td>
                       </tr>
                       <tr>
-                        <td align="center">Produto</td>
+                        
                         <td align="center">
   
-                          <input class="w3-input w3-border nome_procudo" type="text" placeholder="Nome do produto">
+                          <input class="w3-input w3-border nome_procudo" type="text" placeholder="Nome do produto" >
                           
                         </td>
                       </tr>
                       <tr>
-                        <td align="center">Tipo</td>
+                        
                         <td align="center">
                       
                           <select class="w3-select w3-border option" name="option">
@@ -385,21 +385,21 @@
                       </tr>
                       <tr>
 
-                        <td align="center">Quantidade</td>
+                        
                         <td align="center">
                           <input class="w3-input w3-border  pagamento_quantidade" type="number" placeholder="unidades">
                         </td>
                       </tr>
                       <tr>
-                        <td align="center">Data</td>
+                       
                         <td align="center" class="data">19/10/2024</td>
                       </tr>
                       <tr>
-                        <td align="center">Hora</td>
+                     
                         <td align="center" class="hora">11:59:20</td>
                       </tr>
                       <tr>
-                        <td align="center">Valor</td>
+                       
                         <td align="center">
                       
                           <input class="w3-input w3-border pagamento_valor" id="pagamento_valor" type="text" oninput="formatarDinheiro(this)" placeholder="Valor">
@@ -407,15 +407,16 @@
                       </tr>
                     
                       <tr>
-                        <td colspan="2" align="center">
-                            <button onclick="deleteTable(this)">Excluir</button> <!-- Botão de excluir -->
+                        <td colspan="2" align="center" style="padding: 10px;">
+                        
+                            <button onclick="deleteTable(this)" style="cursor: pointer;">Excluir</button> <!-- Botão de excluir -->
                         </td>
                     </tr>
                                
                   </table>
 
                 </div>
-                  <br>
+                  
                 
             <!-- onde vai ser colado para adicinar os produtos -->
              
@@ -424,19 +425,20 @@
   
              
             
-            <div align="center"> 
-              
-              <input class="w3-check verificar_compra" type="checkbox" id="verificar_compra" align="center"> 
-                Verificar...
-              </div>
-            <br>
+           
                 <div>
-                <img src="img/mais.png" alt="mais" onclick="cloneTable()" width="10%" style="cursor: pointer;border-radius: 50%;">
+                <img src="img/mais.png" alt="mais" onclick="cloneTable()" class="ficha_botao_mais" width="5%" style="cursor: pointer;border-radius: 50%;">
               </div>
+
+              <div align="center"> 
               
+                <input class="w3-check verificar_compra" type="checkbox" id="verificar_compra" align="center"> 
+                  Aceitar compras...
+                </div>
+          
               <script src="ficha_compras.js"></script>
 
-              <p><button class="w3-button w3-light-grey w3-block" onclick="salvar()">SALVAR</button></p>
+              <p><button class="w3-button w3-green w3-block" onclick="salvar()">SALVAR</button></p>
             <div class="mostrar1">nomes:</div>
             <div class="mostrar2">tipo:</div>
             <div class="mostrar3">quantidade:</div>
