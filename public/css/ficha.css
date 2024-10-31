@@ -30,5 +30,40 @@
 .nome_procudo{
     font-weight: bold;
     color:green;
+    text-align: center;
 
+}
+.nome_procudo::placeholder{
+    /* font-weight: bold; */
+    color:red;
+
+}
+#ficha_procurar_input{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    /* text-transform: uppercase; */
+}
+.pagamento_quantidade{
+    /* font-size: 25px; */
+    font-weight: bold;
+    text-align: center;
+    color: green;
+}
+.pagamento_quantidade::placeholder{
+    color: red;
+}
+
+.tipo_de_remedio{
+    /* font-size: 25px; */
+    font-weight: bold;
+    text-align: center;
+}
+.pagamento_valor{
+    color: green;
+    font-weight: bold;
+    text-align: center;
+}
+.pagamento_valor::placeholder{
+    color: red;
 }

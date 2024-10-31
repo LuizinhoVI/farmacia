@@ -4,8 +4,9 @@ function ficha_procurar(elemento) {
     const div = document.querySelector('#ficha_procurar_input')
     const ficha_procurar = document.querySelector('#ficha_procurar')
     const ficha_nao_encontrada = document.querySelector('#ficha_nao_encontrada')
-
-    if (div.value=== 'luiz') {
+    const maiusculo = div.value.toUpperCase();
+console.log(div.value);
+    if (div.value == 'LUIZ' || div.value == 'luiz') {
         ficha_procurar.style.display='block'
         ficha_nao_encontrada.style.display='none'
     }else{
@@ -171,7 +172,15 @@ function ficha_menu(numero) {
         
         }
 
-        
+        function validaNumero(input) {
+            // Converte o valor para um número
+            input.value = input.value.replace(/[^0-9]/g, '');
+            const valor = Number(input.value);
+            // Se o valor for negativo, redefine para vazio
+            if (valor <= 0 ) {
+                input.value = null;
+            }
+        }
 
 
 // **********************************************

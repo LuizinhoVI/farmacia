@@ -204,7 +204,7 @@
       
       <form class="w3-container w3-card-4 ficha_pessoa ficha_pessoa2 w3-light-grey " style="display: none;">
       <h4 align="center">P R O C U R A R</h4>
-      <input class="w3-input w3-border w3-round-xxlarge" oninput="ficha_procurar(this)" id="ficha_procurar_input" name="last" type="text"><p></p>
+      <input class="w3-input w3-border w3-round-xxlarge" oninput="this.value=this.value.toUpperCase(),ficha_procurar(this)" id="ficha_procurar_input" name="last" type="text"><p></p>
       
     </form>
   
@@ -233,7 +233,7 @@
       <table border="1">
         <thead>
             <tr align="cent">
-                <td>Nome:</td>
+                <td>Nome -></td>
                 <td align="cente">jose luiz vieira filho </td>
             </tr>
         </thead>
@@ -361,11 +361,11 @@
                         
                         <td align="center">
                       
-                          <select class="w3-select w3-border option" name="option">
+                          <select class="w3-select w3-border option tipo_de_remedio" name="option">
                             
                             <option value="Comprimidos">Comprimidos</option>
                             <option value="Liquido">Liquido</option>
-                            <option value="comprimido">comprimido</option>
+                            <!-- <option value="comprimido">comprimido</option> -->
                             <option value="pomada">pomada</option>
                             <option value="Pó">Pó</option>
                             <option value="Cápsulas">Cápsulas</option>
@@ -387,7 +387,7 @@
 
                         
                         <td align="center">
-                          <input class="w3-input w3-border  pagamento_quantidade" type="number" placeholder="unidades">
+                          <input class="w3-input w3-border  pagamento_quantidade" type="number" placeholder="unidades" oninput="validaNumero(this)">
                         </td>
                       </tr>
                       <tr>

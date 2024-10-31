@@ -140,17 +140,55 @@ function removerclass() {
         divs[i].remove(); // Remove as divs a partir da segunda
     }
 }
+function limpar_input(){
+     document.querySelector('.nome_procudo').value =null;
+     document.querySelector('.pagamento_quantidade').value = null;
+     document.querySelector('.pagamento_valor').value= null;
 
+
+}
 
 function salvar() {
     const checkbox = document.querySelector('.verificar_compra');
     const nomeproduto = document.querySelector('.nome_procudo');
     const pagamento_quantidade = document.querySelector('.pagamento_quantidade');
     const pagamento_valor1 = document.querySelector('.pagamento_valor');
+
+
+    function limpar_produto() {
+        
+        const divs = document.querySelectorAll('.ficha_tabela');
+        
+        // Remove todas as divs, exceto a primeira
+        divs.forEach((div, index) => {
+            if (index !== 0) {
+                div.remove();
+              
+            }
+        });
+
+       
+    }
+
+    function nomes_produtos() {
+        
+    
+    const inputs = document.querySelectorAll('.nome_procudo');
+    let todosPreenchidos = true;
+
+    inputs.forEach(input => {
+        if (input.value.trim() === '') {
+            todosPreenchidos = false;
+        }
+    });
+
+   
+    return todosPreenchidos;     
+}
    
     console.log(pagamento_valor1.value);
     // console.log('Checkbox encontrado:', checkbox); 
-    if (checkbox.checked && nomeproduto.value && pagamento_quantidade.value && pagamento_valor1.value) {
+    if (checkbox.checked && nomeproduto.value && pagamento_quantidade.value && pagamento_valor1.value && nomes_produtos() ) {
         // console.log('Checkbox está marcado:', checkbox.checked);
         
         
@@ -159,14 +197,14 @@ function salvar() {
         option();
         pagamento_valor();
         pagamento_data_hora();
-      
         removerclass();
 
         checkbox.checked=false;
-
+        limpar_input();
+        limpar_produto();
        // const limpar =document.querySelectorAll('.pagamento_valor,.nome_procudo')
     } else {
-        alert('Você deve aceitar os termos para Salvar os produtos.' );
+        alert('Há campos não preenchidos!' );
         
     }
 }
