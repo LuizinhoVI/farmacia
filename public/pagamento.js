@@ -186,7 +186,7 @@ function salvar() {
     return todosPreenchidos;     
 }
    
-    console.log(pagamento_valor1.value);
+   // console.log(pagamento_valor1.value);
     // console.log('Checkbox encontrado:', checkbox); 
     if (checkbox.checked && nomeproduto.value && pagamento_quantidade.value && pagamento_valor1.value && nomes_produtos() ) {
         // console.log('Checkbox está marcado:', checkbox.checked);

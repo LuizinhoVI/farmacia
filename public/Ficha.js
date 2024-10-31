@@ -5,7 +5,7 @@ function ficha_procurar(elemento) {
     const ficha_procurar = document.querySelector('#ficha_procurar')
     const ficha_nao_encontrada = document.querySelector('#ficha_nao_encontrada')
     const maiusculo = div.value.toUpperCase();
-console.log(div.value);
+// console.log(div.value);
     if (div.value == 'LUIZ' || div.value == 'luiz') {
         ficha_procurar.style.display='block'
         ficha_nao_encontrada.style.display='none'
