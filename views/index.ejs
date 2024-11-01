@@ -239,12 +239,12 @@
 <div class="w3-row-padding">
   <div class="w3-half">
     <label>Nome completo </label>
-    <input class="w3-input w3-border" type="text" oninput="ficha_editar(this)" value="jose luiz vieira filho" placeholder="NOME COMPLETO">
+    <input class="w3-input w3-border ficha_procurar_nome" type="text" oninput="ficha_editar(this)" value="jose luiz vieira filho" placeholder="NOME COMPLETO">
   </div>
 
   <div class="w3-half">
     <label> Limite</label>
-    <input class="w3-input w3-border" type="text" disabled value="R$ 500 💵" placeholder="LIMITE">
+    <input class="w3-input w3-border ficha_procurar_limite" oninput="ficha_editar(this)" type="text"  value="R$ 500 " placeholder="LIMITE">
   </div>
 </div>
 
@@ -256,12 +256,12 @@
 <div class="w3-row-padding">
 <div class="w3-half">
 <label>Falta pagar </label>
-<input class="w3-input w3-border" type="text" disabled  value="R$ 99,29" placeholder=" ">
+<input class="w3-input w3-border ficha_procurar_pagar" type="text" disabled  value="R$ 99,29" placeholder=" ">
 </div>
 
 <div class="w3-half">
 <label> STATUS</label>
-<input class="w3-input w3-border" type="text" disabled value="BOM PAGADOR 👍" placeholder="Two">
+<input class="w3-input w3-border " type="text" disabled value="BOM PAGADOR 👍" placeholder="Two">
 </div>
 </div>
 
@@ -274,13 +274,13 @@
   <td>  
 <div class="w3-row-padding">
 <div class="w3-half">
-<label>CPF </label>
-<input class="w3-input w3-border" type="text" disabled  value="789.456.990-67" placeholder=" ">
+  <label>CPF </label>
+  <input class="w3-input w3-border ficha_procurar_cpf" type="text" disabled  value="789.456.990-67" placeholder=" ">
 </div>
 
 <div class="w3-half">
 <label> Data de nascimento</label>
-<input class="w3-input w3-border" type="date" oninput="ficha_editar(this)" value="2024-05-03" placeholder="Two">
+<input class="w3-input w3-border ficha_procurar_data" type="date" oninput="ficha_editar(this)" value="2024-05-03" placeholder="Two">
 </div>
 </div>
 
@@ -292,12 +292,12 @@
 <div class="w3-row-padding">
 <div class="w3-half">
 <label>Login </label>
-<input class="w3-input w3-border" type="text" oninput="ficha_editar(this)"  value="79999722046" placeholder=" ">
+<input class="w3-input w3-border ficha_procurar_login" type="text" oninput="ficha_editar(this)"  value="79999722046" placeholder=" ">
 </div>
 
 <div class="w3-half">
 <label> Telefone</label>
-<input class="w3-input w3-border" type="text" oninput="ficha_editar(this)"  value="79 99722046" placeholder="Two">
+<input class="w3-input w3-border ficha_procurar_telefone" type="text" oninput="ficha_editar(this)"  value="79 99722046" placeholder="Two">
 </div>
 </div>
 
@@ -309,12 +309,12 @@
 <div class="w3-row-padding">
 <div class="w3-half">
 <label>Email </label>
-<input class="w3-input w3-border" type="text" disabled  value="brat.luiz23@hotmail.com" placeholder=" ">
+<input class="w3-input w3-border ficha_procurar_email" type="text"   value="brat.luiz23@hotmail.com" placeholder=" ">
 </div>
 
 <div class="w3-half">
 <label> Rua </label>
-<input class="w3-input w3-border" type="text" oninput="ficha_editar(this)" value="RUA MARECHAL" placeholder="Two">
+<input class="w3-input w3-border ficha_procurar_rua" type="text" oninput="ficha_editar(this)" value="RUA MARECHAL" placeholder="Two">
 </div>
 </div>
 
@@ -326,12 +326,12 @@
 <div class="w3-row-padding">
 <div class="w3-half">
 <label>Referencia </label>
-<input class="w3-input w3-border" type="text" oninput="ficha_editar(this)"  value="centro" placeholder=" ">
+<input class="w3-input w3-border ficha_procurar_referencia" type="text" oninput="ficha_editar(this)"  value="centro" placeholder=" ">
 </div>
 
 <div class="w3-half">
 <label> CEP </label>
-<input class="w3-input w3-border" type="text" oninput="ficha_editar(this)" value="49700-000" placeholder="Two">
+<input class="w3-input w3-border ficha_procurar_cep" type="text" oninput="ficha_editar(this)" value="49700-000" placeholder="Two">
 </div>
 </div>
 
@@ -343,12 +343,12 @@
 <div class="w3-row-padding">
 <div class="w3-half">
 <label>Estado </label>
-<input class="w3-input w3-border" type="text" oninput="ficha_editar(this)"   value="SE" placeholder=" ">
+<input class="w3-input w3-border ficha_procurar_estado" type="text" oninput="ficha_editar(this)"   value="SE" placeholder=" ">
 </div>
 
 <div class="w3-half">
 <label> Cidade </label>
-<input class="w3-input w3-border" type="text" oninput="ficha_editar(this)" value="Capela" placeholder="Two">
+<input class="w3-input w3-border ficha_procurar_cidade" type="text" oninput="ficha_editar(this)" value="Capela" placeholder="Two">
 </div>
 </div>
 
@@ -367,7 +367,7 @@
         </div>
 
         <div class=" ficha_botoes">
-          <button disabled class="ficha_editar_salvar"> Salvar </button>
+          <button disabled class="ficha_editar_salvar" onclick="salvar_edition()"> Salvar </button>
           <button class="ficha_editar_excluir"> Excluir</button>
         </div>
         <!-- confirmação da excluçã  -->

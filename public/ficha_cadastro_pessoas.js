@@ -89,21 +89,40 @@ console.log("senha:"+ senha);
 
 function ficha_editar(elemento) {
     const salvar = document.querySelector('.ficha_editar_salvar');
-    const nome = document.querySelector('.ficha_cadastro_nome').value;
     
-    
-    if (!elemento  == nome) {
-
+    console.log(elemento.value);
+    if (elemento.value) {
+        
         elemento.style.color='red'
         salvar.disabled= false ;
         salvar.style.cursor='pointer';
         
     }else{
-        elemento.style.color=''
+        elemento.style.color='black'
         salvar.disabled= false ;
         salvar.style.cursor='pointer';
-    }
-    
-    
+    } 
 }
-console.log(elemento.value)
+
+function salvar_edition() {
+    const salvar = document.querySelector('.ficha_editar_salvar');
+    const nome = document.querySelector('.ficha_procurar_nome').value;
+    const limite = document.querySelector('.ficha_procurar_limite').value;
+    const pagar = document.querySelector('.ficha_procurar_pagar').value;
+    const cpf = document.querySelector('.ficha_procurar_cpf').value;
+    const data = document.querySelector('.ficha_procurar_data').value;
+    const login = document.querySelector('.ficha_procurar_login').value;   
+    const telefone = document.querySelector('.ficha_procurar_telefone').value;   
+    const email = document.querySelector('.ficha_procurar_email').value;   
+    const rua = document.querySelector('.ficha_procurar_rua').value;   
+    const referencia = document.querySelector('.ficha_procurar_referencia').value;   
+    const cep = document.querySelector('.ficha_procurar_cep').value;   
+    const estado = document.querySelector('.ficha_procurar_estado').value;   
+    const cidade = document.querySelector('.ficha_procurar_cidade').value;   
+    
+
+
+
+    
+
+}
