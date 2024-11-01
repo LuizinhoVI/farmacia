@@ -31,6 +31,7 @@ function ficha_cadastrar_pessoa() {
     const endereco = document.querySelector('.ficha_cadastro_endereco').value;
     const numero_casa = document.querySelector('.ficha_cadastro_numero_casa').value;
     const referencia = document.querySelector('.ficha_cadastro_referencia').value;
+    const cep = document.querySelector('.ficha_cadastro_cep').value;
 
     const data1 = new Date(input1);
     const hoje = new Date();
@@ -56,6 +57,7 @@ console.log("data:"+ ano);
 console.log("endereço:"+ endereco);
 console.log("numero da casa :"+ numero_casa);
 console.log("referencia :"+ referencia);
+console.log("cep :"+ cep);
 }else{
     alert('Complete os dados que falta !')
     
