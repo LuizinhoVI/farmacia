@@ -32,6 +32,11 @@ function ficha_cadastrar_pessoa() {
     const numero_casa = document.querySelector('.ficha_cadastro_numero_casa').value;
     const referencia = document.querySelector('.ficha_cadastro_referencia').value;
     const cep = document.querySelector('.ficha_cadastro_cep').value;
+    const cidade = document.querySelector('.ficha_cadastro_cidade').value;
+    const estado = document.querySelector('.ficha_cadastro_estado').value;
+    const login = document.querySelector('.ficha_cadastro_login').value;
+    const credito = document.querySelector('.ficha_cadastro_credito').value;
+    const senha = document.querySelector('.ficha_cadastro_senha').value;
 
     const data1 = new Date(input1);
     const hoje = new Date();
@@ -45,9 +50,19 @@ function ficha_cadastrar_pessoa() {
     
     //console.log(`Dia: ${dia}, Mês: ${mes}, Ano: ${ano}`);
 
-if (nome && cpf && telefone && ano && endereco && numero_casa && referencia) {
+if (nome && cpf &&  telefone && ano && endereco &&  referencia && cep && cidade && estado && login && credito && senha) {
+
 
     
+
+    let numero_da_casa = null
+
+    if (numero_casa == '') {
+    numero_da_casa = 'sem numero ';
+    }else{
+       numero_da_casa = numero_casa
+    }
+
 //alert(nome+cpf+email+telefone+data);
 console.log("nome:"+nome);
 console.log("cpf:"+cpf);
@@ -55,9 +70,15 @@ console.log("email:"+email);
 console.log("telefone:"+telefone);
 console.log("data:"+ ano);
 console.log("endereço:"+ endereco);
-console.log("numero da casa :"+ numero_casa);
+console.log("numero da casa :"+ numero_da_casa);
 console.log("referencia :"+ referencia);
 console.log("cep :"+ cep);
+console.log("cidade :"+ cidade);
+console.log("estado :"+ estado);
+console.log("login:"+ login);
+console.log("credito:"+ credito);
+console.log("senha:"+ senha);
+
 }else{
     alert('Complete os dados que falta !')
     

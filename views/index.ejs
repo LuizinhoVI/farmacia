@@ -91,7 +91,7 @@
     </div>
   
     <!-- INICIO DO CADASTRO  da ficha-->
-    <div class="w3-container ficha_pessoa1 ficha_pessoa " style="display: block;">
+    <div class="w3-container ficha_pessoa1 ficha_pessoa " style="display: none;">
   <form action="" class="w3-container w3-card-4 w3-light-grey w3-text-green w3-margin">
     <h2 class="w3-center">CADASTRAR</h2>
      
@@ -159,13 +159,13 @@
     <div class="w3-row w3-section">
       <img src="img/vista-da-rua.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt=""> 
         <div class="w3-rest">
-          <input class="w3-input w3-border" id="cidade" value="Capela" required name="message" type="text" placeholder="Cidade">
+          <input class="w3-input w3-border ficha_cadastro_cidade" id="cidade" value="Capela" required name="message" type="text" placeholder="Cidade">
         </div>
     </div>
     <div class="w3-row w3-section">
       <img src="img/cidade.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt=""> 
         <div class="w3-rest">
-          <input class="w3-input w3-border" id="estado" name="message" type="text"required value="SE" placeholder="Estado">
+          <input class="w3-input w3-border ficha_cadastro_estado" id="estado" name="message" type="text"required value="SE" placeholder="Estado">
         </div>
     </div>
   
@@ -175,19 +175,19 @@
       </div>
       <img src="img/movel.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt=""> 
         <div class="w3-rest">
-          <input class="w3-input w3-border" name="message" type="text" placeholder="Login" required>
+          <input class="w3-input w3-border ficha_cadastro_login" name="message" type="text" placeholder="Login" required>
         </div>
     </div>
     <div class="w3-row w3-section">
       <img src="img/pagamento-em-dinheiro.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt=""> 
         <div class="w3-rest">
-          <input class="w3-input w3-border" name="message" type="text" placeholder="Credito" oninput="somentecredito(this)" required>
+          <input class="w3-input w3-border ficha_cadastro_credito" name="message" type="text" placeholder="Credito" oninput="somentecredito(this)" required>
         </div>
     </div>
     <div class="w3-row w3-section">
       <img    src="img/senha.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt=""> 
         <div class="w3-rest">
-          <input class="w3-input w3-border" name="message" type="text" placeholder="Senha" id="ficha_senha" oninput="ficha_senha(this)" required>
+          <input class="w3-input w3-border ficha_cadastro_senha"   type="text" placeholder="Senha" id="ficha_senha"  required>
         </div>
     </div>
    
@@ -217,7 +217,7 @@
   
   <!-- fim mensgem de  ficha mão encontrada -->
   
-    <div class="ficha_procurar" id="ficha_procurar" style="display: none;">
+    <div class="ficha_procurar" id="ficha_procurar" style="display: block;">
   
   
    <!-- FICHA  -->
@@ -230,95 +230,142 @@
     
     <h3>jose luiz vieira filho </h3>
     <div class="w3-container" align="center">
+     
       <table border="1">
         <thead>
-            <tr align="cent">
-                <td>Nome :</td>
-                <td align="cente">jose luiz vieira filho </td>
-            </tr>
+
+<tr align="center">
+<td>  
+<div class="w3-row-padding">
+  <div class="w3-half">
+    <label>Nome completo </label>
+    <input class="w3-input w3-border" type="text" value="jose luiz vieira filho" placeholder="One">
+  </div>
+
+  <div class="w3-half">
+    <label> Limite</label>
+    <input class="w3-input w3-border" type="text" value="R$ 500 💵" placeholder="Two">
+  </div>
+</div>
+
+</td>
+</tr>
         </thead>
-      
-            <tr align="cente">
-                <td>Limite:</td>
-                <td>R$ 500 💵</td>
-            </tr>
-            
-            <tr align="cente">
-                <td>FALTA PAGAR:</td>
-                <td><b> R$&nbsp;99,29 </b></td>
-           
-            </tr>
-           
-            <tr align="cente">
-                <td>STATUS:</td>
-                <td><b>BOM PAGADOR 👍 </b></td>
-             
-            </tr>
+        <tr align="center">
+          <td>  
+<div class="w3-row-padding">
+<div class="w3-half">
+<label>Falta pagar </label>
+<input class="w3-input w3-border" type="text" disabled  value="R$ 99,29" placeholder=" ">
+</div>
+
+<div class="w3-half">
+<label> STATUS</label>
+<input class="w3-input w3-border" type="text" disabled value="BOM PAGADOR 👍" placeholder="Two">
+</div>
+</div>
+
+</td>
+</tr>
+                    
             <tbody id="tableBody" class="hidden">
-            <tr>
-                <td>CPF:</td>
-                <td>789.456.990-67</td>
-              
-            </tr>
-            <tr>
-                <td class="">DATA DE NASCIMENTO:</td>
-                <td class="">	23/03/1995</td>
-              
-            </tr>
-            <tr>
-                <td class="">LOGIN :</td>
-                <td class="">79999722046</td>
-                
-            </tr>
-            <tr>
-                <td class="">TELEFONE: </td>
-                <td class="">	79 99722046</td>
-                
-            </tr>
-            <tr>
-                <td class="">EMAIL:</td>
-                <td class="">brat.luiz23@hotmail.com</td>
-                
-            </tr>
+                      
+<tr align="center">
+  <td>  
+<div class="w3-row-padding">
+<div class="w3-half">
+<label>CPF </label>
+<input class="w3-input w3-border" type="text" disabled  value="789.456.990-67" placeholder=" ">
+</div>
 
-            <tr>
+<div class="w3-half">
+<label> Data de nascimento</label>
+<input class="w3-input w3-border" type="text" value="23/03/1995" placeholder="Two">
+</div>
+</div>
 
-                <td class="">RUA:</td>
-                <td class="">		RUA MARECHAL</td>
-                
-            </tr>
-            <tr>
-                <td class="">REFERÊNCIA:</td>
-                <td class="">centro</td>
-                
-            </tr>
+</td>
+</tr>
+                           
+<tr align="center">
+  <td>  
+<div class="w3-row-padding">
+<div class="w3-half">
+<label>Login </label>
+<input class="w3-input w3-border" type="text" disabled  value="79999722046" placeholder=" ">
+</div>
 
-            <tr>
+<div class="w3-half">
+<label> Telefone</label>
+<input class="w3-input w3-border" type="text" value="79 99722046" placeholder="Two">
+</div>
+</div>
 
-                <td class="">CEP:</td>
-                <td class="">49700-000</td>
-                
-            </tr>
-            <tr>
+</td>
+</tr>
+                            
+<tr align="center">
+  <td>  
+<div class="w3-row-padding">
+<div class="w3-half">
+<label>Email </label>
+<input class="w3-input w3-border" type="text" disabled  value="brat.luiz23@hotmail.com" placeholder=" ">
+</div>
 
-                <td class="">ESTADO:</td>
-                <td class="">SE</td>
-                
-            </tr>
-            <tr>
+<div class="w3-half">
+<label> Rua </label>
+<input class="w3-input w3-border" type="text" value="RUA MARECHAL" placeholder="Two">
+</div>
+</div>
 
-                <td class="">CIDADE:</td>
-                <td class="">Capela</td>
-                
-            </tr>
+</td>
+</tr>
+        
+<tr align="center">
+  <td>  
+<div class="w3-row-padding">
+<div class="w3-half">
+<label>Referencia </label>
+<input class="w3-input w3-border" type="text" disabled  value="centro" placeholder=" ">
+</div>
+
+<div class="w3-half">
+<label> CEP </label>
+<input class="w3-input w3-border" type="text" value="49700-000" placeholder="Two">
+</div>
+</div>
+
+</td>
+</tr>
+          
+<tr align="center">
+  <td>  
+<div class="w3-row-padding">
+<div class="w3-half">
+<label>Estado </label>
+<input class="w3-input w3-border" type="text" disabled  value="SE" placeholder=" ">
+</div>
+
+<div class="w3-half">
+<label> Cidade </label>
+<input class="w3-input w3-border" type="text" value="Capela" placeholder="Two">
+</div>
+</div>
+
+</td>
+</tr>
            
-
         </tbody>
     </table>
    
 
-      <br>
-        <div id="ficha_ver_mais1" style="text-align: center;"><button onclick="abrir_ficha()" class="mostrar_mais_">Ver mais...</button></div>
+      
+
+        <div id="ficha_ver_mais1" style="text-align: center;">
+
+          <button onclick="abrir_ficha()" class="mostrar_mais_">Ver mais...</button>
+        
+        </div>
   
         <br>
     </div>
@@ -432,13 +479,13 @@
 
               <div align="center"> 
               
-                <input class="w3-check verificar_compra" type="checkbox" id="verificar_compra" align="center"> 
+                <input class="w3-check verificar_compra"  type="checkbox" id="verificar_compra" align="center"> 
                   Aceitar compras...
                 </div>
           
               <script src="ficha_compras.js"></script>
 
-              <p><button class="w3-button w3-green w3-block" onclick="salvar()">SALVAR</button></p>
+              <p><button class="w3-button w3-green w3-block" onclick="salvar()" >SALVAR</button></p>
             <div class="mostrar1">nomes:</div>
             <div class="mostrar2">tipo:</div>
             <div class="mostrar3">quantidade:</div>
@@ -646,7 +693,7 @@
                     </tr><tr></tr>                 
                     <tr><th>NOME:</th>
                   
-                    <td colspan="">jose luiz vieira filh </td>
+                    <td colspan="">jose luiz vieira filho </td>
                     </tr><tr></tr>
                     <tr><th align="center">LIMITE</th>
                     <td colspan="">R$ 500 💵</td>
