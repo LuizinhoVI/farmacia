@@ -86,3 +86,24 @@ console.log("senha:"+ senha);
 
 
 }
+
+function ficha_editar(elemento) {
+    const salvar = document.querySelector('.ficha_editar_salvar');
+    const nome = document.querySelector('.ficha_cadastro_nome').value;
+    
+    
+    if (!elemento  == nome) {
+
+        elemento.style.color='red'
+        salvar.disabled= false ;
+        salvar.style.cursor='pointer';
+        
+    }else{
+        elemento.style.color=''
+        salvar.disabled= false ;
+        salvar.style.cursor='pointer';
+    }
+    
+    
+}
+console.log(elemento.value)
