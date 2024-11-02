@@ -2,3 +2,34 @@
     display: none ;
 }
 
+.escolha3{
+    text-align: right;
+}
+.escolha2{
+    text-align: center;
+}
+.escolha1{
+    text-align: left;
+}
+.menu_inicial {
+    display: flex;
+    justify-content: space-between; /* Distribui o espaço entre os itens */
+    width: 100%; /* Ajusta a largura do contêiner */
+}
+.menu_inicial>div {
+    width: 30%; /* Ajusta a largura de cada div */
+    /* padding: 20px; */
+    /* background-color: lightblue; */
+    text-align: center; /* Centraliza o texto dentro da div */
+    /* border: solid red 1px; */
+}
+.menu_inicial>div>div{
+    /* border: solid red 1px; */
+    /* text-align: center; */
+    width: 30%; /* Ajusta a largura de cada div */
+   
+}
+.menu_inicial>div>div{
+    width: 28%;
+
+}

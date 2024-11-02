@@ -27,7 +27,7 @@
   <body cz-shortcut-listen="true">
   
   <!-- Links (sit on top) -->
-  <div class="w3-top desligar">
+  <div class="w3-top desligar" style="display: none;">
     <div class="w3-row w3-large w3-light-grey">
       <div class="w3-col s3  escolha1 " id="escolha1" onclick="menu('menu1','escolha1')">
         <a href="#" class="w3-button w3-block">Conta</a>
@@ -44,6 +44,43 @@
     </div>
   </div>
   
+  
+<div class="w3-container w3-top desligar">
+
+  <div class="w3-bar  w3-large w3-light-grey menu_inicial" >
+    
+    <div class="w3-dropdown-hover s3  escolha1 "  id="escolha1">
+      <button class="w3-button">FICHA 👇</button>
+      <div class="w3-dropdown-content  w3-bar-block w3-card-4" align="center">
+        <a href="#" class="w3-bar-item w3-center w3-button escolha2" onclick="ficha_menu('ficha_pessoa1')">Criar </a>
+        <a href="#" class="w3-bar-item w3-center w3-button" onclick="ficha_menu('ficha_pessoa2')">Procurar </a>
+       
+      </div>
+    </div>
+    <div class="w3-dropdown-hover  s3 escolha2"  id="escolha2">
+      <button class="w3-button">HISTORICO 👇</button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#" class="w3-bar-item w3-center w3-button escolha1" onclick="menu('menu1','escolha1')">Ficha</a>
+        <a href="#" class="w3-bar-item w3-center w3-button">Clientes</a>
+        <a href="#" class="w3-bar-item w3-center w3-button">Remédios</a>
+        <a href="#" class="w3-bar-item w3-center w3-button">Pagamentos</a>
+      </div>
+    </div>
+    <div class="w3-dropdown-hover  s3 escolha3"  id="escolha3">
+      <button class="w3-button">PAGAMENTO 👇</button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#" class="w3-bar-item w3-center w3-button escolha3"onclick="menu('menu3','escolha3')">Cliente</a>
+     
+      </div>
+    </div>
+
+
+
+
+  </div>
+</div>
+
+
   <!-- inicio -->
   <div class="w3-content desligar" style="max-width:1100px;margin-top:10px;margin-bottom:80px">
    
@@ -52,45 +89,10 @@
   
     
     <!-- Grid -->
-    <div class="w3-row-padding" id="about">
-    <br>
-    <br>
-  
-      <div class="w3-third w3-margin-bottom">
-        <div class="w3-card-4" align="center">
-          <br>
-          <img src="img/pasta-medica.png" alt="John" style="width:50%">
-          <div class="w3-container" align="center">
-            <h3>NEW</h3>
-            <p><button class="w3-button w3-light-grey w3-block " onclick="ficha_menu('ficha_pessoa1')">CRIAR FICHA</button></p>
-          </div>
-        </div>
-      </div>
-  
-      <div class="w3-third w3-margin-bottom">
-        <div class="w3-card-4" align="center">
-          <br>
-          <img src="img/analise.png" alt="Mike" align="center" style="width:50%">
-          <div class="w3-container" align="center">
-            <h3>pesquisa</h3>
-            <p><button class="w3-button w3-light-grey w3-block" onclick="ficha_menu('ficha_pessoa2')">PROCURAR FICHA</button></p>
-          </div>
-        </div>
-      </div>
-  
-      <div class="w3-third w3-margin-bottom">
-        <div class="w3-card-4" align="center">
-          <br>
-          <img src="img/lixo.png" alt="Jane" style="width:50%">
-          <div class="w3-container" align="center">
-            <h3>Delete</h3>
-           <p><button class="w3-button w3-light-grey w3-block" onclick="ficha_menu('ficha_pessoa3')">EXCLUIR FICHA</button></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  
+    
     <!-- INICIO DO CADASTRO  da ficha-->
+     <br>
+     <br>
     <div class="w3-container ficha_pessoa1 ficha_pessoa " style="display: none;">
   <form action="" class="w3-container w3-card-4 w3-light-grey w3-text-green w3-margin">
     <h2 class="w3-center">CADASTRAR</h2>
@@ -153,19 +155,19 @@
     <div class="w3-row w3-section">
       <img src="img/localizacao.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt=""> 
         <div class="w3-rest">
-          <input class="w3-input w3-border ficha_cadastro_cep" maxlength="10" id="cep" required oninput="formatarCep(this),buscarCep()" name="" type="text" placeholder="CEP 49700-000" value="49700-000">
+          <input class="w3-input w3-border ficha_cadastro_cep cep" maxlength="10"  required oninput="formatarCep(this),buscarCep(this)" name="" type="text" placeholder="CEP 49700-000" value="49700-000">
         </div>
     </div>
     <div class="w3-row w3-section">
       <img src="img/vista-da-rua.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt=""> 
         <div class="w3-rest">
-          <input class="w3-input w3-border ficha_cadastro_cidade" id="cidade" value="Capela" required name="message" type="text" placeholder="Cidade">
+          <input class="w3-input w3-border ficha_cadastro_cidade cidade" id="" value="Capela" required name="message" type="text" placeholder="Cidade">
         </div>
     </div>
     <div class="w3-row w3-section">
       <img src="img/cidade.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt=""> 
         <div class="w3-rest">
-          <input class="w3-input w3-border ficha_cadastro_estado" id="estado" name="message" type="text"required value="SE" placeholder="Estado">
+          <input class="w3-input w3-border ficha_cadastro_estado estado" id="estado" name="message" type="text"required value="SE" placeholder="Estado">
         </div>
     </div>
   
@@ -201,7 +203,7 @@
   
   <!-- procurar ficha para compras -->
     <div class="w3-container ">
-      
+      <br>
       <form class="w3-container w3-card-4 ficha_pessoa ficha_pessoa2 w3-light-grey " style="display: none;">
       <h4 align="center">P R O C U R A R</h4>
       <input class="w3-input w3-border w3-round-xxlarge" oninput="this.value=this.value.toUpperCase(),ficha_procurar(this)" id="ficha_procurar_input" name="last" type="text"><p></p>
@@ -231,7 +233,7 @@
     <h3>jose luiz vieira filho </h3>
     <div class="w3-container" align="center">
      
-      <table border="1">
+      <table border="0">
         <thead>
 
 <tr align="center">
@@ -292,7 +294,7 @@
 <div class="w3-row-padding">
 <div class="w3-half">
 <label>Login </label>
-<input class="w3-input w3-border ficha_procurar_login" type="text"  oninput="login(this)"  value="79999722046" placeholder=" ">
+<input class="w3-input w3-border ficha_procurar_login" type="text"  oninput="login(this),ficha_editar(this)"  value="79999722046" placeholder=" ">
 </div>
 
 <div class="w3-half">
@@ -309,7 +311,7 @@
 <div class="w3-row-padding">
 <div class="w3-half">
 <label>Email </label>
-<input class="w3-input w3-border ficha_procurar_email" type="text"   value="brat.luiz23@hotmail.com" placeholder=" ">
+<input class="w3-input w3-border ficha_procurar_email" type="text" oninput="ficha_editar(this)"   value="brat.luiz23@hotmail.com" placeholder=" ">
 </div>
 
 <div class="w3-half">
@@ -331,7 +333,7 @@
 
 <div class="w3-half">
 <label> CEP </label>
-<input class="w3-input w3-border ficha_procurar_cep" type="text" oninput="ficha_editar(this)" value="49700-000" placeholder="Two">
+<input class="w3-input w3-border ficha_procurar_cep cep" maxlength="10" type="text" oninput="ficha_editar(this),formatarCep(this),buscarCep(this)" value="49700-000" placeholder="Two">
 </div>
 </div>
 
@@ -343,12 +345,12 @@
 <div class="w3-row-padding">
 <div class="w3-half">
 <label>Estado </label>
-<input class="w3-input w3-border ficha_procurar_estado" type="text" oninput="ficha_editar(this)"   value="SE" placeholder=" ">
+<input class="w3-input w3-border ficha_procurar_estado estado1" type="text" oninput="ficha_editar(this)"   value="SE" placeholder=" ">
 </div>
 
 <div class="w3-half">
 <label> Cidade </label>
-<input class="w3-input w3-border ficha_procurar_cidade" type="text" oninput="ficha_editar(this)" value="Capela" placeholder="Two">
+<input class="w3-input w3-border ficha_procurar_cidade cidade1" oninput="ficha_editar(this)" type="text" oninput="" value="Capela" placeholder="Two">
 </div>
 </div>
 

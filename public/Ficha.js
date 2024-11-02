@@ -57,10 +57,14 @@ function ficha_menu(numero) {
         // Atualiza o valor do input
         input.value = valor;
     }
-    async function buscarCep() {
-        const cep = document.getElementById('cep').value.replace('-', '');
-        const cidade = document.getElementById('cidade');
-        const estado = document.getElementById('estado');
+
+    async function buscarCep(input) {
+        // const cep = document.querySelector('.cep').value.replace('-', '');
+        const cep = input.value.replace('-', '');
+        const cidade = document.querySelector('.cidade');
+        const estado = document.querySelector('.estado');
+        const cidade1 = document.querySelector('.cidade1');
+        const estado1 = document.querySelector('.estado1');
         // resultadoDiv.innerHTML = ''; // Limpa o resultado anterior
 
         if (cep.length === 8) {
@@ -73,8 +77,11 @@ function ficha_menu(numero) {
 
                     cidade.value=data.city  
                     estado.value=data.state
-
-
+                    cidade1.value=data.city  
+                    estado1.value=data.state
+                    
+                    //console.log(data.city)
+                    
                 } else {
                    alert("não encontrou a cidade")
                 }
@@ -213,11 +220,7 @@ function ficha_menu(numero) {
             input.value = input.value.replace(/[^a-zA-Z0-9]/g, '');
             console.log(input.value)
 
-            if (input.value === '') {
-                input.style.color = "black"
-                 input.placeholder = "Login"
-                 
-            }
+   
 
             if(input.value === 'luiz'){
                 setTimeout(function(){
@@ -234,7 +237,8 @@ function ficha_menu(numero) {
 
                 setTimeout(function(){
                      input.placeholder = ""
-                    input.style.color = "green"}
+                    input.style.color = "green"
+                    input.placeholder = "Login"}
                 ,3000);
 
                
