@@ -87,19 +87,26 @@ console.log("senha:"+ senha);
 
 }
 
+
+
+
+
+
 function ficha_editar(elemento) {
     const salvar = document.querySelector('.ficha_editar_salvar');
     
-    console.log(elemento.value);
+   // console.log(elemento.value);
+   // console.log(elemento.value.length);
+
     if (elemento.value) {
-        
-        elemento.style.color='red'
+
+        elemento.style.color='green'
         salvar.disabled= false ;
         salvar.style.cursor='pointer';
         
-    }else{
+    } else {
         elemento.style.color='black'
-        salvar.disabled= false ;
+        salvar.disabled= true ;
         salvar.style.cursor='pointer';
     } 
 }

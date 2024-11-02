@@ -116,3 +116,6 @@ bottom: 20px;
 .ficha_editar_excluir:hover{
 box-shadow: 0px 0px 10px 0px red;
 }
+.login_erro::placeholder{
+color: red;
+}

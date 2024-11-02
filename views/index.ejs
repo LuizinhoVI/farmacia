@@ -98,7 +98,7 @@
     <div class="w3-row w3-section">
       <img src="img/nome.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt=""> 
         <div class="w3-rest">
-          <input class="w3-input w3-border ficha_cadastro_nome" name="first" type="text" required placeholder="Nome completo">
+          <input class="w3-input w3-border ficha_cadastro_nome" name="first" type="text" oninput="nome_completo(this)"   required placeholder="Nome completo">
         </div>
     </div>
     
@@ -112,14 +112,14 @@
     <div class="w3-row w3-section">
       <img src="img/email.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt="">
         <div class="w3-rest">
-          <input class="w3-input w3-border ficha_cadastro_email" name="email" type="email" placeholder="Email">
+          <input class="w3-input w3-border ficha_cadastro_email" oninput="ficha_editar(this)" name="email" type="email" placeholder="Email">
         </div>
     </div>
     
     <div class="w3-row w3-section">
       <img src="img/telefone.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt=""> 
         <div class="w3-rest">
-          <input class="w3-input w3-border ficha_cadastro_telefone" oninput="formatarTelefone()" ame="phone" maxlength="11" type="tel" placeholder="Telefone" required id="ficha_telefone">
+          <input class="w3-input w3-border ficha_cadastro_telefone ficha_telefone" oninput="formatarTelefone(this)" name="phone" maxlength="11" type="tel" placeholder="Telefone" required id="ficha_telefone">
         </div>
     </div>
     
@@ -175,7 +175,7 @@
       </div>
       <img src="img/movel.png" class="w3-col" style="width: 50px;position:relative; top:-10px;" alt=""> 
         <div class="w3-rest">
-          <input class="w3-input w3-border ficha_cadastro_login" name="message" type="text" placeholder="Login" required>
+          <input class="w3-input w3-border ficha_cadastro_login ficha_procurar_login" oninput="login(this)" name="message" type="text" placeholder="Login" required>
         </div>
     </div>
     <div class="w3-row w3-section">
@@ -239,12 +239,12 @@
 <div class="w3-row-padding">
   <div class="w3-half">
     <label>Nome completo </label>
-    <input class="w3-input w3-border ficha_procurar_nome" type="text" oninput="ficha_editar(this)" value="jose luiz vieira filho" placeholder="NOME COMPLETO">
+    <input class="w3-input w3-border ficha_procurar_nome" type="text" oninput="nome_completo(this),ficha_editar(this)" value="jose luiz vieira filho" placeholder="NOME COMPLETO">
   </div>
 
   <div class="w3-half">
     <label> Limite</label>
-    <input class="w3-input w3-border ficha_procurar_limite" oninput="ficha_editar(this)" type="text"  value="R$ 500 " placeholder="LIMITE">
+    <input class="w3-input w3-border ficha_procurar_limite" oninput="dinheiro_real(this),ficha_editar(this)" type="text"  value="R$ 500.00" placeholder="LIMITE">
   </div>
 </div>
 
@@ -280,7 +280,7 @@
 
 <div class="w3-half">
 <label> Data de nascimento</label>
-<input class="w3-input w3-border ficha_procurar_data" type="date" oninput="ficha_editar(this)" value="2024-05-03" placeholder="Two">
+<input class="w3-input w3-border ficha_procurar_data" disabled  type="date" oninput="ficha_editar(this)" value="2024-05-03" placeholder="Two">
 </div>
 </div>
 
@@ -292,12 +292,12 @@
 <div class="w3-row-padding">
 <div class="w3-half">
 <label>Login </label>
-<input class="w3-input w3-border ficha_procurar_login" type="text" oninput="ficha_editar(this)"  value="79999722046" placeholder=" ">
+<input class="w3-input w3-border ficha_procurar_login" type="text"  oninput="login(this)"  value="79999722046" placeholder=" ">
 </div>
 
 <div class="w3-half">
 <label> Telefone</label>
-<input class="w3-input w3-border ficha_procurar_telefone" type="text" oninput="ficha_editar(this)"  value="79 99722046" placeholder="Two">
+<input class="w3-input w3-border ficha_procurar_telefone ficha_telefone" type="tel" oninput="formatarTelefone(this),ficha_editar(this)"  value="(79)99972-2046" maxlength="11" placeholder="telefone">
 </div>
 </div>
 

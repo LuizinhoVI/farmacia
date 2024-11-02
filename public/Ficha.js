@@ -19,6 +19,12 @@ function ficha_procurar(elemento) {
 
 }
 
+function nome_completo(nome) {
+
+    nome.value = nome.value.replace(/[0-9]/g, ''); // Remove números
+    
+}
+
 function ficha_menu(numero) {
     // mostra a div escolhida 
     document.querySelectorAll('.ficha_pessoa').forEach(opcao => {
@@ -77,10 +83,10 @@ function ficha_menu(numero) {
         }
 
 
-       async function formatarTelefone() {
-            const inputTelefone = document.getElementById('ficha_telefone');
+       async function formatarTelefone(element) {
+            const inputTelefone =  element// document.querySelector('.ficha_telefone');
             let value = inputTelefone.value.replace(/\D/g, ''); // Remove caracteres não numéricos
-        
+        console.log(element.value);
             if (value.length > 6) {
                 value = value.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
             } else if (value.length > 2) {
@@ -158,6 +164,27 @@ function ficha_menu(numero) {
                 input.value= null;
             }
         }
+
+        function dinheiro_real(element) {
+
+           
+                let value = element.value.replace(/\D/g, ''); // Remove tudo que não é dígito
+                value = (value / 100).toFixed(2).replace('.', ','); // Converte para formato monetário
+                value = value.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.'); // Adiciona o separador de milhar
+                element.value = 'R$ ' + value; // Adiciona o símbolo de R$
+        }
+    
+            function calcular_subtrair() {
+                const inputValue = document.getElementById('moneyInput').value.replace(/[R$\s.]/g, '').replace(',', '.');
+                const numericValue = parseFloat(inputValue);
+    
+                // Exemplo de operação: adição de 50
+                const result = numericValue - 50;
+    
+                // Mostra o resultado formatado
+                document.getElementById('result').innerHTML = `Resultado: R$ ${result.toFixed(2).replace('.', ',')}`;
+            }
+        
     
         // botão ver mais da ficha  ==============================
       
@@ -181,6 +208,59 @@ function ficha_menu(numero) {
                 input.value = null;
             }
         }
+
+        function login(input) {
+            input.value = input.value.replace(/[^a-zA-Z0-9]/g, '');
+            console.log(input.value)
+
+            if (input.value === '') {
+                input.style.color = "black"
+                 input.placeholder = "Login"
+                 
+            }
+
+            if(input.value === 'luiz'){
+                setTimeout(function(){
+
+
+                    input.classList.toggle('login_erro')
+                    input.placeholder = "Login já existe"
+                    input.value = ""
+                    
+                }
+                    ,3000);
+              
+            } else {
+
+                setTimeout(function(){
+                     input.placeholder = ""
+                    input.style.color = "green"}
+                ,3000);
+
+               
+            }
+
+
+            // setTimeout( function () {
+            //     verificar_login()
+            // } ,3000)
+        }
+        
+        function verificar_login() {
+        
+        const login_atual = document.querySelector('.ficha_procurar_login')
+            alert('teste')
+        if(login_atual.value == 'luiz'){
+            login_atual.classList.toggle('login_erro')
+            login_atual.placeholder = "Login já existe"
+            login_atual.value = ""
+          
+        }else{
+            login_atual.style.color = "green"
+        }
+
+        }
+
 
 
 // **********************************************
