@@ -197,7 +197,7 @@ function ficha_menu(numero) {
       
       function abrir_ficha() {
         
-        const table = document.getElementById('tableBody');
+        const table = document.querySelector('.tableBody');
         const button = document.querySelector('.mostrar_mais_');
 
         table.classList.toggle('hidden');

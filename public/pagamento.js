@@ -242,44 +242,7 @@ function fixarbarra() {
         // div.style.width = "80%";
     }
 }
-// botão ver mais do pagamento ==============================
-function pagamento_ver_mais1() {
-    const mais = document.querySelectorAll('.remover');
-    mais.forEach((elemento) => {
-        elemento.classList.remove('remover'); // Remove a classe que oculta
-    });
-    const mostrar = document.querySelector('#pagamento_ver_mais1');
-    const remover =document.querySelector('#pagamento_remover1');
-  
-    remover.style.display="block"
-    mostrar.style.display="none"  
 
- 
-}
-
-function pagamento_recolher1() {
-    
-    const divs = document.querySelectorAll('.mostrar'); // Seleciona todas as divs com a classe 'minha-div'
-    
-    divs.forEach((div) => {
-        div.classList.add('mostrar'); // Adiciona a classe 'nova-classe' a cada div
-        div.style.setProperty('display', 'none', 'important');
-
-    });
-    console.log('t')
-    const mostrar = document.querySelector('#pagamento_ver_mais1');
-    const remover = document.querySelector('#pagamento_remover1');
-
-
-
-
-    remover.style.display="none"
-    mostrar.style.display="block"  
-
-    
-
-}
-// **********************************************
 
 let total = 100.50; // Valor inicial
 let resto = total; // Resto inicial
@@ -331,3 +294,16 @@ function limite(teste) {
 
 
 }
+
+
+
+function pagamento_ficha_mostrar() {
+        
+    const table = document.getElementById('tableBody1');
+    const button = document.querySelector('.mostrar_mais_1');
+
+    table.classList.toggle('hidden');
+
+    button.textContent = table.classList.contains('hidden') ? 'Ver mais...' : 'Ocultar...';
+    
+    }

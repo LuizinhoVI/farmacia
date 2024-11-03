@@ -202,7 +202,7 @@
   
   
   <!-- procurar ficha para compras -->
-    <div class="w3-container ">
+    <div class="w3-container   " id="">
       <br>
       <form class="w3-container w3-card-4 ficha_pessoa ficha_pessoa2 w3-light-grey " style="display: none;">
       <h4 align="center">P R O C U R A R</h4>
@@ -219,7 +219,7 @@
   
   <!-- fim mensgem de  ficha mão encontrada -->
   
-    <div class="ficha_procurar" id="ficha_procurar" style="display: block;">
+    <div class="ficha_procurar" id="ficha_procurar " style="display: none;">
   
   
    <!-- FICHA  -->
@@ -270,11 +270,11 @@
 </td>
 </tr>
                     
-            <tbody id="tableBody" class="hidden">
+            <tbody id="tableBody" class="hidden" >
                       
-<tr align="center">
+<tr align="center" class="">
   <td>  
-<div class="w3-row-padding">
+<div class="w3-row-padding " >
 <div class="w3-half">
   <label>CPF </label>
   <input class="w3-input w3-border ficha_procurar_cpf" type="text" disabled  value="789.456.990-67" placeholder=" ">
@@ -289,7 +289,7 @@
 </td>
 </tr>
                            
-<tr align="center">
+<tr align="center" class="">
   <td>  
 <div class="w3-row-padding">
 <div class="w3-half">
@@ -306,7 +306,7 @@
 </td>
 </tr>
                             
-<tr align="center">
+<tr align="center" class="">
   <td>  
 <div class="w3-row-padding">
 <div class="w3-half">
@@ -323,7 +323,7 @@
 </td>
 </tr>
         
-<tr align="center">
+<tr align="center" class="">
   <td>  
 <div class="w3-row-padding">
 <div class="w3-half">
@@ -340,8 +340,8 @@
 </td>
 </tr>
           
-<tr align="center">
-  <td>  
+<tr align="center" class="">
+  <td >  
 <div class="w3-row-padding">
 <div class="w3-half">
 <label>Estado </label>
@@ -365,7 +365,7 @@
 
         <div class=""  style="text-align: center;">
 
-          <button onclick="abrir_ficha()" class="mostrar_mais_"> Ver mais... </button>
+          <button onclick="abrir_ficha(this)" class="mostrar_mais_"> Ver mais... </button>
         </div>
 
         <div class=" ficha_botoes">
@@ -495,7 +495,7 @@
               <script src="ficha_compras.js"></script>
 
               <p><button class="w3-button w3-green w3-block" onclick="salvar()" >SALVAR</button></p>
-            <div class="mostrar1">nomes:</div>
+            <div class="">nomes:</div>
             <div class="mostrar2">tipo:</div>
             <div class="mostrar3">quantidade:</div>
             <div class="mostrar4">valor:</div>
@@ -512,11 +512,7 @@
         </div>
           <!-- adiconar produto  -->
        
-  
-  
-  
-  
-  
+
   
     </div>
   
@@ -714,17 +710,23 @@
                     <td colspan="">BOM PAGADOR 👍</td> 
                     
               
-                   
-
-                     
+                  
                     
-                    </tr><tr></tr>
-                    <tr><th class="mostrar remover">CPF : </th>
-                    <td colspan="" class="mostrar remover  ">78945612387</td>
-                    </tr><tr></tr>
+                    
+                    
+                  </tr>
+                  
+                  <tr>
+                    
+                  </tr>
+
+                  <tbody class=" hidden" id="tableBody1">
+                      <tr><th class="mostrar remover">CPF : </th>
+                        <td colspan="" class="mostrar remover  ">78945612387</td>
+                      </tr><tr></tr>
                     <tr><th class="mostrar remover">DATA DE NASCIMENTO:</th>
                     <td colspan="" class="mostrar remover" align="center">23/03/1995 </td>
-                    </tr><tr></tr>
+                  </tr><tr></tr>
                     <tr><th class="mostrar remover">LOGIN :</th>
                     <td colspan="" class="mostrar remover">79999722046 </td>
                     </tr><tr></tr>
@@ -742,27 +744,29 @@
                     <tr><th class="mostrar remover">RUA:</th>
                     <td colspan="" class="mostrar remover">RUA MARECHAL  </td>
                     </tr><tr></tr>
-  
+                    
                     <tr><th colspan="" class="mostrar remover">REFERÊNCIA:</th>
-                    <td class="mostrar remover">centro</td>
+                      <td class="mostrar remover">centro</td>
                     </tr><tr></tr>
                     <tr><th class="mostrar remover">CEP:</th>
-                    <td class="mostrar remover" colspan="">49700-000</td>
+                      <td class="mostrar remover" colspan="">49700-000</td>
                     </tr><tr></tr>
                     <tr><th class="mostrar remover" colspan="">ESTADO:</th>
-                    <td class="mostrar remover">SE</td>
-                   </tr><tr></tr>
-                    <tr><th colspan="" class="mostrar remover">CIDADE:</th>
-                    <td class="mostrar remover">capela</td>
+                      <td class="mostrar remover">SE</td>
                     </tr><tr></tr>
-                   
-                  
+                    <tr><th colspan="" class="mostrar remover">CIDADE:</th>
+                      <td class="mostrar remover">capela</td>
+                    </tr><tr></tr>
+
+                  </tbody>
+                    
+                    
                   </tbody></table>
   
                   <br>
-                  <div id="pagamento_ver_mais1" style="text-align: center;"><button onclick="pagamento_ver_mais1()">Ver mais...</button></div>
+                  <div  style="text-align: center;"><button onclick="pagamento_ficha_mostrar()" class="mostrar_mais_1"> Ver mais...</button></div>
   
-                  <div id="pagamento_remover1" colspan="3" style="text-align: center; display: none !important;"><button onclick="pagamento_recolher1()">Recolher...</button></div>
+              
                   <br>
               </div>
               
