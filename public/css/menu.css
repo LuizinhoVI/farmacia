@@ -51,3 +51,16 @@ a {
     color: green!important;
    
 }
+
+.local_de_pesquisa{
+    width:100vw;
+    height: 100vh;
+    background-color: black;
+}
+#iframe{
+    position: relative;
+    width:95vw;
+    height: 80vh;
+    top: 30px;
+    left: 20px;
+}

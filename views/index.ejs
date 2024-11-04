@@ -75,13 +75,13 @@
         <a href="#" class="w3-bar-item w3-button w3-hover-green">Receitas</a>
       </div>
     </div>
-    <button class="w3-bar-item w3-button w3-green w3-mobile w3-right" onclick="menu_pesquisa()">Pesquisar</button>
-    <input type="text"" class="w3-bar-item w3-input w3-right w3-white w3-mobile" placeholder="pesquisar..">
+    <button type="submit" class="w3-bar-item w3-button w3-green w3-mobile w3-right" onclick="menu_pesquisa()">Pesquisar</button>
+    <input required type="text" onkeydown="realizarPesquisa(event)" id="resultadoframe" class="w3-bar-item w3-input w3-right w3-white w3-mobile" placeholder="Pesquisar fotos..">
   </div>
 
-
-  <iframe id="resultadoframe" src="" frameborder="0">teste</iframe>
-
+  <div class="w3-conteiner local_de_pesquisa" style="display: none;" >    
+    <iframe id="iframe" src="https://www.bing.com/images/search?q=naruto"  frameborder="0"></iframe>
+    
   <script>
     function myFunction() {
       var x = document.getElementById("demo");
@@ -93,6 +93,7 @@
     }
     </script>
 
+  </div>
 </div>
 
 
@@ -544,11 +545,7 @@
     
     <!-- Grid -->
     <div class="w3-row-padding" id="about">
-      <div class="w3-center w3-padding-64">
-        <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">
-        <b>  C O N T A </b>
-        </span>
-      </div>
+   <br><br>
   
       <div class="w3-third w3-margin-bottom">
         <div class="w3-card-4" align="center">
