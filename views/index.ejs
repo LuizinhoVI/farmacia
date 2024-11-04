@@ -26,49 +26,32 @@
   </head>
   <body cz-shortcut-listen="true">
   
-  <!-- Links (sit on top) -->
-  <div class="w3-top desligar" style="display: none;">
-    <div class="w3-row w3-large w3-light-grey">
-      <div class="w3-col s3  escolha1 " id="escolha1" onclick="menu('menu1','escolha1')">
-        <a href="#" class="w3-button w3-block">Conta</a>
-      </div>
-      <div class="w3-col s3 escolha2 w3-green " id="escolha2" onclick="menu('menu2','escolha2')">
-        <a href="#plans" class="w3-button w3-block">Ficha</a>
-      </div>
-      <div class="w3-col s3 escolha3  " id="escolha3" onclick="menu('menu3','escolha3')">
-        <a href="#about" class="w3-button  w3-block">Pagamento</a>
-      </div>
-      <div class="w3-col s3">
-        <a href="#contact" class="w3-button w3-block">Configuração</a>
-      </div>
-    </div>
-  </div>
-  
-  
-<div class="w3-container w3-top desligar">
 
-  <div class="w3-bar  w3-large w3-light-grey menu_inicial" >
+  
+<div class="w3- w3-top desligar">
+
+  <div class="w3-bar  w3-large w3-light-grey menu_inicial " style="display: none;" >
     
-    <div class="w3-dropdown-hover s3  escolha1 "  id="escolha1">
-      <button class="w3-button">FICHA 👇</button>
-      <div class="w3-dropdown-content  w3-bar-block w3-card-4" align="center">
-        <a href="#" class="w3-bar-item w3-center w3-button escolha2" onclick="ficha_menu('ficha_pessoa1')">Criar </a>
-        <a href="#" class="w3-bar-item w3-center w3-button" onclick="ficha_menu('ficha_pessoa2')">Procurar </a>
+    <div class="w3-dropdown-hover s3 w3-hover-green   escolha2 escolha4  "  id="escolha1">
+      <button class="w3-button w3-hover-green verde_button">FICHA 👇</button>
+      <div class="w3-dropdown-content   w3-bar-block w3-card-4" align="center">
+        <a href="#" class="w3-bar-item w3-hover-green  w3-center w3-button " onclick="menu('menu2','escolha2')">Criar </a>
+        <a href="#" class="w3-bar-item w3-center w3-hover-green w3-button" onclick="menu('menu4','escolha2')">Procurar </a>
        
       </div>
     </div>
-    <div class="w3-dropdown-hover  s3 escolha2"  id="escolha2">
-      <button class="w3-button">HISTORICO 👇</button>
+    <div class="w3-dropdown-hover w3-green escolha1  s3 "  id="escolha2">
+      <button class="w3-button w3-hover-green verde_button">HISTORICO 👇</button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#" class="w3-bar-item w3-center w3-button escolha1" onclick="menu('menu1','escolha1')">Ficha</a>
+        <a href="#" class="w3-bar-item w3-center w3-hover-green w3-button verde_menu " onclick="menu('menu1','escolha1')">Ficha</a>
         <a href="#" class="w3-bar-item w3-center w3-button">Clientes</a>
         <a href="#" class="w3-bar-item w3-center w3-button">Remédios</a>
         <a href="#" class="w3-bar-item w3-center w3-button">Pagamentos</a>
       </div>
     </div>
-    <div class="w3-dropdown-hover  s3 escolha3"  id="escolha3">
-      <button class="w3-button">PAGAMENTO 👇</button>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+    <div class="w3-dropdown-hover s3 escolha3"  id="escolha3">
+      <button class="w3-button  w3-hover-green verde_button">PAGAMENTO 👇</button>
+      <div class="w3-dropdown-content  w3-bar-block w3-card-4">
         <a href="#" class="w3-bar-item w3-center w3-button escolha3"onclick="menu('menu3','escolha3')">Cliente</a>
      
       </div>
@@ -78,6 +61,38 @@
 
 
   </div>
+
+  <div class="w3-bar w3-light-grey w3-border">
+    <a href="#" class="w3-bar-item w3-hover-green w3-button w3-mobile">PAGAMENTO DA FICHA</a>
+    <a href="#" class="w3-bar-item w3-button  w3-hover-green w3-mobile">FICHAS</a>
+    <div class="w3-dropdown-hover w3-green-hover w3-mobile">
+      <button class="w3-button w3-green-hover" onclick="myFunction()">
+        HISTÓRICO <i class="fa fa-caret-down"></i>
+      </button>
+      <div id="demo" class="w3-dropdown-content w3-green-hover w3-bar-block w3-card">
+        <a href="#" class="w3-bar-item w3-button w3-hover-green">Remedios</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-green">Clientes</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-green">Receitas</a>
+      </div>
+    </div>
+    <button class="w3-bar-item w3-button w3-green w3-mobile w3-right" onclick="menu_pesquisa()">Pesquisar</button>
+    <input type="text"" class="w3-bar-item w3-input w3-right w3-white w3-mobile" placeholder="pesquisar..">
+  </div>
+
+
+  <iframe id="resultadoframe" src="" frameborder="0">teste</iframe>
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("demo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else { 
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+    </script>
+
 </div>
 
 
@@ -85,7 +100,7 @@
   <div class="w3-content desligar" style="max-width:1100px;margin-top:10px;margin-bottom:80px">
    
    <!-- ficha  -->
-    <div class="w3-container esconder" id="menu2" style="display: block;">
+    <div class="w3-container esconder" id="menu2" style="display: none;">
   
     
     <!-- Grid -->
@@ -93,7 +108,7 @@
     <!-- INICIO DO CADASTRO  da ficha-->
      <br>
      <br>
-    <div class="w3-container ficha_pessoa1 ficha_pessoa " style="display: none;">
+    <div class="w3-container ficha_pessoa1  ">
   <form action="" class="w3-container w3-card-4 w3-light-grey w3-text-green w3-margin">
     <h2 class="w3-center">CADASTRAR</h2>
      
@@ -202,9 +217,9 @@
   
   
   <!-- procurar ficha para compras -->
-    <div class="w3-container   " id="">
+    <div class="w3-container  ">
       <br>
-      <form class="w3-container w3-card-4 ficha_pessoa ficha_pessoa2 w3-light-grey " style="display: none;">
+      <form class="w3-container w3-card-4  ficha_pessoa2 w3-light-grey esconder" id="menu4" style="display: none;">
       <h4 align="center">P R O C U R A R</h4>
       <input class="w3-input w3-border w3-round-xxlarge" oninput="this.value=this.value.toUpperCase(),ficha_procurar(this)" id="ficha_procurar_input" name="last" type="text"><p></p>
       
@@ -222,7 +237,7 @@
     <div class="ficha_procurar" id="ficha_procurar " style="display: none;">
   
   
-   <!-- FICHA  -->
+   <!--inicio FICHA  -->
    <div class=" w3-margin-bottom " align="center">
     <!-- Adicionar produto -->
   <div class="w3-card-4" align="center" style="width: 100%; left: 50%; position: relative;transform: translateX(-50%);">
@@ -383,11 +398,12 @@
   </div>
   <!-- adicionar produto -->
   </div>
-  <!-- FICHA -->
+  <!--fim  FICHA -->
   
-      <hr>
+            <hr>
   
-     <!-- Adicionar produto -->
+
+     <!-- inicio produto -->
           <div class=" w3-margin-bottom " align="center">
             <div class="w3-card-4" align="center" style="width: 100%; left: 50%; position: relative;transform: translateX(-50%);">
          
@@ -510,20 +526,20 @@
           </div>
           <!-- adicionar produto -->
         </div>
-          <!-- adiconar produto  -->
+          <!-- final produto  -->
        
 
   
     </div>
   
     </div>
-  <!-- FINAL procurar ficha para compras -->
+             <!-- FINAL procurar ficha para compras -->
   
-  </div>
-  <!-- final da ficha -->
+       <!-- final da ficha -->
+</div>
   
    <!-- conta  -->
-   <div class="w3-container esconder" id="menu1">
+   <div class="w3-container esconder" id="menu1" style="display: block;">
   
     
     <!-- Grid -->
@@ -844,6 +860,7 @@
   
                       <script src="pagamento.js"></script>
       <script src="Ficha.js"></script>
+      <script src="pesquisa.js"></script>
       <script src="ficha_cadastro_pessoas.js"></script>
   
   

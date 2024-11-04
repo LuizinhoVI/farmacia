@@ -16,9 +16,9 @@ function menu(numero,escolha) {
     
     document.getElementById(numero).style.display = 'block';
     
-    //const nome = document.querySelector("."+escolha);
+    const nome = document.querySelector("."+escolha);
     
-    //nome.classList.add("w3-green");
+    nome.classList.add("w3-green");
     
     }
     
