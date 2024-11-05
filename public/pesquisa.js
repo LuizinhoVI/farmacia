@@ -22,6 +22,8 @@
 
         }
       
+
+        
             function realizarPesquisa(event) {
                 if (event.key === 'Enter') {
                     
@@ -43,4 +45,6 @@
                 }
             }
         
-        
+        function sair_da_pesquisa() {
+             document.querySelector('.local_de_pesquisa').style.display='none';
+        }

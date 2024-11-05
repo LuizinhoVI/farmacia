@@ -34,52 +34,51 @@
     
     <div class="w3-dropdown-hover s3 w3-hover-green   escolha2 escolha4  "  id="escolha1">
       <button class="w3-button w3-hover-green verde_button">FICHA 👇</button>
+      
       <div class="w3-dropdown-content   w3-bar-block w3-card-4" align="center">
+        
         <a href="#" class="w3-bar-item w3-hover-green  w3-center w3-button " onclick="menu('menu2','escolha2')">Criar </a>
-        <a href="#" class="w3-bar-item w3-center w3-hover-green w3-button" onclick="menu('menu4','escolha2')">Procurar </a>
+
+        
        
       </div>
+
     </div>
-    <div class="w3-dropdown-hover w3-green escolha1  s3 "  id="escolha2">
-      <button class="w3-button w3-hover-green verde_button">HISTORICO 👇</button>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#" class="w3-bar-item w3-center w3-hover-green w3-button verde_menu " onclick="menu('menu1','escolha1')">Ficha</a>
-        <a href="#" class="w3-bar-item w3-center w3-button">Clientes</a>
-        <a href="#" class="w3-bar-item w3-center w3-button">Remédios</a>
-        <a href="#" class="w3-bar-item w3-center w3-button">Pagamentos</a>
-      </div>
-    </div>
-    <div class="w3-dropdown-hover s3 escolha3"  id="escolha3">
-      <button class="w3-button  w3-hover-green verde_button">PAGAMENTO 👇</button>
-      <div class="w3-dropdown-content  w3-bar-block w3-card-4">
-        <a href="#" class="w3-bar-item w3-center w3-button escolha3"onclick="menu('menu3','escolha3')">Cliente</a>
-     
-      </div>
-    </div>
+ 
+
+  
 
 
 
 
   </div>
 
-  <div class="w3-bar w3-light-grey w3-border">
-    <a href="#" class="w3-bar-item w3-hover-green w3-button w3-mobile">PAGAMENTO DA FICHA</a>
-    <a href="#" class="w3-bar-item w3-button  w3-hover-green w3-mobile">FICHAS</a>
+  <div class="w3-bar w3-light-grey w3-border ">
+    <a href="#" class="w3-bar-item w3-hover-green s3 w3-button   w3-mobile" onclick="menu('menu2','escolha2'), sair_da_pesquisa()">CRIAR FICHA</a>
+    
+    <a href="#" class="w3-bar-item w3-hover-green s3 w3-button w3-mobile" onclick=" menu('menu3','escolha3'),sair_da_pesquisa()"  id="escolha3">PAGAMENTO DA FICHA</a>
+
+    <a href="#" class="w3-bar-item w3-button s3   w3-hover-green w3-mobile" onclick=" menu('menu4','escolha4'),sair_da_pesquisa()"> PROCURAR FICHAS</a>
+    
     <div class="w3-dropdown-hover w3-green-hover w3-mobile">
-      <button class="w3-button w3-green-hover" onclick="myFunction()">
+      <button class="w3-button w3-green-hover s3" onclick="menu('menu1','escolha1'),myFunction(), sair_da_pesquisa()">
         HISTÓRICO <i class="fa fa-caret-down"></i>
       </button>
+      
       <div id="demo" class="w3-dropdown-content w3-green-hover w3-bar-block w3-card">
-        <a href="#" class="w3-bar-item w3-button w3-hover-green">Remedios</a>
-        <a href="#" class="w3-bar-item w3-button w3-hover-green">Clientes</a>
-        <a href="#" class="w3-bar-item w3-button w3-hover-green">Receitas</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-green" onclick=" sair_da_pesquisa()">Remedios</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-green" onclick=" sair_da_pesquisa()">Clientes</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-green" onclick=" sair_da_pesquisa()">Receitas</a>
       </div>
     </div>
     <button type="submit" class="w3-bar-item w3-button w3-green w3-mobile w3-right" onclick="menu_pesquisa()">Pesquisar</button>
     <input required type="text" onkeydown="realizarPesquisa(event)" id="resultadoframe" class="w3-bar-item w3-input w3-right w3-white w3-mobile" placeholder="Pesquisar fotos..">
   </div>
 
-  <div class="w3-conteiner local_de_pesquisa" style="display: none;" >    
+  <!-- pesquisas em imagens  -->
+  <div class="w3-conteiner local_de_pesquisa" style="display: none;" onclick="sair_da_pesquisa()" >    
+    <button class="close-button" onclick="fechar()">✖</button>
+
     <iframe id="iframe" src="https://www.bing.com/images/search?q=naruto"  frameborder="0"></iframe>
     
   <script>
@@ -94,6 +93,7 @@
     </script>
 
   </div>
+  <!-- final de pesquisas de imagens -->
 </div>
 
 
@@ -220,14 +220,14 @@
   <!-- procurar ficha para compras -->
     <div class="w3-container  ">
       <br>
-      <form class="w3-container w3-card-4  ficha_pessoa2 w3-light-grey esconder" id="menu4" style="display: none;">
+      <form class="w3-container w3-card-4  ficha_pessoa2 w3-light-grey esconder" id="menu4" style="display: ;">
       <h4 align="center">P R O C U R A R</h4>
       <input class="w3-input w3-border w3-round-xxlarge" oninput="this.value=this.value.toUpperCase(),ficha_procurar(this)" id="ficha_procurar_input" name="last" type="text"><p></p>
       
     </form>
   
   <!-- mensgem de  ficha mão encontrada -->
-  <div class="w3-container" id="ficha_nao_encontrada" style="display: none;">
+  <div class="w3-container" id="ficha_nao_encontrada" style="display: block;">
     <br>
      <h1 align="center">Ficha não encontrada...</h1>
     <br>
@@ -540,7 +540,7 @@
 </div>
   
    <!-- conta  -->
-   <div class="w3-container esconder" id="menu1" style="display: block;">
+   <div class="w3-container esconder" id="menu1" style="display: none;">
   
     
     <!-- Grid -->

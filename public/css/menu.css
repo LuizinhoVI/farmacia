@@ -2,15 +2,7 @@
     display: none ;
 }
 
-.escolha3{
-    text-align: right;
-}
-.escolha2{
-    text-align: center;
-}
-.escolha1{
-    text-align: left;
-}
+
 .menu_inicial {
     display: flex;
     justify-content: space-between; /* Distribui o espaço entre os itens */
@@ -40,27 +32,46 @@ a {
     -ms-user-select: none; /* Para IE e Edge */
 }
 
-.s3{
- width: 100%;
-    color: black;
-}
 
 
 
-.s3:hover{
-    color: green!important;
-   
-}
+
 
 .local_de_pesquisa{
     width:100vw;
     height: 100vh;
     background-color: black;
+
 }
 #iframe{
     position: relative;
     width:95vw;
-    height: 80vh;
-    top: 30px;
-    left: 20px;
+    height: 85vh;
+    top: 40px;
+    left: 25px;
+    border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -ms-border-radius: 10px ;
+    -o-border-radius: 10px ;
+}
+.close-button {
+    
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: red;
+    position: absolute;
+    top: 40px;
+    right: 50% ;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.close-button:hover {
+    color: green; /* Muda a cor ao passar o mouse */
 }
