@@ -1,0 +1,37 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.filters {
+    display: flex; /* Usando flexbox para alinhar os filtros */
+    flex-wrap: wrap; /* Para garantir que não quebre em telas pequenas */
+    gap: 10px; /* Espaçamento entre os filtros */
+    margin-bottom: 20px; /* Espaço entre os filtros e a tabela */
+}
+
+select {
+    padding: 5px;
+   
+    box-sizing: border-box;
+}

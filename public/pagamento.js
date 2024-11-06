@@ -209,39 +209,6 @@ function salvar() {
     }
 }
 
-window.onscroll = function() {
-    fixarbarra();
-};
-
-var div = document.getElementById("procurar_ficha");
-var ficha = document.getElementById("ficha");
-
-var sticky = div.offsetTop;
-
-function fixarbarra() {
-    if (window.pageYOffset > sticky) {
-        div.style.position = "fixed";
-        div.style.top = "50px";
-        div.style.width = "70%";
-        div.style.left = "50%";
-        div.style.transform = "translateX(-50%)";
-        div.style.zIndex = "3";
-        ficha.style.position = "relative";
-        ficha.style.top = "200px";
-        
-       
-
-    } else {
-        div.style.position = "relative";
-        div.style.width = "";
-        div.style.top = "";
-        ficha.style.position = "";
-        ficha.style.top = "";
-        
-
-        // div.style.width = "80%";
-    }
-}
 
 
 let total = 100.50; // Valor inicial
@@ -281,8 +248,8 @@ function pagamento() {
 }
 
 window.onload = function() {
-    document.getElementById('resultado').innerText = `Resto: ${formatarMoeda(resto)}`;
-    document.querySelector('#pagamento_falta_pagar').innerText = `Resto: ${formatarMoeda(resto)}`;
+    document.getElementById('resultado').innerText = `Resta: ${formatarMoeda(resto)}`;
+    document.querySelector('#pagamento_falta_pagar').innerText = `Resta: ${formatarMoeda(resto)}`;
 };
 
 
@@ -307,3 +274,24 @@ function pagamento_ficha_mostrar() {
     button.textContent = table.classList.contains('hidden') ? 'Ver mais...' : 'Ocultar...';
     
     }
+
+    
+function pagamento_procurar_ficha() {
+ 
+    const div = document.querySelector('#pagamento_procurar_ficha2')
+    const ficha_procurar1 = document.querySelector('.pagamento_procurar_ficha1')
+    const ficha_nao_encontrada = document.querySelector('#ficha_nao_encontrada1')
+    const maiusculo = div.value.toUpperCase();
+   // console.log(div.value);
+    if (div.value == 'LUIZ' || div.value == 'luiz') {
+        ficha_procurar1.style.display='block'
+        ficha_nao_encontrada.style.display='none'
+    }else{
+        ficha_nao_encontrada.style.display='block'
+        ficha_procurar1.style.display='none'
+        
+
+    }
+
+
+}

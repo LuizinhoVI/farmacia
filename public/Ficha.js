@@ -1,17 +1,17 @@
 
-function ficha_procurar(elemento) {
+function ficha_procurar() {
     
     const div = document.querySelector('#ficha_procurar_input')
-    const ficha_procurar = document.querySelector('#ficha_procurar')
+    const ficha_procurar1 = document.querySelector('.ficha_procurar')
     const ficha_nao_encontrada = document.querySelector('#ficha_nao_encontrada')
     const maiusculo = div.value.toUpperCase();
-// console.log(div.value);
     if (div.value == 'LUIZ' || div.value == 'luiz') {
-        ficha_procurar.style.display='block'
+        //console.log(div.value);
+        ficha_procurar1.style.display='block'
         ficha_nao_encontrada.style.display='none'
     }else{
         ficha_nao_encontrada.style.display='block'
-        ficha_procurar.style.display='none'
+        ficha_procurar1.style.display='none'
         
 
     }

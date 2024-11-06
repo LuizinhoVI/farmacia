@@ -10,3 +10,10 @@
 }
 
 
+.pagamento_ficha_input{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    /* text-transform: uppercase; */
+}
+

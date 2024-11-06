@@ -47,4 +47,5 @@
         
         function sair_da_pesquisa() {
              document.querySelector('.local_de_pesquisa').style.display='none';
+             document.querySelector('.pagamento_ficha_input').value=null;
         }
