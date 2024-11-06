@@ -293,9 +293,10 @@
           <option value="4">4</option>
       </select>
 
-      <select id="filterNome1" onchange="">
-                  <input type="text" id="filterNome" onchange="filterTable()">
-      </select>
+     
+        
+                  <input type="text" id="filterNome" placeholder="NOME" oninput="filterTable()">
+   
 
       <select id="filterStatus" onchange="filterTable()">
           <option value="">Filtrar por Status</option>
@@ -304,19 +305,18 @@
           <option value="NIMESULIDA">NIMESULIDA</option>
       </select>
 
-      <select >
+
         <input type="text" id="filterValor" oninput="filterTable()" placeholder="VALOR R$ 20,00">
-      </select>
+     
 
-      <select id="filterData" onchange="filterTable()">
-          <option value="">Filtrar por Data</option>
-          <option value="19/06/24">19/06/24</option>
-      </select>
+     
 
-      <select id="filterHora" onchange="filterTable()">
-          <option value="">Filtrar por Hora</option>
-          <option value="08:50:30">08:50:30</option>
-      </select>
+        <input type="text" id="filterData" name="data" maxlength="8" oninput="filterTable()" placeholder="DD/MM/AA">
+      
+
+        
+      <input type="time" align="center" id="filterHora" oninput="filterTable()" placeholder="00:00" >
+       
 
       <select id="filterTipo" onchange="filterTable()">
           <option value="">Filtrar por Tipo</option>
@@ -344,36 +344,36 @@
               <td>1</td>
               <td>Luiz Vieira Filho</td>
               <td>PAGAMENTO</td>
-              <td>R$20,00</td>
+              <td>R$20,20</td>
               <td>12/06/24</td>
-              <td>08:50:30</td>
+              <td>10:50:30</td>
               <td>PIX 📱</td>
           </tr>
           <tr>
               <td>2</td>
               <td> Vieira Filho</td>
               <td>DESODORANTE</td>
-              <td>R$50,00</td>
+              <td>R$5,10</td>
               <td>11/06/24</td>
-              <td>08:50:30</td>
+              <td>02:50:30</td>
               <td>FICHA 📝</td>
           </tr>
           <tr>
               <td>3</td>
               <td> Filho</td>
               <td>NIMESULIDA</td>
-              <td>R$40,00</td>
+              <td>R$15,30</td>
               <td>19/06/24</td>
-              <td>08:50:30</td>
+              <td>23:50:30</td>
               <td>FICHA 📝</td>
           </tr>
           <tr>
               <td>4</td>
               <td>José Luiz Vieira Filho</td>
               <td>PAGAMENTO</td>
-              <td>R$40,00</td>
-              <td>19/04/24</td>
-              <td>08:50:30</td>
+              <td>R$150,15</td>
+              <td>10/04/24</td>
+              <td>10:50:30</td>
               <td>DINHEIRO 💲</td>
           </tr>
       </tbody>

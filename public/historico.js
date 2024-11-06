@@ -3,7 +3,7 @@ function filterTable() {
     const inputNome = document.getElementById('filterNome').value;
     const inputStatus = document.getElementById('filterStatus').value.toLowerCase();
     const inputValor = document.getElementById('filterValor').value;
-    const inputData = document.getElementById('filterData').value.toLowerCase();
+    const inputData = document.getElementById('filterData').value;
     const inputHora = document.getElementById('filterHora').value.toLowerCase();
     const inputTipo = document.getElementById('filterTipo').value.toLowerCase();
 
@@ -29,3 +29,6 @@ function filterTable() {
         }
     });
 }
+
+
+
