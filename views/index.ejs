@@ -285,7 +285,7 @@
 
            <!-- Container para os filtros -->
     <div class="filters w3-container" align="center">
-      <select id="filterId" onchange="filterTable()" style="display: none;">
+      <select id="filterId" onchange="filterTable()" class="w3-mobile" style="display: none;">
           <option value="">Filtrar por ID</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -295,10 +295,10 @@
 
      
         
-                  <input type="text" id="filterNome" placeholder="NOME" oninput="filterTable()">
+                  <input type="text" id="filterNome" class="w3-mobile" placeholder="NOME" oninput="filterTable()">
    
 
-      <select id="filterStatus" onchange="filterTable()">
+      <select id="filterStatus"  class="w3-mobile" onchange="filterTable()">
           <option value="">Filtrar por Status</option>
           <option value="PAGAMENTO">PAGAMENTO</option>
           <option value="REMEDIO">REMÉDIO</option>
@@ -306,24 +306,24 @@
       </select>
 
 
-        <input type="text" id="filterValor" oninput="filterTable()" placeholder="VALOR R$ 20,00">
+        <input type="text" id="filterValor"  class="w3-mobile" oninput="formatarValor(this),filterTable()" placeholder="VALOR R$ 20,00">
      
 
      
 
-        <input type="text" id="filterData" name="data" maxlength="8" oninput="filterTable()" placeholder="DD/MM/AA">
+        <input type="text" id="filterData"  class="w3-mobile" name="data" maxlength="8" oninput="formatarData(this),filterTable()" placeholder="DD/MM/AA">
       
 
         
-      <input type="time" align="center" id="filterHora" oninput="filterTable()" placeholder="00:00" >
+      <input type="time" align="center"  class="w3-mobile" id="filterHora" oninput="formatarData(this),filterTable()" placeholder="10:00" value="">
        
 
-      <select id="filterTipo" onchange="filterTable()">
-          <option value="">Filtrar por Tipo</option>
-          <option value="PIX 📱">PIX 📱</option>
-          <option value="FICHA 📝">FICHA 📝</option>
-          <option value="DINHEIRO 💲">DINHEIRO 💲</option>
-          <option value="CARTAO 💲">CARTÃO 💳</option>
+      <select id="filterTipo" align='center' class="w3-mobile" onchange="filterTable()">
+          <option value=""></option>
+          <option value="PIX ">PIX 📱</option>
+          <option value="FICHA ">FICHA 📝</option>
+          <option value="DINHEIRO ">DINHEIRO 💲</option>
+          <option value="CARTÃO ">CARTÃO 💳</option>
       </select>
   </div>
 <hr>
@@ -375,6 +375,24 @@
               <td>10/04/24</td>
               <td>10:50:30</td>
               <td>DINHEIRO 💲</td>
+          </tr>
+          <tr>
+              <td>5</td>
+              <td>José Luiz Vieira Filho</td>
+              <td>PAGAMENTO</td>
+              <td>R$110,15</td>
+              <td>10/04/24</td>
+              <td>10:50:30</td>
+              <td>DINHEIRO 💲</td>
+          </tr>
+          <tr>
+              <td>6</td>
+              <td>José Luiz Vieira Filho</td>
+              <td>PAGAMENTO</td>
+              <td>R$150,15</td>
+              <td>10/04/24</td>
+              <td>11:50:30</td>
+              <td>CARTÃO 💳</td>
           </tr>
       </tbody>
   </table>
