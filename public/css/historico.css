@@ -1,13 +1,17 @@
-table {
+#tabela {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
+
+
+
+
 th, td {
-    padding: 12px;
-    text-align: left;
-    border: 1px solid #ddd;
+    padding: 9px;
+    text-align: center;
+    border: 1px solid #373131;
 }
 
 th {
@@ -15,19 +19,21 @@ th {
     color: white;
 }
 
-td {
+tr {
     background-color: #f9f9f9;
 }
-
-tr:nth-child(even) {
-    background-color: #f2f2f2;
+tr:hover{
+    background-color: #4CAF50;
+    cursor: pointer;
+    color: white;
 }
+
 
 .filters {
     display: flex; /* Usando flexbox para alinhar os filtros */
     flex-wrap: wrap; /* Para garantir que não quebre em telas pequenas */
     gap: 10px; /* Espaçamento entre os filtros */
-    margin-bottom: 20px; /* Espaço entre os filtros e a tabela */
+    margin-bottom: 10px; /* Espaço entre os filtros e a tabela */
 }
 
 select {

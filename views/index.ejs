@@ -12,6 +12,7 @@
   
   <link rel="stylesheet" href="css/pagamento_valor.css">
   <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/cupom.css">
   <link rel="stylesheet" href="css/ficha.css">
   <link rel="stylesheet" href="css/historico.css">
   <link rel="stylesheet" href="css/pagamento.css">
@@ -30,7 +31,7 @@
   
 
   
-<div class="w3- w3-top desligar">
+<div class="w3- w3-top desligar nao-imprimir">
 
 
 <!-- menu inicial -->
@@ -81,11 +82,11 @@
 
 
   <!-- inicio -->
-  <div class="w3-content desligar" style="max-width:1100px;margin-top:10px;margin-bottom:80px">
+  <div class="w3-content desligar nao-imprimir" style="max-width:1100px;margin-top:10px;margin-bottom:80px">
    
    <!-- cria ficha  -->
    
-    <div class="w3-container esconder" id="menu2" style="display: none;">
+    <div class="w3-container esconder nao-imprimir" id="menu2" style="display: none;">
   
 
     
@@ -207,7 +208,7 @@
 
 
    <!-- historico  -->
-   <div class="w3-container esconder" id="menu1" style="display:block;">
+   <div class="w3-container esconder nao-imprimir" id="menu1" style="display:block;">
   
     
     <!-- Grid -->
@@ -299,27 +300,33 @@
    
 
       <select id="filterStatus"  class="w3-mobile" onchange="filterTable()">
-          <option value="">Filtrar por Status</option>
+          <option value="">TODOS OS STATUS</option>
           <option value="PAGAMENTO">PAGAMENTO</option>
           <option value="REMEDIO">REMÉDIO</option>
           <option value="NIMESULIDA">NIMESULIDA</option>
       </select>
 
 
+      <script>
+        function formatarValor(input) {
+            // Substitui qualquer caractere que não seja número ou vírgula
+            input.value = input.value.replace(/[^0-9,]/g, ''); 
+        }
+    </script>
+
         <input type="text" id="filterValor"  class="w3-mobile" oninput="formatarValor(this),filterTable()" placeholder="VALOR R$ 20,00">
      
 
      
 
-        <input type="text" id="filterData"  class="w3-mobile" name="data" maxlength="8" oninput="formatarData(this),filterTable()" placeholder="DD/MM/AA">
+        <input type="text" id="filterData"  class="w3-mobile" name="data" maxlength="9" oninput="formatarData(this),filterTable()" placeholder="DD/MM/AA">
       
 
-        
-      <input type="time" align="center"  class="w3-mobile" id="filterHora" oninput="formatarData(this),filterTable()" placeholder="10:00" value="">
+      <input type="time" align="center" style="display:none;"  class="w3-mobile" id="filterHora" oninput="filterTable()" placeholder="10:00" >
        
 
       <select id="filterTipo" align='center' class="w3-mobile" onchange="filterTable()">
-          <option value=""></option>
+          <option value="">TODOS TIPOS</option>
           <option value="PIX ">PIX 📱</option>
           <option value="FICHA ">FICHA 📝</option>
           <option value="DINHEIRO ">DINHEIRO 💲</option>
@@ -340,7 +347,8 @@
           </tr>
       </thead>
       <tbody  class="historico_geral">
-          <tr>
+          <tr class="t">
+            
               <td>1</td>
               <td>Luiz Vieira Filho</td>
               <td>PAGAMENTO</td>
@@ -382,7 +390,7 @@
               <td>PAGAMENTO</td>
               <td>R$110,15</td>
               <td>10/04/24</td>
-              <td>10:50:30</td>
+              <td>10:30:30</td>
               <td>DINHEIRO 💲</td>
           </tr>
           <tr>
@@ -391,19 +399,16 @@
               <td>PAGAMENTO</td>
               <td>R$150,15</td>
               <td>10/04/24</td>
-              <td>11:50:30</td>
+              <td>11:10:30</td>
               <td>CARTÃO 💳</td>
           </tr>
       </tbody>
   </table>
          
            </div>
-         
-       
           </div>
 
-
-
+      
 
 
 
@@ -413,7 +418,7 @@
          
 
   <!-- pagamento da ficha  -->
-   <div class="w3-container esconder" id="menu3" style="display: none;">
+   <div class="w3-container esconder nao-imprimir" id="menu3" style="display: none; ">
     
     <div class="w3-row-padding" id="about">
   
@@ -590,7 +595,7 @@
     <!-- final pagamento da ficha  -->
 
 <!-- procurar ficha para compras -->
-<div class="w3-container">
+<div class="w3-container nao-imprimir">
   <br>
   <form class="w3-container w3-card-4   w3-light-grey esconder " id="menu4" style="display:none ;">
 
@@ -918,23 +923,98 @@
    <br><br> <br> <br> <br>
   
   <!-- Footer -->
-  <footer class="w3-container w3-padding-32 w3-light-grey w3-center desligar">
+  <footer class="w3-container w3-padding-32 w3-light-grey w3-center desligar nao-imprimir">
     
     <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>voltar pro topo</a>
    
     <p>CRIADO POR  <a href="" title="code programado" target="_blank" class="w3-hover-text-green">LUIZ PROGRAMADOR</a></p>
   </footer>
   
+
+
+      <!-- cupom  -->
+      <div class="w3-container cupom_pagamento " >
+
+            
+        <div class="cupom">
+          <!-- Logo da Loja -->
+          <div class="logo">
+              <img src="logo.png" alt="Logo Loja">
+          </div>
+        
+          <!-- Título -->
+          <div class="titulo">CUPOM FISCAL</div>
+        
+          <!-- Dados da Loja -->
+          <div class="dados-loja">
+              <p><strong>Nome da Loja:</strong> Supermercado Exemplo</p>
+              <p><strong>CNPJ:</strong> 12.345.678/0001-90</p>
+              <p><strong>Endereço:</strong> Av. Principal, 123 - Centro</p>
+              <p><strong>Telefone:</strong> (11) 1234-5678</p>
+          </div>
+        
+          <!-- Dados da Compra -->
+          <div class="dados-compra">
+              <p><strong>Data:</strong> 07/11/2024</p>
+              <p><strong>Hora:</strong> 15:30</p>
+              <p><strong>Caixa:</strong> 01</p>
+          </div>
+        
+          <!-- Itens Comprados -->
+          <div class="itens">
+              <div class="item">
+                  <span>Arroz 5kg</span>
+                  <span>R$ 15,00</span>
+              </div>
+              <div class="item">
+                  <span>Feijão 1kg</span>
+                  <span>R$ 6,50</span>
+              </div>
+              <div class="item">
+                  <span>Óleo 900ml</span>
+                  <span>R$ 4,99</span>
+              </div>
+              <div class="item">
+                  <span>Sabão em Pó</span>
+                  <span>R$ 7,80</span>
+              </div>
+          </div>
+        
+          <!-- Total -->
+          <div class="total">
+              <p><strong>Total: R$ 34,29</strong></p>
+          </div>
+        
+          <!-- Rodapé -->
+          <div class="rodape">
+              <p>Obrigado pela preferência!</p>
+              <p>Este é um cupom fiscal eletrônico.</p>
+          </div>
+        </div>
+        
+        
+          <div align="center" class="nao-imprimir" >
+            <br>
+                     <button class="w3-container w3-button w3-border "align='center' onclick="window.print()"> imprimir 
+                               </button>
+                  </div>
+        
+                   </div>
+                  <!-- final cupom  ------------------------------------------------------>
+                 
   
   
   
   
   
-                      <script src="pagamento.js"></script>
+      <script src="pagamento.js"></script>
       <script src="Ficha.js"></script>
       <script src="pesquisa.js"></script>
       <script src="historico.js"></script>
       <script src="ficha_cadastro_pessoas.js"></script>
   
+
+  </body>
   
-  </body></html>
+  
+  </html>
