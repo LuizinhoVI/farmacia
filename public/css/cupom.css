@@ -1,6 +1,6 @@
 .cupom_pagamento {
     font-family: 'Arial', sans-serif;
-    width: 12cm;
+    width: 6cm;
     margin: 0 auto;
     padding: 10px;
     background-color: #f0f0f0;
@@ -77,6 +77,10 @@
             /* Esconder todos os outros elementos da página durante a impressão */
             .nao-imprimir {
                 display: none;
+            }
+            .cupom_papel{
+                position: absolute;
+            top :10px;
             }
 
           
