@@ -52,7 +52,7 @@ function data_hora_atualizada() {
 
         
     // Seleciona todos os elementos com a classe "data" e "hora"
-            const divs = document.querySelectorAll('.data, .hora');
+            const divs = document.querySelectorAll('.data, .hora, .hora_de_pagamento, .data_de_pagamento');
 
            
 
@@ -60,6 +60,9 @@ function data_hora_atualizada() {
             // Atualiza o texto
             divs[0].textContent = data; // Para a primeira div (data)
             divs[1].textContent =hora; // Para a segunda div (hora)
+
+            divs[2].textContent =data; // Para a segunda div (data)
+            divs[3].textContent =hora; // Para a segunda div (hora)
 
 }
  setInterval(data_hora_atualizada, 1000);
@@ -222,8 +225,10 @@ function formatarMoeda(valor) {
     }).format(valor);
 
 }
+let pagamento_pegar_valor = 0
+let pagamento_valor_ficha = 0
 
-function pagamento() {
+function pagamento(meio_de_pagamento) {
 
     const valorInput = document.getElementById('valor').value;
     const valor = parseFloat(valorInput.replace(/\./g, '').replace(',', '.')); // Converte o valor
@@ -245,12 +250,99 @@ function pagamento() {
     document.getElementById('resultado').innerText = `Resto: ${formatarMoeda(resto)}`;
     document.getElementById('valor').value = ''; // Limpa o input
 
+    console.log(resto)
+   
+    const pagamento_cpf = document.querySelector('.pagamento_mostrar_cpf').innerText;
+    const pagamento_data = document.querySelector('.pagamento_mostrar_data').innerText;
+    const pagamento_hora = document.querySelector('.pagamento_mostrar_hora').innerText;
+    const pagamento_nome = document.querySelector('.pagamento_mostrar_nome').innerText;
+
+
+  enviar_pagamento_para_historico(formatarMoeda(resto),formatarMoeda(valor),meio_de_pagamento.innerText,"Pagamento",pagamento_cpf,pagamento_hora,pagamento_data,pagamento_nome)
+
 }
 
 window.onload = function() {
     document.getElementById('resultado').innerText = `Resta: ${formatarMoeda(resto)}`;
     document.querySelector('#pagamento_falta_pagar').innerText = `Resta: ${formatarMoeda(resto)}`;
+
+
 };
+
+
+
+
+
+
+function enviar_pagamento_para_historico(ficha,valor_1,tipo_1,status_1,cpf_1,hora_1,data_1,nome_1) {
+    
+
+//alert("ficha"+ficha+ "pagamento "+ valor_1 + "tipo "+tipo_1 )
+
+ // Criando uma nova linha na tabela
+ const tabela = document.getElementById('tabela').getElementsByTagName('tbody')[0];
+ const novaLinha = tabela.insertRow();
+
+// Criando as células da linha
+const cpf = novaLinha.insertCell(0);
+const nome = novaLinha.insertCell(1);
+const status = novaLinha.insertCell(2);
+const valor = novaLinha.insertCell(3);
+const data = novaLinha.insertCell(4);
+const hora = novaLinha.insertCell(5);
+const tipo = novaLinha.insertCell(6);
+
+  // Adicionando os dados nas células
+  cpf.textContent = cpf_1;
+  nome.textContent = nome_1;
+  status.textContent = status_1;
+  valor.textContent = valor_1;
+  data.textContent = data_1;
+  hora.textContent = hora_1;
+  tipo.textContent = tipo_1;
+
+ // Adicionando um id para a linha e a classe de tabela
+
+ novaLinha.setAttribute('class', 'tr');
+
+ novaLinha.onclick = function(){
+ 
+    historico_selecionado(this);
+
+ }
+
+
+}
+
+
+function historico_selecionado(linha) {
+    const abrir_cupom = document.querySelector('.cupom_de_pagamento')
+
+    const cpf = document.querySelector('.historico_cpf')
+    const nome_cupom = document.querySelector('.historico_nome_completo')
+    const historico_status = document.querySelector('.historico_status')
+    const valor = document.querySelector('.historico_valor')
+    const data = document.querySelector('.historico_data')
+    const hora = document.querySelector('.historico_hora')
+    const tipo = document.querySelector('.historico_tipo')
+
+    // Obtém a célula da coluna "Nome" (que é a segunda célula da linha)
+ 
+    
+    cpf.innerHTML = linha.cells[0].innerHTML;
+    nome_cupom.innerHTML = linha.cells[1].innerHTML;
+    historico_status.innerHTML= linha.cells[2].innerHTML;
+     valor.innerHTML = linha.cells[3].innerHTML;
+     data.innerHTML = linha.cells[4].innerHTML;
+     hora.innerHTML = linha.cells[5].innerHTML;
+     tipo.innerHTML = linha.cells[6].innerHTML;
+    
+   
+
+    abrir_cupom.style.display="block";
+
+  }
+
 
 
 function limite(teste) {

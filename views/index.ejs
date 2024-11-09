@@ -82,7 +82,7 @@
 
 
   <!-- inicio -->
-  <div class="w3-content desligar nao-imprimir" style="max-width:1100px;margin-top:10px;margin-bottom:80px">
+  <div class="w3-content mostrar_cupom  desligar nao-imprimir" style="max-width:1100px;margin-top:10px;margin-bottom:80px">
    
    <!-- cria ficha  -->
    
@@ -208,136 +208,73 @@
 
 
    <!-- historico  -->
-   <div class="w3-container esconder nao-imprimir" id="menu1" style="display:block;">
-  
-    
-    <!-- Grid -->
-    <div class="w3-row-padding" id="about" style="display: none;">
-   <br><br>
-  
-      <div class="w3-third w3-margin-bottom">
-        <div class="w3-card-4" align="center">
-          <br>
-          <img src="img/voluntario.png" alt="John" style="width:50%">
-          <div class="w3-container" align="center">
-            <h3>BOM PAGADOR</h3>
-            <div class="w3-container">
-              <ul class="w3-ul w3-hoverable">
-                <li> 1ª Jill vieira 💰</li>
-                <li> 2ª Jill vieira 💰</li>
-                <li> 3ª Jill vieira 💰</li>
-              </ul>
-            </div>
-            <p><button class="w3-button w3-light-grey w3-block">MAIS</button></p>
-          </div>
-        </div>
-      </div>
-  
-      <div class="w3-third w3-margin-bottom">
-        <div class="w3-card-4" align="center">
-          <br>
-          <img src="img/feliz-aniversario.png" alt="Mike" align="center" style="width:50%">
-          <div class="w3-container" align="center">
-            <h3>ANIVERSARIANTE </h3>
-            <div class="w3-container">
-              <ul class="w3-ul w3-hoverable">
-                <li> ruck vieira 🎂</li>
-                <li>  lex vieira 🎂</li>
-               
-              </ul>
-            </div>
-            <p><button class="w3-button w3-light-grey w3-block">MAIS</button></p>
-          </div>
-        </div>
-      </div>
-  
-      <div class="w3-third w3-margin-bottom">
-        <div class="w3-card-4" align="center">
-          <br>
-          <img src="img/divida.png" alt="Jane" style="width:50%">
-          <div class="w3-container" align="center">
-            <h3>MAL PAGADOR</h3>
-            <div class="w3-container"></div>
-              <ul class="w3-ul w3-hoverable">
-                <li> 1ª rocket vieira 💸</li>
-                <li> 2ª vivald vieira 💸</li>
-                <li> 3ª donatelo vieira 💸</li>
-              </ul>
-            </div>
-           <p><button class="w3-button w3-light-grey w3-block">MAIS</button></p>
-          </div>
-        </div>
-      </div>
-  <!--  -->
-  <br><br>
-     
-  
-  <br>
+   <div class="w3-container esconder nao-imprimir" id="menu1" style="display:none;">
+  <br> <br>
         <div class="">
-        <form class="w3-container w3-card-4 w3-light-grey">
-          <h2 align="center">HISTÓRICO GERAL</h2>
-          <input class="w3-input w3-border" placeholder="Pesquisar ficha" name="last" type="text"><p></p>
-        </form>
+       
+
+
+
+        
         <div class="w3-container">
           <br>
-          
-
-
-
-           <!-- Container para os filtros -->
-    <div class="filters w3-container" align="center">
-      <select id="filterId" onchange="filterTable()" class="w3-mobile" style="display: none;">
-          <option value="">Filtrar por ID</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-      </select>
-
-     
         
-                  <input type="text" id="filterNome" class="w3-mobile" placeholder="NOME" oninput="filterTable()">
-   
+           <!-- Container para os filtros -->
+    <div class="filters w3-container " >
+    <div class="w3-container filtro_do_historico">
 
-      <select id="filterStatus"  class="w3-mobile" onchange="filterTable()">
+      <input type="text" id="filterId" onkeyup=" formatarCPF(this),validarCPF(this),filterTable()"class="w3-mobile" placeholder="CPF ">
+      
+      
+     
+      
+                  <input type="text" id="filterNome" class="w3-mobile" placeholder="NOME" oninput="filterTable()">
+                  
+                  
+                  <select id="filterStatus"  class="w3-mobile" onchange="filterTable()">
           <option value="">TODOS OS STATUS</option>
           <option value="PAGAMENTO">PAGAMENTO</option>
           <option value="REMEDIO">REMÉDIO</option>
-          <option value="NIMESULIDA">NIMESULIDA</option>
+       
       </select>
 
-
+    </div>
+      
       <script>
         function formatarValor(input) {
             // Substitui qualquer caractere que não seja número ou vírgula
             input.value = input.value.replace(/[^0-9,]/g, ''); 
         }
-    </script>
+      </script>
+      
+      <div align="center" class="filtro_do_historico" >
 
         <input type="text" id="filterValor"  class="w3-mobile" oninput="formatarValor(this),filterTable()" placeholder="VALOR R$ 20,00">
      
 
-     
 
-        <input type="text" id="filterData"  class="w3-mobile" name="data" maxlength="9" oninput="formatarData(this),filterTable()" placeholder="DD/MM/AA">
-      
-
-      <input type="time" align="center" style="display:none;"  class="w3-mobile" id="filterHora" oninput="filterTable()" placeholder="10:00" >
-       
-
+          
+          <input type="text" id="filterData"  class="w3-mobile" name="data" maxlength="9" oninput="formatarData(this),filterTable()" placeholder="DD/MM/AA">
+          
+          
+          <input type="time" align="center" style="display:none;"  class="w3-mobile" id="filterHora" oninput="filterTable()" placeholder="10:00" >
+          
+          
       <select id="filterTipo" align='center' class="w3-mobile" onchange="filterTable()">
           <option value="">TODOS TIPOS</option>
           <option value="PIX ">PIX 📱</option>
           <option value="FICHA ">FICHA 📝</option>
           <option value="DINHEIRO ">DINHEIRO 💲</option>
           <option value="CARTÃO ">CARTÃO 💳</option>
-      </select>
+        </select>
+
+      </div>     
   </div>
 <hr>
     <table id="tabela" class="container" align="center">
       <thead>
-          <tr>
-              <th>ID</th>
+          <tr class="tr">
+              <th>CPF</th>
               <th>Nome</th>
               <th>Status</th>
               <th>Valor</th>
@@ -346,19 +283,21 @@
               <th>Tipo</th>
           </tr>
       </thead>
+
       <tbody  class="historico_geral">
-          <tr class="t">
-            
-              <td>1</td>
-              <td>Luiz Vieira Filho</td>
+
+          <tr class="tr" onclick="historico_selecionado(this)">
+           
+              <td>057.347.435-42</td>
+              <td >Luiz Vieira Filho</td>
               <td>PAGAMENTO</td>
               <td>R$20,20</td>
               <td>12/06/24</td>
               <td>10:50:30</td>
               <td>PIX 📱</td>
           </tr>
-          <tr>
-              <td>2</td>
+          <tr class="tr" onclick="historico_selecionado(this)">
+              <td>213.456.789-09</td>
               <td> Vieira Filho</td>
               <td>DESODORANTE</td>
               <td>R$5,10</td>
@@ -366,17 +305,17 @@
               <td>02:50:30</td>
               <td>FICHA 📝</td>
           </tr>
-          <tr>
-              <td>3</td>
+          <tr class="tr" onclick="historico_selecionado(this)">
+              <td>123.456.789.093</td>
               <td> Filho</td>
-              <td>NIMESULIDA</td>
+              <td>Nimesulida de 10mg</td>
               <td>R$15,30</td>
               <td>19/06/24</td>
               <td>23:50:30</td>
               <td>FICHA 📝</td>
           </tr>
-          <tr>
-              <td>4</td>
+          <tr class="tr" onclick="historico_selecionado(this)">
+              <td>412.345.678.909</td>
               <td>José Luiz Vieira Filho</td>
               <td>PAGAMENTO</td>
               <td>R$150,15</td>
@@ -384,8 +323,8 @@
               <td>10:50:30</td>
               <td>DINHEIRO 💲</td>
           </tr>
-          <tr>
-              <td>5</td>
+          <tr class="tr" onclick="historico_selecionado(this)">
+              <td>123.456.789.095</td>
               <td>José Luiz Vieira Filho</td>
               <td>PAGAMENTO</td>
               <td>R$110,15</td>
@@ -393,14 +332,14 @@
               <td>10:30:30</td>
               <td>DINHEIRO 💲</td>
           </tr>
-          <tr>
-              <td>6</td>
+          <tr class="tr" onclick="historico_selecionado(this)">
+              <td>123.456.789.096</td>
               <td>José Luiz Vieira Filho</td>
-              <td>PAGAMENTO</td>
+              <td> PAGAMENTO </td>
               <td>R$150,15</td>
               <td>10/04/24</td>
               <td>11:10:30</td>
-              <td>CARTÃO 💳</td>
+              <td> CARTÃO 💳</td>
           </tr>
       </tbody>
   </table>
@@ -418,7 +357,7 @@
          
 
   <!-- pagamento da ficha  -->
-   <div class="w3-container esconder nao-imprimir" id="menu3" style="display: none; ">
+   <div class="w3-container esconder nao-imprimir" id="menu3" style="display: block; ">
     
     <div class="w3-row-padding" id="about">
   
@@ -447,7 +386,7 @@
         
   
   <!-- pagamento -->
-  <div class="ficha w3-container pagamento_procurar_ficha1" id="ficha" style="position: relative; top: 10px;display: none;">
+  <div class="ficha w3-container pagamento_procurar_ficha1" id="ficha" style="position: relative; top: 10px;display: block;">
   
   
           <!-- FICHA  -->
@@ -469,7 +408,7 @@
                     </tr><tr></tr>                 
                     <tr><th>NOME:</th>
                   
-                    <td colspan="">jose luiz vieira filho </td>
+                    <td colspan="" class="pagamento_mostrar_nome">jose luiz vieira filho </td>
                     </tr><tr></tr>
                     <tr><th align="center">LIMITE</th>
                     <td colspan="">R$ 500 💵</td>
@@ -492,55 +431,56 @@
                   </tr>
 
                   <tbody class=" hidden" id="tableBody1">
-                      <tr><th class="mostrar remover">CPF : </th>
-                        <td colspan="" class="mostrar remover  ">78945612387</td>
+                      <tr><th class="">CPF : </th>
+                        <td colspan="" class=" pagamento_mostrar_cpf">789.456.123-87</td>
                       </tr><tr></tr>
-                    <tr><th class="mostrar remover">DATA DE NASCIMENTO:</th>
-                    <td colspan="" class="mostrar remover" align="center">23/03/1995 </td>
+                    <tr><th class="">DATA DE NASCIMENTO:</th>
+                    <td colspan="" class="" align="center">23/03/1995 </td>
                   </tr><tr></tr>
-                    <tr><th class="mostrar remover">LOGIN :</th>
-                    <td colspan="" class="mostrar remover">79999722046 </td>
+                    <tr><th class="">LOGIN :</th>
+                    <td colspan="" class="">79999722046 </td>
                     </tr><tr></tr>
                
-                    <tr><th class="remover mostrar"> TELEFONE:</th>
-                    <td colspan=" " class="remover mostrar">79 99722046</td>
+                    <tr><th class=""> TELEFONE:</th>
+                    <td colspan=" " class="">79 99722046</td>
                     </tr><tr></tr>
-                    <tr><th class="remover mostrar">EMAIL:</th>
-                    <td colspan="" class="remover mostrar">brat.luiz23@hotmail.com</td>
-                    </tr><tr></tr>
-                    <tr></tr>
-                    <tr><th colspan="2" class=" remover mostrar" style="text-align: center;">ENDEREÇO</th>
+                    <tr><th class="">EMAIL:</th>
+                    <td colspan="" class="">brat.luiz23@hotmail.com</td>
                     </tr><tr></tr>
                     <tr></tr>
-                    <tr><th class="mostrar remover">RUA:</th>
-                    <td colspan="" class="mostrar remover">RUA MARECHAL  </td>
+                    <tr><th colspan="2" class="" style="text-align: center;">ENDEREÇO</th>
+                    </tr><tr></tr>
+                    <tr></tr>
+                    <tr><th class="">RUA:</th>
+                    <td colspan="" class="">RUA MARECHAL  </td>
                     </tr><tr></tr>
                     
-                    <tr><th colspan="" class="mostrar remover">REFERÊNCIA:</th>
-                      <td class="mostrar remover">centro</td>
+                    <tr><th colspan="" class="">REFERÊNCIA:</th>
+                      <td class="">centro</td>
                     </tr><tr></tr>
-                    <tr><th class="mostrar remover">CEP:</th>
-                      <td class="mostrar remover" colspan="">49700-000</td>
+                    <tr><th class="">CEP:</th>
+                      <td class="" colspan="">49700-000</td>
                     </tr><tr></tr>
-                    <tr><th class="mostrar remover" colspan="">ESTADO:</th>
-                      <td class="mostrar remover">SE</td>
+                    <tr><th class="" colspan="">ESTADO:</th>
+                      <td class="">SE</td>
                     </tr><tr></tr>
-                    <tr><th colspan="" class="mostrar remover">CIDADE:</th>
-                      <td class="mostrar remover">capela</td>
+                    <tr><th colspan="" class="">CIDADE:</th>
+                      <td class="">capela</td>
                     </tr><tr></tr>
-
+                  
                   </tbody>
                     
                     
                   </tbody></table>
-  
+                  
                   <br>
                   <div  style="text-align: center;"><button onclick="pagamento_ficha_mostrar()" class="mostrar_mais_1"> Ver mais...</button></div>
-  
-              
+                  <div class="w3-container w3-left " > DATA<div class=" hora_de_pagamento pagamento_mostrar_data"> </div> </div>
+                  <div class="w3-container w3-right " > HORA <div class="data_de_pagamento pagamento_mostrar_hora" ></div> </div>
+                  
                   <br>
               </div>
-              
+              <br>
             </div>
           </div>
           <!-- adicionar produto -->
@@ -565,10 +505,13 @@
             
            
            
-            <p align="center">            <button onclick="pagamento()" class="w3-button w3-green w3-round-xxlarge">PIX</button> </p>
-            <p align="center">              <button onclick="pagamento()" class="w3-button w3-green w3-round-xxlarge">CARTÃO / BOLETO </button> </p>
-            <p align="center">              <button onclick="pagamento()" class="w3-button w3-green w3-round-xxlarge"> DINHEIRO  </button> </p>
-            <!-- <div id="resultado"> </div> -->
+            <p align="center">            <button onclick="pagamento(this)" class="w3-button w3-green w3-round-xxlarge">Pix 📲</button> <button onclick="pagamento(this)" class="w3-button w3-green w3-round-xxlarge"> Dinheiro 💲 </button>  </p>
+
+            <p align="center">              <button onclick="pagamento(this)" class="w3-button w3-green w3-round-xxlarge">Cartão 💳</button> 
+              
+              <button onclick="pagamento(this)" class="w3-button w3-green w3-round-xxlarge"> Boleto 📄 </button> 
+            </p>
+
               
             
             
@@ -923,7 +866,7 @@
    <br><br> <br> <br> <br>
   
   <!-- Footer -->
-  <footer class="w3-container w3-padding-32 w3-light-grey w3-center desligar nao-imprimir">
+  <footer class="w3-container mostrar_cupom w3-padding-32 w3-light-grey w3-center desligar nao-imprimir">
     
     <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>voltar pro topo</a>
    
@@ -932,8 +875,8 @@
   
 
 
-      <!-- cupom  -->
-       <div class="w3-container w3-left cupom_papel" >  
+      <!-- cupom PAGAMENTO ---------------------------------------------------------->
+       <div class="w3-container w3-left cupom_papel cupom_de_pagamento" onclick="sair_di_cupom()" style="display: none;" >  
       <div class="w3-container cupom_pagamento  " >
 
             
@@ -941,44 +884,48 @@
         
         
           <!-- Título -->
-          <div class="titulo">CUPOM DA FICHA </div>
+          <div class="titulo">CUPOM DE PAGAMENTO </div>
         
           <!-- Dados da Loja -->
           <div class="dados-loja">
-              <p><strong>Nome da Loja:</strong> Supermercado Exemplo</p>
+              <p><strong>Estabelecimento:</strong><div>  Farmacia primos</div></p>
               <p><strong>CNPJ:</strong> 12.345.678/0001-90</p>
-              <p><strong>Endereço:</strong> Av. Principal, 123 - Centro</p>
+              <p><strong>Endereço:</strong> Calçadao </p>
               <p><strong>Telefone:</strong> (11) 1234-5678</p>
           </div>
         
           <!-- Dados da Compra -->
           <div class="dados-compra">
-              <p><strong>Data:</strong> 07/11/2024</p>
-              <p><strong>Hora:</strong> 15:30</p>
-              <p><strong>Caixa:</strong> 01</p>
+            
+       
+            <p ><strong>Nome:</strong> <i class="historico_nome_completo">t</i> </p>
+            <p><strong>CPF:</strong><i class="historico_cpf"> </i> </p>
+              <p><strong>Data:</strong><i class="historico_data"> </i> </p>
+              <p><strong>Hora:</strong><i class="historico_hora"> </i></p>
+              <p><strong>Caixa:</strong>01</p>
           </div>
-        
+          <!-- total -->
           <div class="item w3-center w3-container">
             <span  >VALOR DA FICHA</span>
         </div>
         <div class="item w3-center w3-container">
             <span  ><strong> R$ 400,00 </strong>  </span>
         </div>
+        <!--  -->
+        <div class="item w3-center w3-container"></div>
           <!-- Itens Comprados -->
           <div class="itens">
              
 
               <div class="item">
-                  <span>Valor pago</span>
-                  <span>R$ 15,00</span>
+                  <span class="historico_status">Valor pago</span>
+                  <span class="historico_tipo">PIX</span>
+                  <span  class="historico_valor">R$ 15,00</span>
               </div>
        
           </div>
         
-          <!-- Total -->
-          <div class="total w3-center">
-              <p ><strong >Valor restante: R$ 385,00</strong></p>
-          </div>
+        
         
           <!-- Rodapé -->
           <div class="rodape">
@@ -990,20 +937,23 @@
         
           <div align="center" class="nao-imprimir" >
             <br>
-                     <button class="w3-container w3-button w3-border "align='center' onclick="window.print()"> imprimir 
+                     <button class="w3-container  cupom_botom  "align='center' onclick="window.print()"> imprimir 
                                </button>
+                  
                   </div>
         
                    </div>
                   </div>
                   <!-- final cupom  ------------------------------------------------------>
                  
+ 
   
   
   
   
   
-      <script src="pagamento.js"></script>
+      <script  src="pagamento.js"></script>
+      <script src="cupom.js"></script>
       <script src="Ficha.js"></script>
       <script src="pesquisa.js"></script>
       <script src="historico.js"></script>

@@ -1,4 +1,4 @@
-function filterTable() {
+ function filterTable() {
     const inputId = document.getElementById('filterId').value.toLowerCase();
     const inputNome = document.getElementById('filterNome').value;
     const inputStatus = document.getElementById('filterStatus').value.toLowerCase();
@@ -23,13 +23,14 @@ function filterTable() {
         if (id.includes(inputId) && nome.includes(inputNome) && status.includes(inputStatus) &&
             valor.includes(inputValor) && data.includes(inputData) && hora.includes(inputHora) &&
             tipo.includes(inputTipo)) {
+                
             row.style.display = "";
         } else {
+
             row.style.display = "none";
         }
-        
-
-
+            console.log(status.includes(inputStatus))
+      
 
 
 
@@ -52,3 +53,30 @@ function formatarData(input) {
 // --------------------------------------------------------------------
 
 
+function historico_selecionado(linha) {
+    const abrir_cupom = document.querySelector('.cupom_de_pagamento')
+
+    const cpf = document.querySelector('.historico_cpf')
+    const nome_cupom = document.querySelector('.historico_nome_completo')
+    const historico_status = document.querySelector('.historico_status')
+    const valor = document.querySelector('.historico_valor')
+    const data = document.querySelector('.historico_data')
+    const hora = document.querySelector('.historico_hora')
+    const tipo = document.querySelector('.historico_tipo')
+
+    // Obtém a célula da coluna "Nome" (que é a segunda célula da linha)
+ 
+    
+    cpf.innerHTML = linha.cells[0].innerHTML;
+    nome_cupom.innerHTML = linha.cells[1].innerHTML;
+    historico_status.innerHTML= linha.cells[2].innerHTML;
+     valor.innerHTML = linha.cells[3].innerHTML;
+     data.innerHTML = linha.cells[4].innerHTML;
+     hora.innerHTML = linha.cells[5].innerHTML;
+     tipo.innerHTML = linha.cells[6].innerHTML;
+    
+   
+
+    abrir_cupom.style.display="block";
+
+  }

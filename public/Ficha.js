@@ -93,7 +93,7 @@ function ficha_menu(numero) {
        async function formatarTelefone(element) {
             const inputTelefone =  element// document.querySelector('.ficha_telefone');
             let value = inputTelefone.value.replace(/\D/g, ''); // Remove caracteres não numéricos
-        console.log(element.value);
+        //console.log(element.value);
             if (value.length > 6) {
                 value = value.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
             } else if (value.length > 2) {
@@ -130,12 +130,12 @@ function ficha_menu(numero) {
             // Validação básica do CPF
             if (!isValidCPF(cpf)) {
                 document.querySelector('.cpf_resultado').innerText = 0;
-                alert("CPF ERRADO")
+                // alert("CPF ERRADO")
                 input.value=null;
                 
             } else {
                 input.style.fontSize='20px'
-                alert("valido")
+               // alert("valido")
                 
             }
         }
@@ -218,7 +218,7 @@ function ficha_menu(numero) {
 
         function login(input) {
             input.value = input.value.replace(/[^a-zA-Z0-9]/g, '');
-            console.log(input.value)
+           // console.log(input.value)
 
    
 

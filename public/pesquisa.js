@@ -11,7 +11,7 @@
             if (query) {
             const url = `https://www.bing.com/images/search?q=`+query;
             resultFrame.src = url; // Atualiza o src do iframe para carregar os resultados
-        console.log(   url );
+       // console.log(   url );
 
         mostrar_pesquisa.style.display= 'block'
             
@@ -33,7 +33,7 @@
                     if (query) {
                     const url = `https://www.bing.com/images/search?q=`+query;
                     resultFrame.src = url; // Atualiza o src do iframe para carregar os resultados
-                console.log(   url );
+                //console.log(   url );
         
                 mostrar_pesquisa.style.display= 'block'
                     
