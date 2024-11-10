@@ -41,17 +41,12 @@
     <a href="#" class="w3-bar-item w3-hover-green s3 w3-button w3-mobile" onclick=" menu('menu3','escolha3'),sair_da_pesquisa()"  id="escolha3">PAGAMENTO DA FICHA</a>
 
     <a href="#" class="w3-bar-item w3-button s3   w3-hover-green w3-mobile" onclick=" menu('menu4','escolha4'),sair_da_pesquisa()"> PROCURAR FICHAS</a>
+    <a class="w3-button w3-green-hover w3-green s3" onclick="menu('menu1','escolha1'), sair_da_pesquisa()">
+      HISTÓRICO 
+    </a>
+    
     
     <div class="w3-dropdown-hover w3-green-hover w3-mobile">
-      <button class="w3-button w3-green-hover w3-green s3" onclick="menu('menu1','escolha1'),myFunction(), sair_da_pesquisa()">
-        HISTÓRICO <i class="fa fa-caret-down"></i>
-      </button>
-      
-      <div id="demo" class="w3-dropdown-content w3-green-hover w3-bar-block w3-card">
-        <a href="#" class="w3-bar-item w3-button w3-hover-green" onclick=" sair_da_pesquisa()">Remedios</a>
-        <a href="#" class="w3-bar-item w3-button w3-hover-green" onclick=" sair_da_pesquisa()">Clientes</a>
-        <a href="#" class="w3-bar-item w3-button w3-hover-green" onclick=" sair_da_pesquisa()">Receitas</a>
-      </div>
     </div>
     <button type="submit" class="w3-bar-item w3-button w3-green w3-mobile w3-right" onclick="menu_pesquisa()">Pesquisar</button>
     <input required type="text" onkeydown="realizarPesquisa(event)" id="resultadoframe" class="w3-bar-item w3-input w3-right w3-white w3-mobile" placeholder="Pesquisar fotos..">
@@ -225,18 +220,9 @@
 
       <input type="text" id="filterId" onkeyup=" formatarCPF(this),validarCPF(this),filterTable()"class="w3-mobile" placeholder="CPF ">
       
-      
-     
-      
                   <input type="text" id="filterNome" class="w3-mobile" placeholder="NOME" oninput="filterTable()">
                   
-                  
-                  <select id="filterStatus"  class="w3-mobile" onchange="filterTable()">
-          <option value="">TODOS OS STATUS</option>
-          <option value="PAGAMENTO">PAGAMENTO</option>
-          <option value="REMEDIO">REMÉDIO</option>
-       
-      </select>
+                  <input type="text"  id="filterStatus"  class="w3-mobile" oninput="filterTable()" placeholder="STATUS">
 
     </div>
       
@@ -295,6 +281,8 @@
               <td>12/06/24</td>
               <td>10:50:30</td>
               <td>PIX 📱</td>
+              <td style="display: none;"> limite</td>
+              <td style="display: none;"> limite</td>
           </tr>
           <tr class="tr" onclick="historico_selecionado(this)">
               <td>213.456.789-09</td>
@@ -304,6 +292,8 @@
               <td>11/06/24</td>
               <td>02:50:30</td>
               <td>FICHA 📝</td>
+              <td style="display: none;"> limite</td>
+              <td style="display: none;"> limite</td>
           </tr>
           <tr class="tr" onclick="historico_selecionado(this)">
               <td>123.456.789.093</td>
@@ -313,6 +303,8 @@
               <td>19/06/24</td>
               <td>23:50:30</td>
               <td>FICHA 📝</td>
+              <td style="display: none;"> limite</td>
+              <td style="display: none;"> pago</td>
           </tr>
           <tr class="tr" onclick="historico_selecionado(this)">
               <td>412.345.678.909</td>
@@ -322,6 +314,8 @@
               <td>10/04/24</td>
               <td>10:50:30</td>
               <td>DINHEIRO 💲</td>
+              <td style="display: none;"> limite</td>
+              <td style="display: none;"> limite</td>
           </tr>
           <tr class="tr" onclick="historico_selecionado(this)">
               <td>123.456.789.095</td>
@@ -331,6 +325,8 @@
               <td>10/04/24</td>
               <td>10:30:30</td>
               <td>DINHEIRO 💲</td>
+              <td style="display: none;"> limite</td>
+              <td style="display: none;"> limite</td>
           </tr>
           <tr class="tr" onclick="historico_selecionado(this)">
               <td>123.456.789.096</td>
@@ -340,6 +336,8 @@
               <td>10/04/24</td>
               <td>11:10:30</td>
               <td> CARTÃO 💳</td>
+              <td style="display: none;"> limite</td>
+              <td style="display: none;"> limite</td>
           </tr>
       </tbody>
   </table>
@@ -357,7 +355,7 @@
          
 
   <!-- pagamento da ficha  -->
-   <div class="w3-container esconder nao-imprimir" id="menu3" style="display: block; ">
+   <div class="w3-container esconder nao-imprimir" id="menu3" style="display: none; ">
     
     <div class="w3-row-padding" id="about">
   
@@ -386,7 +384,7 @@
         
   
   <!-- pagamento -->
-  <div class="ficha w3-container pagamento_procurar_ficha1" id="ficha" style="position: relative; top: 10px;display: block;">
+  <div class="ficha w3-container pagamento_procurar_ficha1" id="ficha" style="position: relative; top: 10px;display: none;">
   
   
           <!-- FICHA  -->
@@ -408,10 +406,10 @@
                     </tr><tr></tr>                 
                     <tr><th>NOME:</th>
                   
-                    <td colspan="" class="pagamento_mostrar_nome">jose luiz vieira filho </td>
+                    <td colspan="" class="pagamento_mostrar_nome"> luiz vieira filho </td>
                     </tr><tr></tr>
                     <tr><th align="center">LIMITE</th>
-                    <td colspan="">R$ 500 💵</td>
+                    <td colspan="" class="pagamento_mostrar_limite">R$ 500 💵</td>
                     </tr><tr></tr>
                     <tr><th>FALTA PAGAR</th>
                     <td id="pagamento_falta_pagar"> R$&nbsp;99,29</td>
@@ -505,9 +503,12 @@
             
            
            
-            <p align="center">            <button onclick="pagamento(this)" class="w3-button w3-green w3-round-xxlarge">Pix 📲</button> <button onclick="pagamento(this)" class="w3-button w3-green w3-round-xxlarge"> Dinheiro 💲 </button>  </p>
-
-            <p align="center">              <button onclick="pagamento(this)" class="w3-button w3-green w3-round-xxlarge">Cartão 💳</button> 
+          
+              <p class="w3-center w3-padding" >  
+                
+                <button onclick="pagamento(this)" class="w3-button w3-green w3-round-xxlarge">Pix 📲</button> 
+                 <button onclick="pagamento(this)" class="w3-button w3-green w3-round-xxlarge"> Dinheiro 💲 </button>  
+                          <button onclick="pagamento(this)" class="w3-button w3-green w3-round-xxlarge">Cartão 💳</button> 
               
               <button onclick="pagamento(this)" class="w3-button w3-green w3-round-xxlarge"> Boleto 📄 </button> 
             </p>
@@ -540,7 +541,7 @@
 <!-- procurar ficha para compras -->
 <div class="w3-container nao-imprimir">
   <br>
-  <form class="w3-container w3-card-4   w3-light-grey esconder " id="menu4" style="display:none ;">
+  <form class="w3-container w3-card-4   w3-light-grey esconder " id="menu4" style="display:BLOCK ;">
 
 
   <h4 align="center">P R O C U R A R</h4>
@@ -556,7 +557,7 @@
 </div>
 <!-- fim mensgem de  ficha mão encontrada -->
 
-<div class="ficha_procurar esconder" id="ficha_procurar " style="display: none;">
+<div class="ficha_procurar esconder" id="ficha_procurar " style="display: block;">
 
 <!--inicio FICHA  -->
 <div class=" w3-margin-bottom " align="center">
@@ -606,7 +607,7 @@
 </td>
 </tr>
                 
-        <tbody id="tableBody" class="hidden" >
+        <tbody id="tableBody" class="hidden1"  >
                   
 <tr align="center" class="">
 <td>  
@@ -701,13 +702,16 @@
 
     <div class=""  style="text-align: center;">
 
-      <button onclick="abrir_ficha(this)" class="mostrar_mais_"> Ver mais... </button>
+      <button onclick="abrir_ficha()" class="mostrar_mais_"> Ver mais... </button>
     </div>
 
     <div class=" ficha_botoes">
       <button disabled class="ficha_editar_salvar" onclick="salvar_edition()"> Salvar </button>
       <button class="ficha_editar_excluir"> Excluir</button>
     </div>
+
+
+
     <!-- confirmação da excluçã  -->
     <div>
 
@@ -778,24 +782,26 @@
                   </tr>
                   <tr>
 
-                    
+                      
                     <td align="center">
-                      <input class="w3-input w3-border  pagamento_quantidade" type="number" placeholder="unidades" oninput="validaNumero(this)">
+                  
+                      
+                      <input class="w3-input w3-border pagamento_valor" id="pagamento_valor" type="text" oninput="formatarDinheiro(this),enviar_valor(this)" placeholder="Valor">
                     </td>
+                
                   </tr>
                   <tr>
                    
-                    <td align="center" class="data">19/10/2024</td>
+                    <td align="center" class="data"></td>
                   </tr>
                   <tr>
                  
-                    <td align="center" class="hora">11:59:20</td>
+                    <td align="center" class="hora"></td>
                   </tr>
                   <tr>
-                   
+                 
                     <td align="center">
-                  
-                      <input class="w3-input w3-border pagamento_valor" id="pagamento_valor" type="text" oninput="formatarDinheiro(this)" placeholder="Valor">
+                      <input class="w3-input w3-border  pagamento_quantidade" type="number" placeholder="unidades" value="1" oninput="validaNumero(this),unidade_multiplica_valor(this)">
                     </td>
                   </tr>
                 
@@ -830,8 +836,13 @@
             </div>
       
           <script src="ficha_compras.js"></script>
+          <script src="procurar_ficha.js"></script>
+
+            <button onclick="adicionar_produto_para_historico() "> teporario </button>
+
 
           <p><button class="w3-button w3-green w3-block" onclick="salvar()" >SALVAR</button></p>
+
         <div class="">nomes:</div>
         <div class="mostrar2">tipo:</div>
         <div class="mostrar3">quantidade:</div>
@@ -902,14 +913,14 @@
             <p><strong>CPF:</strong><i class="historico_cpf"> </i> </p>
               <p><strong>Data:</strong><i class="historico_data"> </i> </p>
               <p><strong>Hora:</strong><i class="historico_hora"> </i></p>
-              <p><strong>Caixa:</strong>01</p>
+              <p><strong>Limite:</strong> <i class="historico_limite"> </i>   </p>
           </div>
           <!-- total -->
           <div class="item w3-center w3-container">
             <span  >VALOR DA FICHA</span>
         </div>
         <div class="item w3-center w3-container">
-            <span  ><strong> R$ 400,00 </strong>  </span>
+            <span  ><strong ><i  class="historico_valor_da_ficha" ></i> </strong>  </span>
         </div>
         <!--  -->
         <div class="item w3-center w3-container"></div>
@@ -955,6 +966,7 @@
       <script  src="pagamento.js"></script>
       <script src="cupom.js"></script>
       <script src="Ficha.js"></script>
+   
       <script src="pesquisa.js"></script>
       <script src="historico.js"></script>
       <script src="ficha_cadastro_pessoas.js"></script>

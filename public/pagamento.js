@@ -124,6 +124,9 @@ function pagamento_valor() {
     
     // Pega todos os inputs dentro da div de resultado
     const inputs = document.querySelectorAll('.pagamento_valor');
+
+
+
     for (let index1 = 0; index1 < inputs.length; index1++) {
         
         const terceiroValor = inputs[index1].value; // Acessa o valor do terceiro input
@@ -133,6 +136,72 @@ function pagamento_valor() {
         // alert(terceiroValor);           
         
                 }
+}
+
+  // Função para converter o valor monetário para número
+  function converterParaNumero(numerico_valor) {
+    // Remove os pontos de milhar e substitui a vírgula por ponto
+    let valorConvertido = numerico_valor.replace(/\./g, '').replace(',', '.');
+    return parseFloat(valorConvertido);
+}
+// Função para formatar o número em Real (R$)
+function formatarEmReal(novonumero) {
+    return new Intl.NumberFormat('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+    }).format(novonumero);
+}
+
+
+let valoruniversal
+
+function enviar_valor(params) {
+
+    valoruniversal =params.value
+
+    
+}
+
+
+function unidade_multiplica_valor(unidade) {
+
+   // alert(valoruniversal)
+
+  const valor =  document.querySelector('.pagamento_valor').value
+  const valor1 =  document.querySelector('#pagamento_valor')
+  
+const numero_convertido = converterParaNumero(valor)
+
+  //console.log(  converterParaNumero(valor))
+  //console.log(unidade.value)
+
+
+  if ( unidade.value >  0) {
+
+console.log(unidade.value)
+console.log(valoruniversal)
+    
+valoruniversal =  unidade.value * numero_convertido
+        
+        const novovalor = formatarEmReal(valoruniversal)
+        
+        valor1.value =novovalor ;
+        
+       console.log(novovalor)
+    }else{
+
+        valoruniversal =  unidade.value / numero_convertido
+     
+        console.log(valoruniversal)
+        
+        const novovalor = formatarEmReal(valoruniversal)
+        
+            valor1.value =novovalor ;
+
+           console.log(novovalor)
+    }
+
+
 }
 
 
@@ -250,18 +319,20 @@ function pagamento(meio_de_pagamento) {
     document.getElementById('resultado').innerText = `Resto: ${formatarMoeda(resto)}`;
     document.getElementById('valor').value = ''; // Limpa o input
 
-    console.log(resto)
+    //console.log(resto)
    
     const pagamento_cpf = document.querySelector('.pagamento_mostrar_cpf').innerText;
     const pagamento_data = document.querySelector('.pagamento_mostrar_data').innerText;
     const pagamento_hora = document.querySelector('.pagamento_mostrar_hora').innerText;
     const pagamento_nome = document.querySelector('.pagamento_mostrar_nome').innerText;
+    const pagamento_limite = document.querySelector('.pagamento_mostrar_limite').innerText;
 
-
-  enviar_pagamento_para_historico(formatarMoeda(resto),formatarMoeda(valor),meio_de_pagamento.innerText,"Pagamento",pagamento_cpf,pagamento_hora,pagamento_data,pagamento_nome)
+    // vai passar para a minhão função os valores da pagina de pagamento da ficha 
+  enviar_pagamento_para_historico(formatarMoeda(resto),formatarMoeda(valor),meio_de_pagamento.innerText,"Pagamento",pagamento_cpf,pagamento_hora,pagamento_data,pagamento_nome,pagamento_limite)
 
 }
 
+// vai deixar no formato do dinheiro toda hora que o valor for atualizado
 window.onload = function() {
     document.getElementById('resultado').innerText = `Resta: ${formatarMoeda(resto)}`;
     document.querySelector('#pagamento_falta_pagar').innerText = `Resta: ${formatarMoeda(resto)}`;
@@ -274,7 +345,7 @@ window.onload = function() {
 
 
 
-function enviar_pagamento_para_historico(ficha,valor_1,tipo_1,status_1,cpf_1,hora_1,data_1,nome_1) {
+function enviar_pagamento_para_historico(ficha_1,valor_1,tipo_1,status_1,cpf_1,hora_1,data_1,nome_1,limite_1) {
     
 
 //alert("ficha"+ficha+ "pagamento "+ valor_1 + "tipo "+tipo_1 )
@@ -291,6 +362,8 @@ const valor = novaLinha.insertCell(3);
 const data = novaLinha.insertCell(4);
 const hora = novaLinha.insertCell(5);
 const tipo = novaLinha.insertCell(6);
+const limite = novaLinha.insertCell(7);
+const ficha_valor = novaLinha.insertCell(8);
 
   // Adicionando os dados nas células
   cpf.textContent = cpf_1;
@@ -300,9 +373,14 @@ const tipo = novaLinha.insertCell(6);
   data.textContent = data_1;
   hora.textContent = hora_1;
   tipo.textContent = tipo_1;
+  limite.textContent = limite_1;
+  ficha_valor.textContent = ficha_1;
 
  // Adicionando um id para a linha e a classe de tabela
+// limite.setAttribute('class','');
 
+ limite.setAttribute('class', 'escondido');
+ ficha_valor.setAttribute('class', 'escondido');
  novaLinha.setAttribute('class', 'tr');
 
  novaLinha.onclick = function(){
@@ -315,33 +393,38 @@ const tipo = novaLinha.insertCell(6);
 }
 
 
-function historico_selecionado(linha) {
-    const abrir_cupom = document.querySelector('.cupom_de_pagamento')
+//  function historico_selecionado(linha) {
+//     const abrir_cupom = document.querySelector('.cupom_de_pagamento')
 
-    const cpf = document.querySelector('.historico_cpf')
-    const nome_cupom = document.querySelector('.historico_nome_completo')
-    const historico_status = document.querySelector('.historico_status')
-    const valor = document.querySelector('.historico_valor')
-    const data = document.querySelector('.historico_data')
-    const hora = document.querySelector('.historico_hora')
-    const tipo = document.querySelector('.historico_tipo')
+//     const cpf = document.querySelector('.historico_cpf')
+//     const nome_cupom = document.querySelector('.historico_nome_completo')
+//     const historico_status = document.querySelector('.historico_status')
+//     const valor = document.querySelector('.historico_valor')
+//     const data = document.querySelector('.historico_data')
+//     const hora = document.querySelector('.historico_hora')
+//     const tipo = document.querySelector('.historico_tipo')
+//     const limite = document.querySelector('.historico_limite')
+    
+//     alert()
 
-    // Obtém a célula da coluna "Nome" (que é a segunda célula da linha)
+//     // Obtém a célula da coluna "Nome" (que é a segunda célula da linha)
  
     
-    cpf.innerHTML = linha.cells[0].innerHTML;
-    nome_cupom.innerHTML = linha.cells[1].innerHTML;
-    historico_status.innerHTML= linha.cells[2].innerHTML;
-     valor.innerHTML = linha.cells[3].innerHTML;
-     data.innerHTML = linha.cells[4].innerHTML;
-     hora.innerHTML = linha.cells[5].innerHTML;
-     tipo.innerHTML = linha.cells[6].innerHTML;
+//     cpf.innerHTML = linha.cells[0].innerHTML;
+//     nome_cupom.innerHTML = linha.cells[1].innerHTML;
+//     historico_status.innerHTML= linha.cells[2].innerHTML;
+//      valor.innerHTML = linha.cells[3].innerHTML;
+//      data.innerHTML = linha.cells[4].innerHTML;
+//      hora.innerHTML = linha.cells[5].innerHTML;
+//      tipo.innerHTML = linha.cells[6].innerHTML;
+//     // limite.innerHTML = linha.cells[7].innerHTML;
+
     
    
 
-    abrir_cupom.style.display="block";
+//     abrir_cupom.style.display="block";
 
-  }
+//   }
 
 
 
@@ -359,7 +442,7 @@ function limite(teste) {
 function pagamento_ficha_mostrar() {
         
     const table = document.getElementById('tableBody1');
-    const button = document.querySelector('.mostrar_mais_1');
+    const button = document.querySelector('.mostrar_mais_');
 
     table.classList.toggle('hidden');
 

@@ -197,12 +197,12 @@ function ficha_menu(numero) {
       
       function abrir_ficha() {
         
-        const table = document.querySelector('.tableBody');
+        const table = document.querySelector('#tableBody');
         const button = document.querySelector('.mostrar_mais_');
 
-        table.classList.toggle('hidden');
+        table.classList.toggle('hidden1');
 
-        button.textContent = table.classList.contains('hidden') ? 'Ver mais...' : 'Ocultar...';
+        button.textContent = table.classList.contains('hidden1') ? 'Ver mais...' : 'Ocultar...';
         
         }
 

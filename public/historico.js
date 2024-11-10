@@ -1,7 +1,7 @@
  function filterTable() {
     const inputId = document.getElementById('filterId').value.toLowerCase();
     const inputNome = document.getElementById('filterNome').value;
-    const inputStatus = document.getElementById('filterStatus').value.toLowerCase();
+    const inputStatus = document.getElementById('filterStatus').value;
     const inputValor = document.getElementById('filterValor').value;
     const inputData = document.getElementById('filterData').value;
     const inputHora = document.getElementById('filterHora').value.toLowerCase();
@@ -29,7 +29,7 @@
 
             row.style.display = "none";
         }
-            console.log(status.includes(inputStatus))
+           // console.log(status.includes(inputStatus))
       
 
 
@@ -63,7 +63,8 @@ function historico_selecionado(linha) {
     const data = document.querySelector('.historico_data')
     const hora = document.querySelector('.historico_hora')
     const tipo = document.querySelector('.historico_tipo')
-
+    const limite = document.querySelector('.historico_limite')
+    const valor_pagamento = document.querySelector('.historico_valor_da_ficha')
     // Obtém a célula da coluna "Nome" (que é a segunda célula da linha)
  
     
@@ -74,8 +75,10 @@ function historico_selecionado(linha) {
      data.innerHTML = linha.cells[4].innerHTML;
      hora.innerHTML = linha.cells[5].innerHTML;
      tipo.innerHTML = linha.cells[6].innerHTML;
+     limite.innerHTML = linha.cells[7].innerHTML;
+     valor_pagamento.innerHTML = linha.cells[8].innerHTML;
     
-   
+    
 
     abrir_cupom.style.display="block";
 
