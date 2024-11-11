@@ -595,7 +595,7 @@
 <div class="w3-row-padding">
 <div class="w3-half">
 <label>Falta pagar </label>
-<input class="w3-input w3-border ficha_procurar_pagar" type="text" disabled  value="R$ 99,29" placeholder=" ">
+<input class="w3-input w3-border ficha_procurar_pagar varlor_da_minha_ficha" type="text" disabled  value="R$ 00,00" placeholder=" ">
 </div>
 
 <div class="w3-half">
@@ -786,8 +786,10 @@
                     <td align="center">
                   
                       
-                      <input class="w3-input w3-border pagamento_valor" id="pagamento_valor" type="text" oninput="formatarDinheiro(this),enviar_valor(this)" placeholder="Valor">
+                      <input class="w3-input w3-border pagamento_valor" id="pagamento_valor" type="text" oninput="formatarDinheiro(this)" placeholder="R$ 0,00">
+                      
                     </td>
+                
                 
                   </tr>
                   <tr>
@@ -798,13 +800,7 @@
                  
                     <td align="center" class="hora"></td>
                   </tr>
-                  <tr>
-                 
-                    <td align="center">
-                      <input class="w3-input w3-border  pagamento_quantidade" type="number" placeholder="unidades" value="1" oninput="validaNumero(this),unidade_multiplica_valor(this)">
-                    </td>
-                  </tr>
-                
+            
                   <tr>
                     <td colspan="2" align="center" style="padding: 10px;">
                     
@@ -843,13 +839,14 @@
 
           <p><button class="w3-button w3-green w3-block" onclick="salvar()" >SALVAR</button></p>
 
-        <div class="">nomes:</div>
+        <div class="mostrar1">nomes:</div>
         <div class="mostrar2">tipo:</div>
-        <div class="mostrar3">quantidade:</div>
-        <div class="mostrar4">valor:</div>
+        
+        <div class="mostrar4">valor unitario :</div>
         <div class="mostrar5">hora :</div>
         <div class="mostrar6">data :</div>
-       
+        <div class="testevalor">total:</div>
+        
         <div class="w3-container ">
           <button onclick="window.print()">imprimir</button>
           </div>

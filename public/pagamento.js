@@ -84,19 +84,7 @@ function option() {
 }
 
 
-function quantidade() {
 
-    // Pega todos os inputs dentro da div de resultado
-    const inputs = document.querySelectorAll('.pagamento_quantidade');
-        for (let index = 0; index < inputs.length; index++) {
-
-            
- const terceiroValor = inputs[index].value; // Acessa o valor do terceiro input
-        document.querySelector('.mostrar3').textContent += terceiroValor; // Mostra no HTML
-
-        
-    }
-}
 
 
         
@@ -119,6 +107,23 @@ function pagamento_nome() {
     
   
 
+}
+function pagamento_total() {
+    
+    // Pega todos os inputs dentro da div de resultado
+    const inputs = document.querySelectorAll('.pagamento_valor');
+
+
+
+    for (let index1 = 0; index1 < inputs.length; index1++) {
+        
+        const terceiroValor = inputs[index1].value; // Acessa o valor do terceiro input
+        
+        document.querySelector('.mostrar4').textContent += terceiroValor; // Mostra no HTML
+        
+        // alert(terceiroValor);           
+        
+                }
 }
 function pagamento_valor() {
     
@@ -144,66 +149,32 @@ function pagamento_valor() {
     let valorConvertido = numerico_valor.replace(/\./g, '').replace(',', '.');
     return parseFloat(valorConvertido);
 }
-// Função para formatar o número em Real (R$)
-function formatarEmReal(novonumero) {
-    return new Intl.NumberFormat('pt-BR', {
-        style: 'currency',
-        currency: 'BRL',
-    }).format(novonumero);
-}
 
+//  ------------------------------------------------------------------------- 
+ // Função para formatar o valor como moeda (Real)
+ function pagamento_formatar_dinheiro(input) {
+    let valor = input.value.replace(/[^\d]/g, ''); // Remove tudo o que não for número
 
-let valoruniversal
-
-function enviar_valor(params) {
-
-    valoruniversal =params.value
-
-    
-}
-
-
-function unidade_multiplica_valor(unidade) {
-
-   // alert(valoruniversal)
-
-  const valor =  document.querySelector('.pagamento_valor').value
-  const valor1 =  document.querySelector('#pagamento_valor')
-  
-const numero_convertido = converterParaNumero(valor)
-
-  //console.log(  converterParaNumero(valor))
-  //console.log(unidade.value)
-
-
-  if ( unidade.value >  0) {
-
-console.log(unidade.value)
-console.log(valoruniversal)
-    
-valoruniversal =  unidade.value * numero_convertido
-        
-        const novovalor = formatarEmReal(valoruniversal)
-        
-        valor1.value =novovalor ;
-        
-       console.log(novovalor)
-    }else{
-
-        valoruniversal =  unidade.value / numero_convertido
-     
-        console.log(valoruniversal)
-        
-        const novovalor = formatarEmReal(valoruniversal)
-        
-            valor1.value =novovalor ;
-
-           console.log(novovalor)
+    // Formata para a moeda brasileira (R$)
+    if (valor.length > 2) {
+        valor = valor.replace(/(\d)(\d{2})$/, '$1,$2'); // Adiciona a vírgula
+        valor = valor.replace(/(\d)(\d{3})(\d)/, '$1.$2.$3'); // Adiciona o ponto para milhar
     }
 
-
+    input.value = "R$ " + valor;
 }
 
+
+
+// Função auxiliar para formatar o total como moeda
+function formatarTotal(valor) {
+    valor = valor.toFixed(2).replace(".", ",");
+    let [inteiro, decimal] = valor.split(",");
+    inteiro = inteiro.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+    return "R$ " + inteiro + "," + decimal;
+}
+// ---------------------------------------------------------------------------
+  
 
 function removerclass() {
     const divs = document.querySelectorAll('.adicionar_produto'); // Seleciona todas as divs clonadas
@@ -214,16 +185,34 @@ function removerclass() {
 }
 function limpar_input(){
      document.querySelector('.nome_procudo').value =null;
-     document.querySelector('.pagamento_quantidade').value = null;
+ 
      document.querySelector('.pagamento_valor').value= null;
 
 
 }
+// Função para somar os valores dos inputs com a classe "valor"
+function somarValores() {
+    // Obter todos os inputs com a classe "valor"
+    const inputs = document.querySelectorAll('.pagamento_valor');
+    
+    let soma = 0;
+
+    // Iterar sobre os inputs e somar seus valores
+    inputs.forEach(input => {
+        soma += parseFloat(input.value.replace(',', '.')) || 0;  // Converte o valor para número, tratando ',' como '.' 
+    });
+
+    // Atualizar o valor do input "resultado", formatando como moeda
+  document.querySelector('.varlor_da_minha_ficha').value = formatarMoeda(soma);
+  
+  console.log(formatarMoeda(soma))
+}
+
 
 function salvar() {
     const checkbox = document.querySelector('.verificar_compra');
     const nomeproduto = document.querySelector('.nome_procudo');
-    const pagamento_quantidade = document.querySelector('.pagamento_quantidade');
+   
     const pagamento_valor1 = document.querySelector('.pagamento_valor');
 
 
@@ -258,18 +247,19 @@ function salvar() {
     return todosPreenchidos;     
 }
    
-   // console.log(pagamento_valor1.value);
+  
     // console.log('Checkbox encontrado:', checkbox); 
-    if (checkbox.checked && nomeproduto.value && pagamento_quantidade.value && pagamento_valor1.value && nomes_produtos() ) {
+    if (checkbox.checked && nomeproduto.value && pagamento_valor1.value && nomes_produtos() ) {
         // console.log('Checkbox está marcado:', checkbox.checked);
         
         
-        quantidade();
+       
         pagamento_nome();
         option();
         pagamento_valor();
         pagamento_data_hora();
         removerclass();
+        somarValores();
 
         checkbox.checked=false;
         limpar_input();

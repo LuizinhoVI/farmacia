@@ -1,3 +1,4 @@
+
 function adicionar_produto_para_historico() {
     
     
@@ -9,12 +10,36 @@ function adicionar_produto_para_historico() {
     const falta_pagar = document.querySelector('.ficha_procurar_pagar').value;
     const nome_remedio = document.querySelector('.nome_procudo').value;
 
-    alert(limite+""+nome+""+hora+""+data)
+    alert(limite+""+nome+""+hora+""+data +""+falta_pagar )
     
     //enviar_pagamento_para_historico()
 
 }
 
+
+ // Função para formatar o valor em Real (R$)
+ function formatarMoeda(valor) {
+    return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+}
+
+
+// Função para somar os valores dos inputs com a classe "valor"
+function somarValores() {
+    // Obter todos os inputs com a classe "valor"
+    const inputs = document.querySelectorAll('.pagamento_valor');
+    
+    let soma = 0;
+
+    // Iterar sobre os inputs e somar seus valores
+    inputs.forEach(input => {
+        soma += parseFloat(input.value.replace(',', '.')) || 0;  // Converte o valor para número, tratando ',' como '.' 
+    });
+
+    // Atualizar o valor do input "resultado", formatando como moeda
+  document.querySelector('.varlor_da_minha_ficha').value = formatarMoeda(soma);
+  
+  console.log(formatarMoeda(soma))
+}
 
 
 
