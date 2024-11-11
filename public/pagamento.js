@@ -190,23 +190,7 @@ function limpar_input(){
 
 
 }
-// Função para somar os valores dos inputs com a classe "valor"
-function somarValores() {
-    // Obter todos os inputs com a classe "valor"
-    const inputs = document.querySelectorAll('.pagamento_valor');
-    
-    let soma = 0;
 
-    // Iterar sobre os inputs e somar seus valores
-    inputs.forEach(input => {
-        soma += parseFloat(input.value.replace(',', '.')) || 0;  // Converte o valor para número, tratando ',' como '.' 
-    });
-
-    // Atualizar o valor do input "resultado", formatando como moeda
-  document.querySelector('.varlor_da_minha_ficha').value = formatarMoeda(soma);
-  
-  console.log(formatarMoeda(soma))
-}
 
 
 function salvar() {
@@ -258,9 +242,10 @@ function salvar() {
         option();
         pagamento_valor();
         pagamento_data_hora();
-        removerclass();
-        somarValores();
+       
 
+
+        removerclass();
         checkbox.checked=false;
         limpar_input();
         limpar_produto();

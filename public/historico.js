@@ -83,3 +83,4 @@ function historico_selecionado(linha) {
     abrir_cupom.style.display="block";
 
   }
+

@@ -17,7 +17,8 @@
   <link rel="stylesheet" href="css/historico.css">
   <link rel="stylesheet" href="css/pagamento.css">
   <link rel="stylesheet" href="css/ficha_compras.css">
-  
+
+
   <style>
   html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   .mySlides {display:none}
@@ -541,6 +542,10 @@
 <!-- procurar ficha para compras -->
 <div class="w3-container nao-imprimir">
   <br>
+
+
+
+  
   <form class="w3-container w3-card-4   w3-light-grey esconder " id="menu4" style="display:BLOCK ;">
 
 
@@ -786,7 +791,7 @@
                     <td align="center">
                   
                       
-                      <input class="w3-input w3-border pagamento_valor" id="pagamento_valor" type="text" oninput="formatarDinheiro(this)" placeholder="R$ 0,00">
+                      <input class="w3-input w3-border pagamento_valor" id="pagamento_valor" type="text" oninput="dinheiro_real(this)" placeholder="R$ 0,00">
                       
                     </td>
                 
@@ -831,13 +836,11 @@
               Aceitar compras...
             </div>
       
-          <script src="ficha_compras.js"></script>
-          <script src="procurar_ficha.js"></script>
+          
+         
 
-            <button onclick="adicionar_produto_para_historico() "> teporario </button>
-
-
-          <p><button class="w3-button w3-green w3-block" onclick="salvar()" >SALVAR</button></p>
+           
+          <p><button class="w3-button w3-green w3-block" onclick="adicionar_produto_para_historico(),salvar()" >SALVAR</button></p>
 
         <div class="mostrar1">nomes:</div>
         <div class="mostrar2">tipo:</div>
@@ -845,11 +848,9 @@
         <div class="mostrar4">valor unitario :</div>
         <div class="mostrar5">hora :</div>
         <div class="mostrar6">data :</div>
-        <div class="testevalor">total:</div>
+        <div class="mostrar7">total:</div>
         
-        <div class="w3-container ">
-          <button onclick="window.print()">imprimir</button>
-          </div>
+       
 
       </div>
       </div>
@@ -960,14 +961,16 @@
   
   
   
-      <script  src="pagamento.js"></script>
-      <script src="cupom.js"></script>
-      <script src="Ficha.js"></script>
-   
+                
+                  <script src="ficha_compras.js"></script>
+                  <script  src="pagamento.js"></script>
+                  <script src="cupom.js"></script>
+                  <script src="Ficha.js"></script>
       <script src="pesquisa.js"></script>
-      <script src="historico.js"></script>
       <script src="ficha_cadastro_pessoas.js"></script>
-  
+      
+  <script src="historico.js"></script>
+  <script src="procurar_ficha.js"></script>
 
   </body>
   
