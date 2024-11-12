@@ -600,7 +600,9 @@
 <div class="w3-row-padding">
 <div class="w3-half">
 <label>Falta pagar </label>
-<input class="w3-input w3-border ficha_procurar_pagar varlor_da_minha_ficha" type="text" disabled  value="R$ 00,00" placeholder=" ">
+<input class="w3-input w3-border ficha_procurar_pagar  varlor_da_minha_ficha" oninput="teste(this)"  type="text" disabled   placeholder=" R$ 00,00" value=" R$ 0,00">
+
+
 </div>
 
 <div class="w3-half">
@@ -791,7 +793,7 @@
                     <td align="center">
                   
                       
-                      <input class="w3-input w3-border pagamento_valor" id="pagamento_valor" type="text" oninput="dinheiro_real(this)" placeholder="R$ 0,00">
+                      <input class="w3-input w3-border pagamento_valor" id="pagamento_valor" type="text" oninput="dinheiro_real(this),somarValores()" placeholder="R$ 0,00">
                       
                     </td>
                 
@@ -841,6 +843,14 @@
 
            
           <p><button class="w3-button w3-green w3-block" onclick="adicionar_produto_para_historico(),salvar()" >SALVAR</button></p>
+
+
+            <hr>
+              <div class="w3-container">
+                <input class=" w3-phone" type="text" name="" id="" placeholder=" nome">
+                <input type="text" name="" id="">
+              </div>
+            <hr>
 
         <div class="mostrar1">nomes:</div>
         <div class="mostrar2">tipo:</div>

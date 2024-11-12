@@ -21,14 +21,16 @@ function cloneTable() {
 
 function deleteTable(button) {
     const table = button.closest('.ficha_tabela'); // Encontra a tabela pai do botão
+    
     table.remove(); // Remove a tabela
-
     // Atualiza os IDs das tabelas restantes
     updateTableIds();
+
 }
 
 function updateTableIds() {
     const tables = document.querySelectorAll('#tabelaContainer .ficha_tabela');
+   
     
     // Reinicia o contador e atualiza os IDs
     tables.forEach((table, index) => {

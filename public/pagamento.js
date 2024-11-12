@@ -181,12 +181,25 @@ function removerclass() {
     // Mantém apenas a primeira div
     for (let i = 1; i < divs.length; i++) {
         divs[i].remove(); // Remove as divs a partir da segunda
+       
     }
 }
+
+
 function limpar_input(){
-     document.querySelector('.nome_procudo').value =null;
- 
-     document.querySelector('.pagamento_valor').value= null;
+     const nome_procudo= document.querySelector('.nome_procudo');
+    const pagamento= document.querySelector('.pagamento_valor');
+    const faltapagar = document.querySelector('.valor_da_minha_ficha');
+
+    nome_procudo.value =null
+    pagamento.value =null
+
+
+    //faltapagar.value -= pagamento.value 
+
+
+
+
 
 
 }
@@ -242,9 +255,7 @@ function salvar() {
         option();
         pagamento_valor();
         pagamento_data_hora();
-       
-
-
+    
         removerclass();
         checkbox.checked=false;
         limpar_input();
@@ -366,40 +377,6 @@ const ficha_valor = novaLinha.insertCell(8);
 
 
 }
-
-
-//  function historico_selecionado(linha) {
-//     const abrir_cupom = document.querySelector('.cupom_de_pagamento')
-
-//     const cpf = document.querySelector('.historico_cpf')
-//     const nome_cupom = document.querySelector('.historico_nome_completo')
-//     const historico_status = document.querySelector('.historico_status')
-//     const valor = document.querySelector('.historico_valor')
-//     const data = document.querySelector('.historico_data')
-//     const hora = document.querySelector('.historico_hora')
-//     const tipo = document.querySelector('.historico_tipo')
-//     const limite = document.querySelector('.historico_limite')
-    
-//     alert()
-
-//     // Obtém a célula da coluna "Nome" (que é a segunda célula da linha)
- 
-    
-//     cpf.innerHTML = linha.cells[0].innerHTML;
-//     nome_cupom.innerHTML = linha.cells[1].innerHTML;
-//     historico_status.innerHTML= linha.cells[2].innerHTML;
-//      valor.innerHTML = linha.cells[3].innerHTML;
-//      data.innerHTML = linha.cells[4].innerHTML;
-//      hora.innerHTML = linha.cells[5].innerHTML;
-//      tipo.innerHTML = linha.cells[6].innerHTML;
-//     // limite.innerHTML = linha.cells[7].innerHTML;
-
-    
-   
-
-//     abrir_cupom.style.display="block";
-
-//   }
 
 
 

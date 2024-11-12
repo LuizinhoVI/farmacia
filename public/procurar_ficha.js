@@ -12,14 +12,15 @@ function adicionar_produto_para_historico() {
    
     
 
+
    // alert("limite da ficha"+limite+"nome"+nome+"hora:"+hora+"data:"+data +"falta pagar:"+falta_pagar +"nome_remedio"+nome_remedio+"cpf:"+cpf+"preço:"+preco)
    
 
    
    enviar_ficha_para_historico(nome,cpf,data,hora,limite,falta_pagar,nome_remedio,preco);
    
-   
-  
+ 
+
  
 }
 
@@ -29,41 +30,9 @@ function adicionar_produto_para_historico() {
 
 
 
-
 function enviar_ficha_para_historico(nome_,cpf_,data_,hora_,limite_,pagar_,remedio_,preco_) {
-    // Seleciona todos os inputs de texto com a classe 'inputValor'
-    var inputs = document.querySelectorAll(".pagamento_valor");
-    var soma = 0;
-      // Loop para percorrer todos os inputs e somar os valores
-      inputs.forEach(function(input) {
-        // Pega o valor do input e remove qualquer caractere não numérico
-        var valor = input.value.trim().replace('R$', '').replace('.', '').replace(',', '.');
+ 
 
-        // Converte o valor para número
-        var numero = parseFloat(valor);
-
-        // Verifica se o valor é um número válido e soma
-        if (!isNaN(numero)) {
-            soma += numero;
-        }
-    });
-
-    // Exibe o resultado da soma no elemento com id 'resultado'
-    document.querySelector(".mostrar7").innerText = " R$ " + soma.toFixed(2).replace('.', ',');
-
-    const limite1 = document.querySelector('.varlor_da_minha_ficha'); 
-
-    const dinheiro = limite1.value.trim().replace('R$', '').replace('.', '').replace(',', '.');
-    var dinheiro1 = parseFloat(dinheiro);
-        dinheiro1 =   soma + dinheiro1 * 1; 
-
-        limite1.value = dinheiro1.toFixed(2).replace('.', ',')
-
-      
-
-
-    //alert("ficha"+ficha+ "pagamento "+ valor_1 + "tipo "+tipo_1 )
-    
      // Criando uma nova linha na tabela
      const tabela = document.getElementById('tabela').getElementsByTagName('tbody')[0];
      const novaLinha = tabela.insertRow();
@@ -91,20 +60,10 @@ function enviar_ficha_para_historico(nome_,cpf_,data_,hora_,limite_,pagar_,remed
       data.textContent = data_;
       hora.textContent = hora_;
       tipo.textContent = "Ficha 📄";
-      limite.textContent = soma.toFixed(2).replace('.', ',');
-      ficha_valor.textContent = pagar_;
+      limite.textContent = limite_;
+      ficha_valor.textContent =pagar_;
       
      // console.log(preco_)
-
-
-   
-       
-    
-      
-            
-    
-    
-
 
 
      // Adicionando um id para a linha e a classe de tabela
@@ -124,11 +83,38 @@ function enviar_ficha_para_historico(nome_,cpf_,data_,hora_,limite_,pagar_,remed
     }
 
 
-    
 
- // Função para formatar o valor em Real (R$)
- function formatarMoeda(valor) {
-    return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+
+
+
+function formatarValor(valor) {
+    // Remover "R$", espaços e vírgulas (substituindo por ponto)
+    return parseFloat(valor.replace('R$', '').replace(/\s/g, '').replace(',', '.')) || 0;
+}
+let ficha_para_pgar=0;
+
+function somarValores() {
+    // Selecionar todos os inputs com a classe "valor"
+    const valor_pra_pagar = document.querySelector('.varlor_da_minha_ficha')
+
+    const inputs = document.querySelectorAll('.pagamento_valor');
+    let soma = 0;
+
+    // Iterar sobre os inputs e somar os valores
+    inputs.forEach(input => {
+
+        soma += formatarValor(input.value) ; // Formatar o valor antes de somar
+        ficha_para_pgar = soma
+
+    });
+    
+    // Atribuir a soma ao input de resultado, formatado como R$
+    valor_pra_pagar.value = `R$ ${soma.toFixed(2).replace('.', ',')}`;
+    console.log(ficha_para_pgar)
+
 }
 
 
+    // Chama a função para calcular a soma assim que a página for carregada
+   
